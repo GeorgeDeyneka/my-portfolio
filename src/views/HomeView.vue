@@ -11,6 +11,15 @@ export default {
 </script>
 
 <template>
-  <HeaderVue />
-  <RouterView />
+  <div class="container">
+    <HeaderVue />
+    <RouterView />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+</style>
