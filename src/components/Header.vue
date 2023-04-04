@@ -6,11 +6,30 @@ export default {};
   <header class="header">
     <div class="container">
       <nav class="header__nav">
-        <RouterLink class="header__link" to="/">About</RouterLink>
-        <RouterLink class="header__link" to="/projects">Projects</RouterLink>
-        <RouterLink class="header__link" to="/contacts">Contacts</RouterLink>
+        <RouterLink class="header__link" exact-active-class="active-link" to="/"
+          >About</RouterLink
+        >
+        <RouterLink
+          class="header__link"
+          active-class="active-link"
+          to="/projects"
+          >Projects</RouterLink
+        >
+        <RouterLink
+          class="header__link"
+          active-class="active-link"
+          to="/contacts"
+          >Contacts</RouterLink
+        >
       </nav>
-      <button class="header__btn-cv">Download CV</button>
+      <a
+        href="https://drive.google.com/u/1/uc?id=1xFofPXShHbUfT7SISAzqGvd3oOdeCYLY&export=download"
+        rel="noopener"
+        class="header__btn-cv"
+        title="Download CV"
+        download
+        >Download CV</a
+      >
     </div>
   </header>
 </template>
@@ -25,6 +44,10 @@ export default {};
   padding: 20px 0;
 }
 
+.active-link {
+  border-bottom: 3px solid #61cf9e;
+}
+
 .header {
   font-family: Poppins;
 
@@ -34,10 +57,12 @@ export default {};
 
   &__nav {
     display: flex;
-    gap: 20px;
+    gap: 60px;
   }
 
   &__btn-cv {
+    display: block;
+    text-decoration: none;
     border: 2px solid var(--white);
     background-color: transparent;
     color: var(--white);
@@ -48,7 +73,7 @@ export default {};
 
     &:hover {
       background-color: antiquewhite;
-          background-color: #1d1d1e;
+      background-color: #1d1d1e;
     }
   }
 
