@@ -1,5 +1,11 @@
 <script>
-export default {};
+import ButtonCV from "./ButtonCV.vue";
+
+export default {
+  components: {
+    ButtonCV,
+  },
+};
 </script>
 
 <template>
@@ -9,12 +15,21 @@ export default {};
         <RouterLink class="header__link" exact-active-class="active-link" to="/"
           >About</RouterLink
         >
+
         <RouterLink
           class="header__link"
           active-class="active-link"
           to="/projects"
           >Projects</RouterLink
         >
+
+        <RouterLink
+          class="header__link"
+          active-class="active-link"
+          to="/stack"
+          >Technologies</RouterLink
+        >
+
         <RouterLink
           class="header__link"
           active-class="active-link"
@@ -22,14 +37,8 @@ export default {};
           >Contacts</RouterLink
         >
       </nav>
-      <a
-        href="https://drive.google.com/u/1/uc?id=1xFofPXShHbUfT7SISAzqGvd3oOdeCYLY&export=download"
-        rel="noopener"
-        class="header__btn-cv"
-        title="Download CV"
-        download
-        >Download CV</a
-      >
+
+      <ButtonCV />
     </div>
   </header>
 </template>
@@ -37,51 +46,47 @@ export default {};
 <style lang="scss" scoped>
 @import "../assets/variables.scss";
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
-.active-link {
-  border-bottom: 3px solid #61cf9e;
-}
-
-.header {
-  font-family: Poppins;
-
-  &__title {
-    font-weight: 400;
-  }
-
-  &__nav {
+@media (min-width: 320px) {
+  .container {
     display: flex;
-    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  &__btn-cv {
-    display: block;
-    text-decoration: none;
-    border: 2px solid var(--white);
-    background-color: transparent;
-    color: var(--white);
-    padding: 10px 25px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 200ms ease-in;
+  .active-link {
+    border-bottom: 3px solid #61cf9e;
+  }
 
-    &:hover {
-      background-color: antiquewhite;
-      background-color: #1d1d1e;
+  .header {
+    font-family: Poppins;
+
+    &__title {
+      font-weight: 400;
+    }
+
+    &__nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+      font-size: 18px;
     }
   }
+}
 
-  &__link {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 18px;
+@media (min-width: 768px) {
+  .container {
+    padding: 20px 0;
+  }
+
+  .header {
+    &__nav {
+      gap: 60px;
+    }
   }
 }
 </style>
