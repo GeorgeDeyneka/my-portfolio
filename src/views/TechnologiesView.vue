@@ -1,91 +1,40 @@
 <script>
+import LogoList from "../components/LogoList.vue";
+import { SVG_PATH_DATA } from "../data/svgPathData";
+
 export default {
+  components: {
+    LogoList,
+  },
+
   data() {
     return {
-      frameworksSvg: [
-        {
-          name: "angular",
-          path: "icon-ang",
-        },
-        {
-          name: "vue",
-          path: "icon-vue",
-        },
-        {
-          name: "rest",
-          path: "icon-nest",
-        },
-      ],
-
-      mainStackSvg: [
-        {
-          name: "js",
-          path: "icon-js",
-        },
-        {
-          name: "ts",
-          path: "icon-ts",
-        },
-        {
-          name: "html",
-          path: "icon-html",
-        },
-        {
-          name: "css",
-          path: "icon-css",
-        },
-      ],
+      buildersSvg: SVG_PATH_DATA.buildersSvg,
+      softwareSvg: SVG_PATH_DATA.softwareSvg,
+      librariesSvg: SVG_PATH_DATA.librariesSvg,
+      frameworksSvg: SVG_PATH_DATA.frameworksSvg,
+      mainStackSvg: SVG_PATH_DATA.mainStackSvg,
     };
   },
 };
 </script>
 
 <template>
-  <h1 class="tech__title">My Tech stack:</h1>
+  <h1 class="tech__title">I have work experience with:</h1>
 
-  <h2>Frameworks:</h2>
-  <ul class="tech__logos">
-    <li class="tech__item" v-for="item of frameworksSvg" :key="item">
-      <svg class="icon-svg">
-        <use :href="'src/assets/images/sprite.svg#' + item.path"></use>
-      </svg>
-    </li>
-  </ul>
-
-  <h2>Main Stack:</h2>
-  <ul class="tech__logos">
-    <li class="tech__item" v-for="item of mainStackSvg" :key="item">
-      <svg class="icon-svg">
-        <use :href="'src/assets/images/sprite.svg#' + item.path"></use>
-      </svg>
-    </li>
-  </ul>
+  <LogoList title="Frameworks" :arrOfPath="frameworksSvg" />
+  <LogoList title="Tech stack" :arrOfPath="mainStackSvg" />
+  <LogoList title="Builders" :arrOfPath="buildersSvg" />
+  <LogoList title="Software" :arrOfPath="softwareSvg" />
+  <LogoList title="Libraries" :arrOfPath="librariesSvg" />
 </template>
 
-<!-- Make this reusable component? -->
-<!-- Separate data in other file? -->
+<!-- Think about rxjs logo visibility -->
 
 <style lang="scss" scoped>
 .tech {
   &__title {
     padding: 20px 0;
   }
-
-  &__item {
-    list-style: none;
-  }
-
-  &__logos {
-    display: flex;
-    gap: 30px;
-    padding: 20px 0;
-  }
-}
-
-.icon-svg {
-  fill: #aaa;
-  display: block;
-  width: 100px;
-  height: 100px;
 }
 </style>
