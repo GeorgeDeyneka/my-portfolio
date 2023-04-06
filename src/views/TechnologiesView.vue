@@ -1,6 +1,6 @@
 <script>
 import LogoList from "../components/LogoList.vue";
-import { TECH_DATA } from "../data/svgPathData";
+import { TECH_DATA, SPRITE_PATH } from "../data/techSvgData";
 
 export default {
   components: {
@@ -9,6 +9,7 @@ export default {
 
   data() {
     return {
+      url: SPRITE_PATH,
       techData: TECH_DATA,
     };
   },
@@ -20,13 +21,12 @@ export default {
 
   <LogoList
     v-for="item of techData"
+    :basePath="url"
     :key="item"
     :title="item.title"
-    :arrOfPath="item.data"
+    :arrData="item.data"
   />
 </template>
-
-<!-- Think about rxjs logo visibility -->
 
 <style lang="scss" scoped>
 .tech {

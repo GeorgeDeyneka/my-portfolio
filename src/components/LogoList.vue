@@ -6,8 +6,13 @@ export default {
       required: true,
     },
 
-    arrOfPath: {
+    arrData: {
       type: Array,
+      required: true,
+    },
+
+    basePath: {
+      type: String,
       required: true,
     },
   },
@@ -18,10 +23,12 @@ export default {
   <h2>{{ title }}:</h2>
 
   <ul class="tech__logos">
-    <li class="tech__item" v-for="item of arrOfPath" :key="item">
+    <li class="tech__item" v-for="item of arrData" :key="item">
       <svg :style="{ width: item?.width }" class="icon-svg">
-        <use :href="'src/assets/images/sprite.min.svg#' + item.path"></use>
+        <use :href="basePath + item.path"></use>
       </svg>
+
+<!-- make reuse -->
       <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
