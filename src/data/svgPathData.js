@@ -1,89 +1,104 @@
-export const SVG_PATH_DATA = {
-  buildersSvg: [
-    {
-      name: "gulp",
-      path: "icon-gulp",
-    },
-    {
-      name: "webpack",
-      path: "icon-webpack",
-      width: "250px",
-    },
-  ],
+export const TECH_DATA = [
+  {
+    title: "Frameworks",
+    data: [
+      {
+        name: "Angular",
+        path: "icon-ang",
+      },
+      {
+        name: "Vue.js",
+        path: "icon-vue",
+      },
+      {
+        name: "Nest.js",
+        path: "icon-nest",
+      },
+    ],
+  },
 
-  softwareSvg: [
-    {
-      name: "chat-gpt",
-      path: "icon-chat-gpt",
-    },
-    {
-      name: "photoshop",
-      path: "icon-ps",
-    },
-    {
-      name: "postman",
-      path: "icon-postman",
-    },
-    {
-      name: "figma",
-      path: "icon-figma",
-    },
-    {
-      name: "vs-code",
-      path: "icon-vs-code",
-    },
-  ],
+  {
+    title: "Main stack",
+    data: [
+      {
+        name: "JavaScript",
+        path: "icon-js",
+      },
+      {
+        name: "TypeScript",
+        path: "icon-ts",
+      },
+      {
+        name: "HTML",
+        path: "icon-html",
+      },
+      {
+        name: "CSS",
+        path: "icon-css",
+      },
+      {
+        name: "SCSS",
+        path: "icon-sass",
+      },
+      {
+        name: "REST API",
+        path: "icon-rest",
+      },
+      {
+        name: "HTTP/HTTPS (+CORS)",
+        path: "icon-http",
+      },
+    ],
+  },
 
-  librariesSvg: [
-    {
-      name: "rxjs",
-      path: "icon-rxjs",
-    },
-  ],
+  {
+    title: "Builders",
+    data: [
+      {
+        name: "Gulp",
+        path: "icon-gulp",
+      },
+      {
+        name: "Webpack",
+        path: "icon-webpack",
+        width: "250px",
+      },
+    ],
+  },
 
-  frameworksSvg: [
-    {
-      name: "angular",
-      path: "icon-ang",
-    },
-    {
-      name: "vue",
-      path: "icon-vue",
-    },
-    {
-      name: "rest",
-      path: "icon-nest",
-    },
-  ],
+  {
+    title: "Software",
+    data: [
+      {
+        name: "Chat GPT",
+        path: "icon-chat-gpt",
+      },
+      {
+        name: "Adobe Photoshop",
+        path: "icon-ps",
+      },
+      {
+        name: "Postman",
+        path: "icon-postman",
+      },
+      {
+        name: "Figma",
+        path: "icon-figma",
+      },
+      {
+        name: "VS Code",
+        path: "icon-vs-code",
+      },
+    ],
+  },
 
-  mainStackSvg: [
-    {
-      name: "js",
-      path: "icon-js",
-    },
-    {
-      name: "ts",
-      path: "icon-ts",
-    },
-    {
-      name: "html",
-      path: "icon-html",
-    },
-    {
-      name: "css",
-      path: "icon-css",
-    },
-    {
-      name: "sass",
-      path: "icon-sass",
-    },
-    {
-      name: "rest",
-      path: "icon-rest",
-    },
-    {
-      name: "http",
-      path: "icon-http",
-    },
-  ],
-};
+  {
+    title: "Libraries",
+    data: [
+      {
+        name: "rxjs",
+        path: "icon-rxjs",
+      },
+    ],
+  },
+];

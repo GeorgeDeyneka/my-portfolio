@@ -20,10 +20,9 @@ export default {
   <ul class="tech__logos">
     <li class="tech__item" v-for="item of arrOfPath" :key="item">
       <svg :style="{ width: item?.width }" class="icon-svg">
-        <use
-          :href="'src/assets/images/sprite.svg#' + item.path"
-        ></use>
+        <use :href="'src/assets/images/sprite.svg#' + item.path"></use>
       </svg>
+      <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
 </template>
@@ -32,6 +31,13 @@ export default {
 .tech {
   &__item {
     list-style: none;
+    max-width: 100px;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 0;
   }
 
   &__logos {
