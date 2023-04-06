@@ -26,11 +26,15 @@ export const CONTACT_DATA = [
     hoverColor: "#E04C40",
   },
   {
-    link: "",
+    link: "https://github.com/GeorgeDeyneka",
     path: "github",
+    title: "GeorgeDeyneka",
+    hoverColor: "#3E75C3",
   },
   {
-    link: "",
+    link: "https://www.codewars.com/users/GeorgeDeyneka",
     path: "codewars",
+    title: "GeorgeDeyneka",
+    hoverColor: "#B13621",
   },
 ];

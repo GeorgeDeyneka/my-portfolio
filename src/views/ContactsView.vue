@@ -17,9 +17,11 @@ export default {
 </script>
 
 <template>
-  <h1 class="cont__title">Contacts</h1>
+  <h1 class="cont__title">My Contacts</h1>
 
   <ContactList :arrData="contactData" :basePath="url" />
+
+
 </template>
 
 <style lang="scss" scoped>

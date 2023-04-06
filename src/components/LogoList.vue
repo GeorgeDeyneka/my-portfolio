@@ -1,4 +1,6 @@
 <script>
+import SvgIcon from "./icons/SvgIcon.vue";
+
 export default {
   props: {
     title: {
@@ -16,6 +18,10 @@ export default {
       required: true,
     },
   },
+
+  components: {
+    SvgIcon
+},
 };
 </script>
 
@@ -24,11 +30,7 @@ export default {
 
   <ul class="tech__logos">
     <li class="tech__item" v-for="item of arrData" :key="item">
-      <svg :style="{ width: item?.width }" class="icon-svg">
-        <use :href="basePath + item.path"></use>
-      </svg>
-
-<!-- make reuse -->
+      <SvgIcon :item="item" :basePath="basePath" :size="100"/>
       <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
@@ -52,11 +54,5 @@ export default {
     gap: 30px;
     padding: 20px 0;
   }
-}
-
-.icon-svg {
-  display: block;
-  width: 100px;
-  height: 100px;
 }
 </style>

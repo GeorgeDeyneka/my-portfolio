@@ -10,12 +10,24 @@ export default {
       type: String,
       required: true,
     },
+
+    size: {
+      type: Number,
+      default: 50,
+    },
   },
 };
 </script>
 
 <template>
-  <svg :style="{ '--hover-color': item?.hoverColor }" class="icon-svg">
+  <svg
+    :style="{
+      '--hover-color': item?.hoverColor,
+      width: item.width || `${size}px`,
+      height: `${size}px`,
+    }"
+    class="icon-svg"
+  >
     <use :href="basePath + item.path"></use>
   </svg>
 </template>
@@ -24,8 +36,6 @@ export default {
 .icon-svg {
   display: block;
   fill: #fff;
-  width: 50px;
-  height: 50px;
 
   &:hover {
     transition: fill 200ms ease-in;
