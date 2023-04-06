@@ -52,16 +52,27 @@ export const TECH_DATA = [
   },
 
   {
-    title: "Builders",
+    title: "Libraries",
     data: [
       {
-        name: "Gulp",
-        path: "icon-gulp",
+        name: "RxJS",
+        path: "icon-rxjs",
       },
       {
-        name: "Webpack",
-        path: "icon-webpack",
-        width: "250px",
+        name: "Angular Material",
+        path: "icon-ang-mat",
+      },
+      {
+        name: "jQuery",
+        path: "icon-jquery",
+      },
+      {
+        name: "Babel",
+        path: "icon-babel",
+      },
+      {
+        name: "Date-fns",
+        path: "icon-date-fns",
       },
     ],
   },
@@ -86,6 +97,10 @@ export const TECH_DATA = [
         path: "icon-figma",
       },
       {
+        name: "Canva",
+        path: "icon-canva",
+      },
+      {
         name: "VS Code",
         path: "icon-vs-code",
       },
@@ -93,11 +108,54 @@ export const TECH_DATA = [
   },
 
   {
-    title: "Libraries",
+    title: "Data bases",
     data: [
       {
-        name: "rxjs",
-        path: "icon-rxjs",
+        name: "MongoDB",
+        path: "icon-mongodb",
+      },
+      {
+        name: "Firebase",
+        path: "icon-firebase",
+      },
+    ],
+  },
+
+  {
+    title: "Version control system",
+    data: [
+      {
+        name: "GIT",
+        path: "icon-git",
+      },
+      {
+        name: "GitHub",
+        path: "icon-github",
+      },
+    ],
+  },
+
+  {
+    title: "Builders",
+    data: [
+      {
+        name: "Gulp",
+        path: "icon-gulp",
+      },
+      {
+        name: "Webpack",
+        path: "icon-webpack",
+        width: "250px",
+      },
+    ],
+  },
+
+  {
+    title: "Package Managers",
+    data: [
+      {
+        name: "NPM",
+        path: "icon-npm",
       },
     ],
   },
