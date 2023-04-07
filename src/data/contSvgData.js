@@ -1,4 +1,4 @@
-export const SPRITE_PATH = "src/assets/images/sprite-contacts.svg#icon-";
+export const SPRITE_PATH = "src/assets/icons/sprite-contacts.min.svg#icon-";
 
 export const CONTACT_DATA = [
   {

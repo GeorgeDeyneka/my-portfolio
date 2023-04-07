@@ -1,4 +1,4 @@
-export const SPRITE_PATH = "src/assets/images/sprite-stack.min.svg#icon-";
+export const SPRITE_PATH = "src/assets/icons/sprite-stack.min.svg#icon-";
 
 export const TECH_DATA = [
   {
@@ -95,12 +95,12 @@ export const TECH_DATA = [
         path: "postman",
       },
       {
-        name: "Figma",
-        path: "figma",
-      },
-      {
         name: "Canva",
         path: "canva",
+      },
+      {
+        name: "Figma",
+        path: "figma",
       },
       {
         name: "VS Code",
@@ -108,6 +108,9 @@ export const TECH_DATA = [
       },
     ],
   },
+
+  // Add links on tech stack
+  // Make tech icons less on mobile
 
   {
     title: "Data bases",
