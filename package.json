@@ -16,11 +16,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "fast-glob": "^3.2.12",
     "modern-css-reset": "^1.4.0",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
     "vite": "^4.1.4",
-    "vite-plugin-svg-icons": "^2.0.1"
+    "vite-plugin-copy": "^0.1.6"
   }
 }
