@@ -13,7 +13,7 @@ const router = createRouter({
           path: "",
           name: "about",
           component: () => import("../views/AboutView.vue"),
-          exact: true
+          exact: true,
         },
         {
           path: "/projects",
@@ -24,6 +24,11 @@ const router = createRouter({
           path: "/contacts",
           name: "contacts",
           component: () => import("../views/ContactsView.vue"),
+        },
+        {
+          path: "/stack",
+          name: "stack",
+          component: () => import("../views/TechnologiesView.vue"),
         },
       ],
     },

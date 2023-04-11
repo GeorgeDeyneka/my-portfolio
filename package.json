@@ -8,7 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^9.19.1",
+    "firebase-tools": "^11.25.3",
     "vue": "^3.2.47",
+    "vue-lazyload": "^3.0.0-rc.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
@@ -16,6 +19,7 @@
     "modern-css-reset": "^1.4.0",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "vite-plugin-copy": "^0.1.6"
   }
 }
