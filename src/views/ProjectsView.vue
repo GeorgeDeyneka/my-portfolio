@@ -1,16 +1,21 @@
 <script>
-import DataBase from "../components/DataBase.vue";
+import SvgSprite from "../components/icons/SvgSprite.vue";
 
 export default {
-  components: DataBase,
+  components: {
+    SvgSprite,
+  },
 };
 </script>
 
 <template>
   <div class="about">
     <h1>This is a projects page</h1>
-    <DataBase />
   </div>
 </template>
 
-<style></style>
+<style>
+.icon {
+  fill: #fff;
+}
+</style>

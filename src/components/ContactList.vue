@@ -7,17 +7,11 @@ export default {
       type: Array,
       required: true,
     },
-
-    basePath: {
-      type: String,
-      required: true,
-    },
   },
 
   components: {
     SvgIcon,
   },
-
 };
 </script>
 
@@ -25,7 +19,7 @@ export default {
   <ul class="cont__list">
     <li class="cont__item" v-for="item of arrData">
       <a class="cont__link" :href="item.link" target="_blank">
-        <SvgIcon :item="item" :basePath="basePath" />
+        <SvgIcon :item="item" />
         <h2 class="cont__subtitle">{{ item.title }}</h2>
       </a>
     </li>

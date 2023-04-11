@@ -1,20 +1,18 @@
-export const SPRITE_PATH = "src/assets/icons/sprite-stack.min.svg#icon-";
-
 export const TECH_DATA = [
   {
     title: "Frameworks",
     data: [
       {
         name: "Angular",
-        path: "ang",
+        path: "#icon-ang",
       },
       {
         name: "Vue.js",
-        path: "vue",
+        path: "#icon-vue",
       },
       {
         name: "Nest.js",
-        path: "nest",
+        path: "#icon-nest",
       },
     ],
   },
@@ -24,31 +22,31 @@ export const TECH_DATA = [
     data: [
       {
         name: "JavaScript",
-        path: "js",
+        path: "#icon-js",
       },
       {
         name: "TypeScript",
-        path: "ts",
+        path: "#icon-ts",
       },
       {
         name: "HTML",
-        path: "html",
+        path: "#icon-html",
       },
       {
         name: "CSS",
-        path: "css",
+        path: "#icon-css",
       },
       {
         name: "SCSS",
-        path: "sass",
+        path: "#icon-sass",
       },
       {
         name: "REST API",
-        path: "rest",
+        path: "#icon-rest",
       },
       {
         name: "HTTP/HTTPS (+CORS)",
-        path: "http",
+        path: "#icon-http",
       },
     ],
   },
@@ -58,23 +56,23 @@ export const TECH_DATA = [
     data: [
       {
         name: "RxJS",
-        path: "rxjs",
+        path: "#icon-rxjs",
       },
       {
         name: "Angular Material",
-        path: "ang-mat",
+        path: "#icon-ang-mat",
       },
       {
         name: "jQuery",
-        path: "jquery",
+        path: "#icon-jquery",
       },
       {
         name: "Babel",
-        path: "babel",
+        path: "#icon-babel",
       },
       {
         name: "Date-fns",
-        path: "date-fns",
+        path: "#icon-date-fns",
       },
     ],
   },
@@ -84,27 +82,27 @@ export const TECH_DATA = [
     data: [
       {
         name: "Chat GPT",
-        path: "chat-gpt",
+        path: "#icon-chat-gpt",
       },
       {
         name: "Adobe Photoshop",
-        path: "ps",
+        path: "#icon-ps",
       },
       {
         name: "Postman",
-        path: "postman",
+        path: "#icon-postman",
       },
       {
         name: "Canva",
-        path: "canva",
+        path: "#icon-canva",
       },
       {
         name: "Figma",
-        path: "figma",
+        path: "#icon-figma",
       },
       {
         name: "VS Code",
-        path: "vs-code",
+        path: "#icon-vs-code",
       },
     ],
   },
@@ -117,11 +115,11 @@ export const TECH_DATA = [
     data: [
       {
         name: "MongoDB",
-        path: "mongodb",
+        path: "#icon-mongodb",
       },
       {
         name: "Firebase",
-        path: "firebase",
+        path: "#icon-firebase",
       },
     ],
   },
@@ -131,11 +129,11 @@ export const TECH_DATA = [
     data: [
       {
         name: "GIT",
-        path: "git",
+        path: "#icon-git",
       },
       {
         name: "GitHub",
-        path: "github",
+        path: "#icon-github",
       },
     ],
   },
@@ -145,11 +143,11 @@ export const TECH_DATA = [
     data: [
       {
         name: "Gulp",
-        path: "gulp",
+        path: "#icon-gulp",
       },
       {
         name: "Webpack",
-        path: "webpack",
+        path: "#icon-webpack",
         width: "250px",
       },
     ],
@@ -160,7 +158,7 @@ export const TECH_DATA = [
     data: [
       {
         name: "NPM",
-        path: "npm",
+        path: "#icon-npm",
       },
     ],
   },

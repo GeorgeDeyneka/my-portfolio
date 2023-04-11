@@ -6,11 +6,6 @@ export default {
       required: true,
     },
 
-    basePath: {
-      type: String,
-      required: true,
-    },
-
     size: {
       type: Number,
       default: 50,
@@ -28,7 +23,7 @@ export default {
     }"
     class="icon-svg"
   >
-    <use :href="basePath + item.path"></use>
+    <use :href="item.path"></use>
   </svg>
 </template>
 

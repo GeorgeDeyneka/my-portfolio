@@ -1,6 +1,6 @@
 <script>
 import ContactList from "../components/ContactList.vue";
-import { SPRITE_PATH, CONTACT_DATA } from "../data/contSvgData";
+import { CONTACT_DATA } from "../data/contSvgData";
 
 export default {
   components: {
@@ -9,7 +9,6 @@ export default {
 
   data() {
     return {
-      url: SPRITE_PATH,
       contactData: CONTACT_DATA,
     };
   },
@@ -19,7 +18,7 @@ export default {
 <template>
   <h1 class="cont__title">My Contacts</h1>
 
-  <ContactList :arrData="contactData" :basePath="url" />
+  <ContactList :arrData="contactData" />
 
 
 </template>

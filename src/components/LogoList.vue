@@ -12,11 +12,6 @@ export default {
       type: Array,
       required: true,
     },
-
-    basePath: {
-      type: String,
-      required: true,
-    },
   },
 
   components: {
@@ -30,7 +25,7 @@ export default {
 
   <ul class="tech__logos">
     <li class="tech__item" v-for="item of arrData" :key="item">
-      <SvgIcon :item="item" :basePath="basePath" :size="100"/>
+      <SvgIcon :item="item" :size="100"/>
       <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>

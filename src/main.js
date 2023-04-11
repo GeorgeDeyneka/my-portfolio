@@ -4,8 +4,9 @@ import VueLazyload from "vue-lazyload";
 import router from "./router";
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
-
 import "./assets/main.css";
+import SvgSprite from "./components/icons/SvgSprite.vue";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA_6nUw_aqysoF0jaupTcU5pU8xNDAhUMY",
@@ -33,5 +34,7 @@ app.use(VueLazyload, {
 });
 
 app.use(router);
+
+app.component("svg-sprite", SvgSprite);
 
 app.mount("#app");

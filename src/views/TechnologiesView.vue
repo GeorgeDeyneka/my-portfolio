@@ -1,6 +1,6 @@
 <script>
 import LogoList from "../components/LogoList.vue";
-import { TECH_DATA, SPRITE_PATH } from "../data/techSvgData";
+import { TECH_DATA } from "../data/techSvgData";
 
 export default {
   components: {
@@ -9,7 +9,6 @@ export default {
 
   data() {
     return {
-      url: SPRITE_PATH,
       techData: TECH_DATA,
     };
   },
@@ -21,7 +20,6 @@ export default {
 
   <LogoList
     v-for="item of techData"
-    :basePath="url"
     :key="item"
     :title="item.title"
     :arrData="item.data"
