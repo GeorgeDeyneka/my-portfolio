@@ -1,5 +1,5 @@
 <script>
-import LogoList from "../components/LogoList.vue";
+import LogoList from "../components/TechList.vue";
 import { TECH_DATA } from "../data/techSvgData";
 
 export default {

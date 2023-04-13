@@ -7,7 +7,6 @@ import "firebase/compat/database";
 import "./assets/main.css";
 import SvgSprite from "./components/icons/SvgSprite.vue";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyA_6nUw_aqysoF0jaupTcU5pU8xNDAhUMY",
   authDomain: "portfolio-deyneka.firebaseapp.com",

@@ -107,9 +107,6 @@ export const TECH_DATA = [
     ],
   },
 
-  // Add links on tech stack
-  // Make tech icons less on mobile
-
   {
     title: "Data bases",
     data: [
