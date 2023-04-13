@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div class="project">
-    <RouterLink class="project__link" to="/">
+    <RouterLink class="project__link" :to="'/projects/' + projectItem.id">
       <img class="project__image" :src="projectItem.imgUrls[0]" alt="" />
       <h3 class="project__title">{{ projectItem.title }}</h3>
 
