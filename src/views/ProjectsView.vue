@@ -1,44 +1,31 @@
 <script>
 import ProjectItem from "../components/ProjectItem.vue";
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
 
-export default {
-  data() {
+export default defineComponent({
+  setup() {
+    const store = useStore();
+
     return {
-      arrData: [],
+      arrProjects: computed(() => store.state.items),
     };
+  },
+
+  mounted() {
+    this.$store.dispatch("fetchItems");
   },
 
   components: {
     ProjectItem,
   },
-
-  mounted() {
-    this.getData();
-  },
-
-  methods: {
-    async getData() {
-      try {
-        const snapshot = await this.$root.$database
-          .ref("projects")
-          .once("value");
-        let resp = snapshot.val();
-
-        for (const value of resp) {
-          this.arrData.push(value);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    },
-  },
-};
+});
 </script>
 
 <template>
   <h1 class="projects__title">Projects I have worked on:</h1>
   <div class="projects__wrapper">
-    <ProjectItem :projectItem="item" v-for="item of arrData" />
+    <ProjectItem :projectItem="item" v-for="item of arrProjects" />
   </div>
 </template>
 
