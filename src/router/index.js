@@ -35,6 +35,11 @@ const router = createRouter({
           name: "stack",
           component: () => import("../views/TechnologiesView.vue"),
         },
+        {
+          path: "/:catchAll(.*)",
+          name: "404",
+          component: () => import("../views/404-PageView.vue"),
+        },
       ],
     },
   ],

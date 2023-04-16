@@ -1,10 +1,10 @@
 <script>
-import LogoList from "../components/TechList.vue";
+import TechList from "../components/TechList.vue";
 import { TECH_DATA } from "../data/techSvgData";
 
 export default {
   components: {
-    LogoList,
+    TechList,
   },
 
   data() {
@@ -18,7 +18,7 @@ export default {
 <template>
   <h1 class="tech__title">I have work experience with:</h1>
 
-  <LogoList
+  <TechList
     v-for="item of techData"
     :key="item"
     :title="item.title"

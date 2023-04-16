@@ -8,6 +8,7 @@ export default {
 
 <template>
   <svg
+    style="position: absolute; height: 0; width: 0; visibility: hidden"
     aria-hidden="true"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

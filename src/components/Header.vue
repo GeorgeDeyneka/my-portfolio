@@ -66,6 +66,7 @@ export default {
 
     &__nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
     }
 

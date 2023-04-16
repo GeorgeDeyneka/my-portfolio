@@ -25,22 +25,32 @@ export default {};
 </template>
 
 <style lang="scss" scoped>
-.about {
-  &__title {
-    padding: 80px 0;
-    font-size: 80px;
-  }
+@media (min-width: 320px) {
+  .about {
+    &__title {
+      padding: 80px 0;
+      font-size: 65px;
+    }
 
-  &__link {
-    text-decoration: none;
-    color: #61cf9e;
-  }
+    &__link {
+      text-decoration: none;
+      color: #61cf9e;
+    }
 
-  &__paragraph {
-    font-size: 18px;
-    padding: 5px 0;
-    color: #aaa;
-    max-width: 700px;
+    &__paragraph {
+      font-size: 18px;
+      padding: 5px 0;
+      color: #aaa;
+      max-width: 700px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    &__title {
+      font-size: 80px;
+    }
   }
 }
 </style>

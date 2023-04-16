@@ -31,6 +31,7 @@ export default {
 .icon-svg {
   display: block;
   fill: #fff;
+  flex-shrink: 0;
 
   &:hover {
     transition: fill 200ms ease-in;
