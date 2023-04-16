@@ -1,6 +1,5 @@
 <script>
 import SvgIcon from "./icons/SvgIcon.vue";
-import { debounce } from "lodash";
 
 export default {
   props: {
@@ -38,23 +37,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.tech {
-  &__item {
-    list-style: none;
-    max-width: min-content;
-  }
+@media (min-width: 320px) {
+  .tech {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      max-width: min-content;
+    }
 
-  &__name {
-    text-align: center;
-    font-weight: 500;
-    padding: 10px 0;
-  }
+    &__name {
+      text-align: center;
+      font-weight: 500;
+      padding: 10px 0;
+      font-size: 16px;
+    }
 
-  &__logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px 0;
+    &__logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .tech {
+    &__name {
+      font-size: 18px;
+    }
   }
 }
 </style>
