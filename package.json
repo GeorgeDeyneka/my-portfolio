@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^3.2.47",
     "vue-lazyload": "^3.0.0-rc.2",
     "vue-router": "^4.1.6",

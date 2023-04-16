@@ -1,6 +1,7 @@
 <script>
 import TechList from "../components/TechList.vue";
 import { TECH_DATA } from "../data/techSvgData";
+import { debounce } from "lodash";
 
 export default {
   components: {
@@ -10,7 +11,28 @@ export default {
   data() {
     return {
       techData: TECH_DATA,
+      screenWidth: window.innerWidth,
     };
+  },
+
+  mounted() {
+    window.addEventListener("resize", this.updateScreenWidth);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateScreenWidth);
+  },
+
+  methods: {
+    updateScreenWidth: debounce(function () {
+      this.screenWidth = window.innerWidth;
+    }, 200),
+  },
+
+  computed: {
+    iconSize() {
+      return this.screenWidth < 768 ? 70 : 100;
+    },
   },
 };
 </script>
@@ -20,6 +42,7 @@ export default {
 
   <TechList
     v-for="item of techData"
+    :iconSize="iconSize"
     :key="item"
     :title="item.title"
     :arrData="item.data"

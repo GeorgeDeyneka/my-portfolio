@@ -1,5 +1,6 @@
 <script>
 import SvgIcon from "./icons/SvgIcon.vue";
+import { debounce } from "lodash";
 
 export default {
   props: {
@@ -10,6 +11,11 @@ export default {
 
     arrData: {
       type: Array,
+      required: true,
+    },
+
+    iconSize: {
+      type: Number,
       required: true,
     },
   },
@@ -25,7 +31,7 @@ export default {
 
   <ul class="tech__logos">
     <li class="tech__item" v-for="item of arrData" :key="item">
-      <SvgIcon :item="item" :size="100" />
+      <SvgIcon :item="item" :size="iconSize" />
       <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
