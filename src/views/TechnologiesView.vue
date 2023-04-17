@@ -1,10 +1,11 @@
 <script>
-import LogoList from "../components/LogoList.vue";
+import TechList from "../components/TechList.vue";
 import { TECH_DATA } from "../data/techSvgData";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
-    LogoList,
+    TechList,
   },
 
   data() {
@@ -12,14 +13,22 @@ export default {
       techData: TECH_DATA,
     };
   },
+
+  computed: {
+    ...mapGetters(["screenWidth"]),
+    iconSize() {
+      return this.screenWidth < 768 ? 70 : 100;
+    },
+  },
 };
 </script>
 
 <template>
   <h1 class="tech__title">I have work experience with:</h1>
 
-  <LogoList
+  <TechList
     v-for="item of techData"
+    :iconSize="iconSize"
     :key="item"
     :title="item.title"
     :arrData="item.data"

@@ -1,21 +1,46 @@
 <script>
-import SvgSprite from "../components/icons/SvgSprite.vue";
+import ProjectItem from "../components/ProjectItem.vue";
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
 
-export default {
-  components: {
-    SvgSprite,
+export default defineComponent({
+  setup() {
+    const store = useStore();
+
+    return {
+      arrProjects: computed(() => store.state.items),
+    };
   },
-};
+
+  mounted() {
+    this.$store.dispatch("fetchItems");
+  },
+
+  components: {
+    ProjectItem,
+  },
+});
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is a projects page</h1>
+  <h1 class="projects__title">Projects I have worked on:</h1>
+  <div class="projects__wrapper">
+    <ProjectItem :projectItem="item" v-for="item of arrProjects" />
   </div>
 </template>
 
-<style>
-.icon {
-  fill: #fff;
+<style lang="scss" scoped>
+.projects {
+  &__title {
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    justify-content: center;
+    padding: 35px 0;
+    gap: 35px;
+    grid-template-columns: repeat(auto-fill, 312px);
+  }
 }
 </style>

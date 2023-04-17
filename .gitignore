@@ -32,3 +32,7 @@ coverage
 .firebaserc
 firebase.json
 database.rules.json
+
+# Other
+todo.md
+collection-projects.json

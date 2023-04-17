@@ -107,9 +107,6 @@ export const TECH_DATA = [
     ],
   },
 
-  // Add links on tech stack
-  // Make tech icons less on mobile
-
   {
     title: "Data bases",
     data: [
@@ -134,6 +131,7 @@ export const TECH_DATA = [
       {
         name: "GitHub",
         path: "#icon-github",
+        hoverColor: "#fff"
       },
     ],
   },
@@ -148,7 +146,7 @@ export const TECH_DATA = [
       {
         name: "Webpack",
         path: "#icon-webpack",
-        width: "250px",
+        width: '225px'
       },
     ],
   },
