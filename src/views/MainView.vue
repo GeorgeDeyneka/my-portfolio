@@ -1,11 +1,27 @@
 <script>
 import { RouterView } from "vue-router";
 import HeaderVue from "../components/Header.vue";
+import store from "../store";
+import { debounce } from "lodash";
 
 export default {
   components: {
     HeaderVue,
     RouterView,
+  },
+
+  mounted() {
+    window.addEventListener("resize", this.updateScreenWidth);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateScreenWidth);
+  },
+
+  methods: {
+    updateScreenWidth: debounce(function () {
+      store.commit("setScreenWidth", window.innerWidth);
+    }, 200),
   },
 };
 </script>

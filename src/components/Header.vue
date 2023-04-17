@@ -2,18 +2,17 @@
 import ButtonCV from "./ButtonCV.vue";
 import BurgerMenu from "./burger-menu/BurgerMenu.vue";
 import DesktopMenu from "./DesktopMenu.vue";
+import { mapGetters } from "vuex";
 
 export default {
-  data() {
-    return {
-      screenWidth: window.innerWidth,
-    };
-  },
-
   components: {
     ButtonCV,
     BurgerMenu,
     DesktopMenu,
+  },
+
+  computed: {
+    ...mapGetters(["screenWidth"]),
   },
 };
 </script>

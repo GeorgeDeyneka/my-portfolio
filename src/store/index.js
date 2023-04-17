@@ -20,17 +20,27 @@ const db = firebase.database();
 
 export default createStore({
   state: {
+    screenWidth: window.innerWidth,
     items: [],
     item: {},
   },
 
   mutations: {
+    setScreenWidth(state, width) {
+      state.screenWidth = width;
+    },
+
     setItems(state, items) {
       state.items = items;
     },
+
     setItem(state, item) {
       state.item = item;
     },
+  },
+
+  getters: {
+    screenWidth: (state) => state.screenWidth,
   },
 
   actions: {
