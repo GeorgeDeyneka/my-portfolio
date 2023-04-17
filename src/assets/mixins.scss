@@ -1,0 +1,14 @@
+@mixin burger-line {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #61cf9e;
+}
+
+@mixin burger-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
