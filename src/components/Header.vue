@@ -1,5 +1,5 @@
 <script>
-import ButtonCV from "./ButtonCV.vue";
+import ButtonCV from "./buttons/ButtonCV.vue";
 import BurgerMenu from "./burger-menu/BurgerMenu.vue";
 import DesktopMenu from "./DesktopMenu.vue";
 import { mapGetters } from "vuex";
