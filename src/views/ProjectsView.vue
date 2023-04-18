@@ -1,35 +1,57 @@
 <script>
 import ProjectItem from "../components/ProjectItem.vue";
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, ref } from "vue";
 import { useStore } from "vuex";
+import LoadSpinner from "../components/LoadSpinner.vue";
 
 export default defineComponent({
   setup() {
     const store = useStore();
+    const arrProjects = computed(() => store.state.items);
 
     return {
-      arrProjects: computed(() => store.state.items),
+      arrProjects,
+    };
+  },
+
+  data() {
+    return {
+      loading: true,
     };
   },
 
   mounted() {
-    this.$store.dispatch("fetchItems");
+    this.$store.dispatch("fetchItems").then(() => {
+      this.loading = false;
+    });
   },
 
   components: {
     ProjectItem,
+    LoadSpinner,
   },
 });
 </script>
 
 <template>
-  <h1 class="projects__title">Projects I have worked on:</h1>
-  <div class="projects__wrapper">
-    <ProjectItem :projectItem="item" v-for="item of arrProjects" />
+  <div class="wrapper">
+    <LoadSpinner v-if="loading" />
+    <h1 class="projects__title">Projects I have worked on:</h1>
+    <div class="projects__wrapper">
+      <ProjectItem
+        v-for="item of arrProjects"
+        :projectItem="item"
+        :key="item"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  position: relative;
+  min-height: 600px;
+}
 .projects {
   &__title {
     padding: 20px 0;
