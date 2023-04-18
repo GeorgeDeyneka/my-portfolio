@@ -1,8 +1,8 @@
 <script>
-import ProjectItem from "../components/ProjectItem.vue";
+import ProjectItem from "./ProjectItem.vue";
 import { defineComponent, computed, ref } from "vue";
 import { useStore } from "vuex";
-import LoadSpinner from "../components/LoadSpinner.vue";
+import LoadSpinner from "../../components/LoadSpinner.vue";
 
 export default defineComponent({
   setup() {

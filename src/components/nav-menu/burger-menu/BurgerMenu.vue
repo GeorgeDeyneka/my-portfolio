@@ -1,5 +1,5 @@
 <script>
-import { ARR_ROUTES } from "../../data/routesData";
+import { ARR_ROUTES } from "/src/data/routesData";
 import CloseBtn from "./CloseBtn.vue";
 import OpenBtn from "./OpenBtn.vue";
 

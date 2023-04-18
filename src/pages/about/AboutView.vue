@@ -1,7 +1,7 @@
 <script>
-import ButtonHireMe from "../components/buttons/ButtonHireMe.vue";
+import ButtonHireMe from "../../components/buttons/ButtonHireMe.vue";
 
-export default { components: { ButtonHireMe } };
+export default { components: { ButtonHireMe, ButtonHireMe } };
 </script>
 
 <template>

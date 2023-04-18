@@ -1,6 +1,6 @@
 <script>
-import ContactList from "../components/ContactList.vue";
-import { CONTACT_DATA } from "../data/contSvgData";
+import ContactList from "./ContactList.vue";
+import { CONTACT_DATA } from "../../data/contSvgData";
 
 export default {
   components: {

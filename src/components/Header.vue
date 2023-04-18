@@ -1,7 +1,7 @@
 <script>
 import ButtonCV from "./buttons/ButtonCV.vue";
-import BurgerMenu from "./burger-menu/BurgerMenu.vue";
-import DesktopMenu from "./DesktopMenu.vue";
+import BurgerMenu from "./nav-menu/burger-menu/BurgerMenu.vue";
+import DesktopMenu from "./nav-menu/DesktopMenu.vue";
 import { mapGetters } from "vuex";
 
 export default {

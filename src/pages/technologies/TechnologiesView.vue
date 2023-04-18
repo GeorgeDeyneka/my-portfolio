@@ -1,6 +1,6 @@
 <script>
-import TechList from "../components/TechList.vue";
-import { TECH_DATA } from "../data/techSvgData";
+import TechList from "./TechList.vue";
+import { TECH_DATA } from "/src/data/techSvgData";
 import { mapGetters } from "vuex";
 
 export default {
