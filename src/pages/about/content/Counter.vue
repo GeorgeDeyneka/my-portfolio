@@ -1,18 +1,46 @@
 <script>
 import { COUNT_STATISTICS } from "/src/data/aboutStatistics";
+
 export default {
   data() {
     return {
       statistics: COUNT_STATISTICS,
+      visible: false,
+      startCount: 0,
     };
+  },
+
+  mounted() {
+    this.observer = new IntersectionObserver(this.checkVisible, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1,
+    });
+    this.observer.observe(this.$refs.counter);
+  },
+
+  beforeUnmount() {
+    this.observer.disconnect();
+  },
+
+  methods: {
+    checkVisible(entries, observer) {
+      const entry = entries.find((entry) => entry.isIntersecting);
+
+      if (entry) this.visible = true;
+    },
   },
 };
 </script>
 
 <template>
-  <div class="count">
+  <div class="count" ref="counter">
     <div v-for="item of statistics" :key="item" class="count__block">
-      <h2 class="count__number" :style="{ '--number': item.num }">
+      <h2
+        class="count__number"
+        v-show="visible"
+        :style="{ '--number': visible ? item.num : startCount }"
+      >
         <span class="plus">+</span>
       </h2>
       <p class="count__text">{{ item.title }}</p>
@@ -51,7 +79,7 @@ export default {
       font-size: 50px;
       font-weight: 600;
       counter-reset: ms var(--number);
-      animation: count 2s steps(100) infinite;
+      animation: count 1.5s steps(100) infinite;
       animation-iteration-count: 1;
 
       &::before {

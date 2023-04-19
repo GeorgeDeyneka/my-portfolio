@@ -5,10 +5,10 @@ export const COUNT_STATISTICS = [
   },
   {
     title: "Years experience",
-    num: 100,
+    num: 1,
   },
   {
     title: "Certificates",
-    num: 200,
+    num: 2,
   },
 ];
