@@ -1,7 +1,13 @@
 <script>
 import ButtonHireMe from "../../components/buttons/ButtonHireMe.vue";
+import AboutMe from "./content/AboutMe.vue";
 
-export default { components: { ButtonHireMe, ButtonHireMe } };
+export default {
+  components: {
+    ButtonHireMe,
+    AboutMe,
+  },
+};
 </script>
 
 <template>
@@ -13,40 +19,9 @@ export default { components: { ButtonHireMe, ButtonHireMe } };
       with my personal portfolio.
     </p>
 
-    <div class="about__content-block">
-      <h3 class="about__subtitle">About Me</h3>
-      <h2 class="about__title">
-        I can deliver results that exceed your expectations.
-      </h2>
-
-      <ButtonHireMe />
-
-      <p class="about__text">
-        I am a front-end developer with 1 year of experience. My core skills
-        include developing web applications using the Angular or Vue.js
-        frameworks.
-      </p>
-
-      <p class="about__text">
-        I am proficient in adaptive layout, SPA development, working with the
-        server and asynchronous code. I work with modern frameworks and also
-        have experience building applications written in Vanilla JavaScript. I
-        also work with databases like MongoDB and Firebase Realtime Database.
-      </p>
-
-      <p class="about__text">
-        It is worth mentioning the observance of such important development
-        principles as DRY, KISS and SOLID. Of course, I work with the GIT
-        version control system.
-      </p>
-    </div>
+    <AboutMe />
 
     <!-- <p class="about__paragraph">
-      Let's get acquainted! My name is George and I am a front-end developer
-      with 1 year of experience. My core skills include developing web
-      applications using the Angular or Vue.js frameworks.
-    </p>
-    <p class="about__paragraph">
       You can go to the
       <RouterLink class="about__link" to="/projects">Projects</RouterLink>
       section to see my work. In this section, I would like to share with you
@@ -72,7 +47,7 @@ export default { components: { ButtonHireMe, ButtonHireMe } };
 @media (min-width: 320px) {
   .about {
     &__main-title {
-      padding: 180px 0 40px;
+      padding: 60px 0;
       font-size: 65px;
     }
 
@@ -107,7 +82,7 @@ export default { components: { ButtonHireMe, ButtonHireMe } };
 @media (min-width: 768px) {
   .about {
     &__main-title {
-      font-size: 180px 0 40px;
+      padding: 180px 0 40px;
     }
   }
 }
