@@ -1,14 +1,17 @@
 export const COUNT_STATISTICS = [
   {
     title: "Projects completed",
-    num: 15,
+    endNum: 15,
+    iterable: 0,
   },
   {
     title: "Years experience",
-    num: 1,
+    endNum: 1,
+    iterable: 0,
   },
   {
     title: "Certificates",
-    num: 2,
+    endNum: 2,
+    iterable: 0,
   },
 ];

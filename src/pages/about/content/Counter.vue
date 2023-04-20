@@ -6,7 +6,6 @@ export default {
     return {
       statistics: COUNT_STATISTICS,
       visible: false,
-      startCount: 0,
     };
   },
 
@@ -27,7 +26,25 @@ export default {
     checkVisible(entries, observer) {
       const entry = entries.find((entry) => entry.isIntersecting);
 
-      if (entry) this.visible = true;
+      if (entry) {
+        if (!this.visible) {
+          this.statistics.forEach((elem) => {
+            this.startCount(elem, 1500);
+          });
+        }
+
+        return (this.visible = true);
+      }
+    },
+
+    startCount(elem, ms) {
+      elem.iterable = 0;
+      const time = Math.round(ms / (elem.endNum / 1));
+      const interval = setInterval(() => {
+        elem.iterable += 1;
+
+        if (elem.iterable == elem.endNum) clearInterval(interval);
+      }, time);
     },
   },
 };
@@ -36,12 +53,8 @@ export default {
 <template>
   <div class="count" ref="counter">
     <div v-for="item of statistics" :key="item" class="count__block">
-      <h2
-        class="count__number"
-        v-show="visible"
-        :style="{ '--number': visible ? item.num : startCount }"
-      >
-        <span class="plus">+</span>
+      <h2 class="count__number">
+        {{ item.iterable }}<span class="plus">+</span>
       </h2>
       <p class="count__text">{{ item.title }}</p>
     </div>
@@ -50,12 +63,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "/src/assets/keyframes.scss";
-
-@property --number {
-  syntax: "<integer>";
-  inherits: false;
-  initial-value: 0;
-}
 
 @media (min-width: 320px) {
   .plus {
@@ -78,14 +85,6 @@ export default {
     &__number {
       font-size: 50px;
       font-weight: 600;
-      counter-reset: ms var(--number);
-      animation: count 1.5s steps(100) infinite;
-      animation-iteration-count: 1;
-
-      &::before {
-        content: counter(ms);
-        font-size: 50px;
-      }
     }
 
     &__text {
