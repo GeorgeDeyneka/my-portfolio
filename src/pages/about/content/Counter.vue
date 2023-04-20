@@ -41,7 +41,7 @@ export default {
       elem.iterable = 0;
       const time = Math.round(ms / (elem.endNum / 1));
       const interval = setInterval(() => {
-        elem.iterable += 1;
+        elem.iterable++;
 
         if (elem.iterable == elem.endNum) clearInterval(interval);
       }, time);
