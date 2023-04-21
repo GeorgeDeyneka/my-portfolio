@@ -1,4 +1,4 @@
-export const CONTACT_DATA = [
+export const CONTACTS_LINKS = [
   {
     link: "https://t.me/Deyneka_George",
     path: "#icon-telegram",

@@ -1,5 +1,5 @@
 <script>
-import { ARR_ROUTES } from "../../data/routesData";
+import { ARR_ROUTES } from "/src/data/routesData";
 import CloseBtn from "./CloseBtn.vue";
 import OpenBtn from "./OpenBtn.vue";
 
@@ -28,7 +28,7 @@ export default {
 <template>
   <OpenBtn @click="toggleMenu" />
 
-  <div :class="{ 'is-open': isOpen }" class="navbar">
+  <div :class="{ opened: isOpen }" class="navbar">
     <CloseBtn @click="toggleMenu" />
 
     <nav class="navbar__list">
@@ -59,12 +59,12 @@ export default {
   gap: 35px;
   background-color: #000000;
   transform: translateX(-100%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s ease-out;
   z-index: 1000;
   overflow: hidden;
   padding: 20px;
 
-  &.is-open {
+  &.opened {
     transform: translateX(0);
   }
 

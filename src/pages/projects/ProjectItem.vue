@@ -6,6 +6,10 @@ export default {
       type: Object,
     },
   },
+
+  data() {
+    return {};
+  },
 };
 </script>
 
@@ -22,6 +26,12 @@ export default {
 .project {
   overflow: hidden;
   background-color: #171717;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &__link {
     text-decoration: none;
@@ -30,7 +40,7 @@ export default {
 
   &__title {
     font-size: 18px;
-    padding: 5px;
+    padding: 10px;
   }
 }
 </style>

@@ -12,33 +12,38 @@ const router = createRouter({
         {
           path: "",
           name: "about",
-          component: () => import("../views/AboutView.vue"),
+          component: () => import("../pages/about/AboutView.vue"),
           exact: true,
         },
         {
           path: "/projects",
           name: "projects",
-          component: () => import("../views/ProjectsView.vue"),
+          component: () => import("../pages/projects/ProjectsView.vue"),
         },
         {
           path: "/projects/:id",
           name: "project",
-          component: () => import("../views/ProjectDetailsView.vue"),
+          component: () =>
+            import("../pages/projects/details/ProjectDetailsView.vue"),
         },
         {
           path: "/contacts",
           name: "contacts",
-          component: () => import("../views/ContactsView.vue"),
+          component: () => import("../pages/contacts/ContactsView.vue"),
         },
         {
           path: "/stack",
           name: "stack",
-          component: () => import("../views/TechnologiesView.vue"),
+          component: () => import("../pages/technologies/TechnologiesView.vue"),
         },
         {
           path: "/:catchAll(.*)",
-          name: "404",
-          component: () => import("../views/404-PageView.vue"),
+          redirect: "/404-page",
+        },
+        {
+          path: "/404-page",
+          name: "404-page",
+          component: () => import("../pages/404/404-PageView.vue"),
         },
       ],
     },

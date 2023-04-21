@@ -1,5 +1,5 @@
 <script>
-import { ARR_ROUTES } from '../data/routesData';
+import { ARR_ROUTES } from '../../data/routesData';
 
 export default {
   data() {
