@@ -51,7 +51,8 @@ export default {
 
 <template>
   <div class="count" ref="counter">
-    <h2 class="count__number">{{ count }}<span class="count__plus">+</span></h2>
+    <h2 class="count__number" v-html="count"></h2>
+    <span class="count__plus">+</span>
     <p class="count__text">{{ item.title }}</p>
   </div>
 </template>
@@ -66,6 +67,8 @@ export default {
     padding: 10px;
 
     &__plus {
+      font-size: 50px;
+      font-weight: 600;
       color: #75fa7f;
       opacity: 0;
       animation: fade-in 2s 1s ease-out forwards;
@@ -74,6 +77,7 @@ export default {
     &__number {
       font-size: 50px;
       font-weight: 600;
+      display: inline-block;
     }
 
     &__text {
