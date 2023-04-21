@@ -20,10 +20,10 @@ export default {};
   border: 2px solid var(--white);
   background-color: transparent;
   color: var(--white);
-  padding: 10px 25px;
   font-weight: 500;
-  cursor: pointer;
   transition: background-color 200ms ease-in;
+  cursor: pointer;
+  padding: 10px 25px;
 
   &:hover {
     background-color: #1d1d1e;

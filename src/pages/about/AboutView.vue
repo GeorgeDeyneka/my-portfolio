@@ -1,25 +1,31 @@
 <script>
 import ButtonHireMe from "../../components/buttons/ButtonHireMe.vue";
 import AboutMe from "./content/AboutMe.vue";
+import Collaboration from "./content/Collaboration.vue";
 
 export default {
   components: {
     ButtonHireMe,
     AboutMe,
-  },
+    Collaboration
+},
 };
 </script>
 
 <template>
   <div class="wrapper">
-    <h1 class="about__main-title">George Deyneka</h1>
-
-    <p class="about__paragraph">
-      Hello, my name is George. Nice to meet you! I would like to welcome you
-      with my personal portfolio.
-    </p>
+    <div class="about">
+      <h1 class="about__main-title">George Deyneka</h1>
+      
+      <p class="about__paragraph">
+        Hello, my name is George. Nice to meet you! I would like to welcome you
+        with my personal portfolio.
+      </p>
+    </div>
 
     <AboutMe />
+
+    <Collaboration/>
 
     <!-- <p class="about__paragraph">
       You can go to the
@@ -46,28 +52,11 @@ export default {
 <style lang="scss" scoped>
 @media (min-width: 320px) {
   .about {
+    padding: 50px 0;
+
     &__main-title {
       padding: 60px 0;
       font-size: 65px;
-    }
-
-    &__content-block {
-      padding: 100px 0;
-    }
-
-    &__subtitle {
-      color: #61cf9e;
-    }
-
-    &__title {
-      font-size: 30px;
-      max-width: 550px;
-      padding: 10px 0 40px;
-    }
-
-    &__link {
-      text-decoration: none;
-      color: #61cf9e;
     }
 
     &__paragraph {
@@ -82,7 +71,10 @@ export default {
 @media (min-width: 768px) {
   .about {
     &__main-title {
-      padding: 180px 0 40px;
+      padding: 70px 0 40px;
+      font-size: 80px;
+      max-width: 600px;
+      line-height: 1.3;
     }
   }
 }
