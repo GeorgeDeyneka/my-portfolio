@@ -22,7 +22,7 @@ export default {
   <div class="collab">
     <h3 class="collab__subtitle">Collaboration</h3>
     <h2 class="collab__title">Lets talk to Collaboration!</h2>
-    
+
     <div class="collab__buttons">
       <ButtonNav :text="BtnGetIn.text" :route="BtnGetIn.link" />
       <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
@@ -38,7 +38,7 @@ export default {
   padding: 50px 0;
 
   &__title {
-    font-size: 80px;
+    font-size: 45px;
     padding: 10px 0 40px;
     max-width: 650px;
     text-align: center;
@@ -51,8 +51,22 @@ export default {
 
   &__buttons {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     align-items: center;
+  }
+}
+
+@media (min-width: 768) {
+  .collab {
+    &__title {
+      font-size: 80px;
+    }
+
+    &__buttons {
+      gap: 40px;
+    }
   }
 }
 </style>

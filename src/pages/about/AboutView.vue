@@ -53,7 +53,7 @@ export default {
       font-size: 18px;
       padding: 15px 0;
       color: #aaa;
-      max-width: 700px;
+      max-width: 600px;
     }
   }
 }
