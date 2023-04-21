@@ -1,12 +1,19 @@
 <script>
-import ButtonCV from "./buttons/ButtonCV.vue";
+import ButtonLink from "./buttons/ButtonLink.vue";
 import BurgerMenu from "./nav-menu/burger-menu/BurgerMenu.vue";
 import DesktopMenu from "./nav-menu/DesktopMenu.vue";
+import { BUTTON_DATA } from "../data/buttonsData";
 import { mapGetters } from "vuex";
 
 export default {
+  data() {
+    return {
+      BtnDowload: BUTTON_DATA.downloadCV,
+    };
+  },
+
   components: {
-    ButtonCV,
+    ButtonLink,
     BurgerMenu,
     DesktopMenu,
   },
@@ -22,7 +29,11 @@ export default {
     <div class="container">
       <BurgerMenu v-if="screenWidth < 768" />
       <DesktopMenu v-else />
-      <ButtonCV />
+      <ButtonLink
+        :link="BtnDowload.link"
+        :text="BtnDowload.text"
+        size="small"
+      />
     </div>
   </header>
 </template>

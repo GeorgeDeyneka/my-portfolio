@@ -1,11 +1,19 @@
 <script>
-import ButtonHireMe from "../../../components/buttons/ButtonHireMe.vue";
+import ButtonLink from "../../../components/buttons/ButtonLink.vue";
 import ButtonNav from "../../../components/buttons/ButtonNav.vue";
+import { BUTTON_DATA } from "/src/data/buttonsData";
 
 export default {
+  data() {
+    return {
+      BtnGetIn: BUTTON_DATA.getInTouch,
+      BtnHire: BUTTON_DATA.hireMe,
+    };
+  },
+
   components: {
-    ButtonHireMe,
     ButtonNav,
+    ButtonLink,
   },
 };
 </script>
@@ -14,9 +22,10 @@ export default {
   <div class="collab">
     <h3 class="collab__subtitle">Collaboration</h3>
     <h2 class="collab__title">Lets talk to Collaboration!</h2>
+    
     <div class="collab__buttons">
-      <ButtonNav />
-      <ButtonHireMe />
+      <ButtonNav :text="BtnGetIn.text" :route="BtnGetIn.link" />
+      <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
     </div>
   </div>
 </template>

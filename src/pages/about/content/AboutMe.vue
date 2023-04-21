@@ -1,6 +1,7 @@
 <script>
-import ButtonHireMe from "../../../components/buttons/ButtonHireMe.vue";
+import ButtonLink from "../../../components/buttons/ButtonLink.vue";
 import Counter from "./Counter.vue";
+import { BUTTON_DATA } from "/src/data/buttonsData";
 import { COUNT_STATISTICS, PARAGRAPH_CONTENT } from "/src/data/aboutData";
 
 export default {
@@ -8,12 +9,13 @@ export default {
     return {
       statistics: COUNT_STATISTICS,
       textData: PARAGRAPH_CONTENT,
+      BtnHire: BUTTON_DATA.hireMe,
     };
   },
 
   components: {
-    ButtonHireMe,
     Counter,
+    ButtonLink,
   },
 };
 </script>
@@ -24,7 +26,7 @@ export default {
     <h2 class="about__title">
       I can deliver results that exceed your expectations.
     </h2>
-    <ButtonHireMe />
+    <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
 
     <div class="about__text-wrapper">
       <p class="about__text" v-for="text of textData">

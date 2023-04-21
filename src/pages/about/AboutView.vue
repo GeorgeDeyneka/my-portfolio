@@ -1,14 +1,12 @@
 <script>
-import ButtonHireMe from "../../components/buttons/ButtonHireMe.vue";
 import AboutMe from "./content/AboutMe.vue";
 import Collaboration from "./content/Collaboration.vue";
 
 export default {
   components: {
-    ButtonHireMe,
     AboutMe,
-    Collaboration
-},
+    Collaboration,
+  },
 };
 </script>
 
@@ -16,7 +14,7 @@ export default {
   <div class="wrapper">
     <div class="about">
       <h1 class="about__main-title">George Deyneka</h1>
-      
+
       <p class="about__paragraph">
         Hello, my name is George. Nice to meet you! I would like to welcome you
         with my personal portfolio.
@@ -25,7 +23,7 @@ export default {
 
     <AboutMe />
 
-    <Collaboration/>
+    <Collaboration />
 
     <!-- <p class="about__paragraph">
       You can go to the
@@ -37,15 +35,7 @@ export default {
       You can also learn more about the technologies I use in the
       <RouterLink class="about__link" to="/stack">Technologies</RouterLink>
       section.
-    </p>
-
-    <p class="about__paragraph">
-      Interested in my services? Hire me now or go to the
-      <RouterLink class="about__link" to="/contacts">Contacts</RouterLink>
-      section and do it in a convenient way for you!
     </p> -->
-
-    <!-- <ButtonHireMe /> -->
   </div>
 </template>
 

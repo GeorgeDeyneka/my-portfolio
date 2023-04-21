@@ -1,4 +1,4 @@
-export const TECH_DATA = [
+export const TECHNOLOGIES_SVG = [
   {
     title: "Frameworks",
     data: [

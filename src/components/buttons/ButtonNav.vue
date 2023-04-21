@@ -1,9 +1,21 @@
 <script>
-export default {};
+export default {
+  props: {
+    text: {
+      type: String,
+      required: true
+    },
+
+    route: {
+      type: String,
+      required: true
+    }
+  }
+};
 </script>
 
 <template>
-  <RouterLink class="btn" to="/contacts">Get in Touch</RouterLink>
+  <RouterLink class="btn" :to="route">{{ text }}</RouterLink>
 </template>
 
 <style lang="scss" scoped>

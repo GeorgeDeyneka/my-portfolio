@@ -10,6 +10,7 @@ export default {
     item: {
       required: true,
       type: Object,
+      visible: false,
     },
   },
 
@@ -30,8 +31,9 @@ export default {
     checkVisible(entries, observer) {
       const entry = entries.find((entry) => entry.isIntersecting);
 
-      if (entry) {
+      if (entry && !this.visible) {
         this.startCount(this.item.endNum, 1500);
+        this.visible = true;
       }
     },
 

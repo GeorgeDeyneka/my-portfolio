@@ -1,6 +1,6 @@
 <script>
 import ContactList from "./ContactList.vue";
-import { CONTACT_DATA } from "../../data/contSvgData";
+import { CONTACTS_LINKS } from "../../data/contactsData";
 
 export default {
   components: {
@@ -9,7 +9,7 @@ export default {
 
   data() {
     return {
-      contactData: CONTACT_DATA,
+      contactData: CONTACTS_LINKS,
     };
   },
 };
