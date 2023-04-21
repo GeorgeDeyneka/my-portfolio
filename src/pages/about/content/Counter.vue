@@ -1,12 +1,17 @@
 <script>
-import { COUNT_STATISTICS } from "/src/data/aboutStatistics";
-
 export default {
   data() {
     return {
-      statistics: COUNT_STATISTICS,
       visible: false,
+      count: 0,
     };
+  },
+
+  props: {
+    item: {
+      required: true,
+      type: Object,
+    },
   },
 
   mounted() {
@@ -27,23 +32,19 @@ export default {
       const entry = entries.find((entry) => entry.isIntersecting);
 
       if (entry) {
-        if (!this.visible) {
-          this.statistics.forEach((elem) => {
-            this.startCount(elem, 1500);
-          });
-        }
+        this.startCount(this.item.endNum, 1500);
 
         return (this.visible = true);
       }
     },
 
-    startCount(elem, ms) {
-      elem.iterable = 0;
-      const time = Math.round(ms / (elem.endNum / 1));
+    startCount(endNum, ms) {
+      if (this.count == endNum) return;
+      const time = Math.round(ms / (endNum / 1));
       const interval = setInterval(() => {
-        elem.iterable++;
+        this.count++;
 
-        if (elem.iterable == elem.endNum) clearInterval(interval);
+        if (this.count == endNum) clearInterval(interval);
       }, time);
     },
   },
@@ -52,12 +53,8 @@ export default {
 
 <template>
   <div class="count" ref="counter">
-    <div v-for="item of statistics" :key="item" class="count__block">
-      <h2 class="count__number">
-        {{ item.iterable }}<span class="plus">+</span>
-      </h2>
-      <p class="count__text">{{ item.title }}</p>
-    </div>
+    <h2 class="count__number">{{ count }}<span class="plus">+</span></h2>
+    <p class="count__text">{{ item.title }}</p>
   </div>
 </template>
 
@@ -72,15 +69,9 @@ export default {
   }
 
   .count {
-    display: flex;
-    gap: 60px;
-    padding: 20px 0;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &__block {
-      text-align: center;
-    }
+    text-align: center;
+    max-width: fit-content;
+    padding: 10px;
 
     &__number {
       font-size: 50px;

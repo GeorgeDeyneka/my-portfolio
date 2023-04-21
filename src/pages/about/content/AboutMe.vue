@@ -1,8 +1,15 @@
 <script>
 import ButtonHireMe from "../../../components/buttons/ButtonHireMe.vue";
 import Counter from "./Counter.vue";
+import { COUNT_STATISTICS } from "/src/data/aboutStatistics";
 
 export default {
+  data() {
+    return {
+      statistics: COUNT_STATISTICS,
+    };
+  },
+
   components: {
     ButtonHireMe,
     Counter,
@@ -46,7 +53,9 @@ export default {
         section.
       </p>
 
-      <Counter />
+      <div class="about__counter">
+        <Counter v-for="item of statistics" :item="item" />
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +66,14 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 100px 0;
+
+    &__counter {
+      display: flex;
+      gap: 60px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     &__text {
       font-size: 16px;
