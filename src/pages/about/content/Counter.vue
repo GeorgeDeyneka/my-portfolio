@@ -2,7 +2,6 @@
 export default {
   data() {
     return {
-      visible: false,
       count: 0,
     };
   },
@@ -33,13 +32,12 @@ export default {
 
       if (entry) {
         this.startCount(this.item.endNum, 1500);
-
-        return (this.visible = true);
       }
     },
 
     startCount(endNum, ms) {
       if (this.count == endNum) return;
+
       const time = Math.round(ms / (endNum / 1));
       const interval = setInterval(() => {
         this.count++;
@@ -53,7 +51,7 @@ export default {
 
 <template>
   <div class="count" ref="counter">
-    <h2 class="count__number">{{ count }}<span class="plus">+</span></h2>
+    <h2 class="count__number">{{ count }}<span class="count__plus">+</span></h2>
     <p class="count__text">{{ item.title }}</p>
   </div>
 </template>
@@ -62,16 +60,16 @@ export default {
 @import "/src/assets/keyframes.scss";
 
 @media (min-width: 320px) {
-  .plus {
-    color: #75fa7f;
-    opacity: 0;
-    animation: fade-in 2s 1s ease-out forwards;
-  }
-
   .count {
     text-align: center;
     max-width: fit-content;
     padding: 10px;
+
+    &__plus {
+      color: #75fa7f;
+      opacity: 0;
+      animation: fade-in 2s 1s ease-out forwards;
+    }
 
     &__number {
       font-size: 50px;
@@ -81,12 +79,6 @@ export default {
     &__text {
       font-size: inherit;
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .count {
-    justify-content: flex-start;
   }
 }
 </style>

@@ -101,5 +101,13 @@ export default {
       padding: 10px 0 40px;
     }
   }
+
+  @media (min-width: 768px) {
+    .about {
+      &__counter {
+        justify-content: flex-start;
+      }
+    }
+  }
 }
 </style>
