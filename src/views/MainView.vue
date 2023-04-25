@@ -27,8 +27,8 @@ export default {
 </script>
 
 <template>
+  <HeaderVue />
   <div class="container">
-    <HeaderVue />
     <RouterView />
   </div>
 </template>
@@ -37,12 +37,12 @@ export default {
 @media (min-width: 320px) {
   .container {
     padding: 24px;
+    padding-top: 0;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 24px 40px;
     max-width: 1100px;
     margin: 0 auto;
   }

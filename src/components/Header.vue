@@ -46,9 +46,14 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 24px;
   }
 
   .header {
+    background-color: var(--black-header-bg);
+    top: 0;
+    position: sticky;
+    z-index: 900;
     font-family: Poppins;
   }
 }
@@ -56,6 +61,8 @@ export default {
 @media (min-width: 768px) {
   .container {
     padding: 20px 0;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 }
 </style>
