@@ -61,9 +61,12 @@ export default createStore({
         .equalTo(id)
         .once("value");
 
-      const item = Object.values(snapshot.val())[0]
+      if (!snapshot.val()) {
+        return null;
+      }
 
-      commit("setItem", item);
+      const item = Object.values(snapshot.val())[0];
+      return commit("setItem", item);
     },
   },
 });

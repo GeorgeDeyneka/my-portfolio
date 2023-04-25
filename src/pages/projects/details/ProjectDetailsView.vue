@@ -1,6 +1,7 @@
 <script>
 import { useStore } from "vuex";
 import { defineComponent, computed } from "vue";
+import router from "@/router";
 
 export default defineComponent({
   setup() {
@@ -11,8 +12,21 @@ export default defineComponent({
     };
   },
 
-  mounted() {
-    this.$store.dispatch("fetchItem", Number(this.$route.params.id));
+  methods: {
+    checkItemAndRedirect(resp) {
+      if (resp === null) {
+        return router.push({ name: "404-page" });
+      }
+    },
+  },
+
+  async mounted() {
+    const resp = await this.$store.dispatch(
+      "fetchItem",
+      Number(this.$route.params.id)
+    );
+
+    this.checkItemAndRedirect(resp);
   },
 });
 </script>
