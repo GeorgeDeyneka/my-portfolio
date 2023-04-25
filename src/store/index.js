@@ -55,8 +55,14 @@ export default createStore({
     },
 
     async fetchItem({ commit }, id) {
-      const snapshot = await db.ref("projects").once("value");
-      const item = Object.values(snapshot.val()).find((elem) => elem.id == id);
+      const snapshot = await db
+        .ref("projects")
+        .orderByChild("id")
+        .equalTo(id)
+        .once("value");
+
+      const item = Object.values(snapshot.val())[0]
+
       commit("setItem", item);
     },
   },

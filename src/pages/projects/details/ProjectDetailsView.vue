@@ -12,7 +12,7 @@ export default defineComponent({
   },
 
   mounted() {
-    this.$store.dispatch("fetchItem", this.$route.params.id);
+    this.$store.dispatch("fetchItem", Number(this.$route.params.id));
   },
 });
 </script>
