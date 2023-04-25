@@ -20,13 +20,12 @@ export default defineComponent({
     },
   },
 
-  async mounted() {
-    const resp = await this.$store.dispatch(
-      "fetchItem",
-      Number(this.$route.params.id)
-    );
-
-    this.checkItemAndRedirect(resp);
+  mounted() {
+    this.$store
+      .dispatch("fetchItem", Number(this.$route.params.id))
+      .then((resp) => {
+        this.checkItemAndRedirect(resp);
+      });
   },
 });
 </script>
