@@ -57,7 +57,7 @@ export default {
   top: 0;
   left: 0;
   gap: 35px;
-  background-color: #000000;
+  background-color: var(--black);
   transform: translateX(-100%);
   transition: transform 0.4s ease-out;
   z-index: 1000;

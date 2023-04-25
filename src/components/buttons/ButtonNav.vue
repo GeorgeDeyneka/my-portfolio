@@ -21,19 +21,19 @@ export default {
 <style lang="scss" scoped>
 .btn {
   display: block;
-  background-color: #75fa7f;
-  border: 2px solid #75fa7f;
+  background-color: var(--green-accent);
+  border: 2px solid var(--green-accent);
   transition: all 200ms ease-in;
   cursor: pointer;
   padding: 12px 35px;
   max-width: fit-content;
   text-decoration: none;
-  color: #000;
+  color: var(--black);
   font-weight: 600;
 
   &:hover {
-    background-color: #000;
-    color: #75fa7f;
+    background-color: var(--black);
+    color: var(--green-accent);
   }
 }
 </style>

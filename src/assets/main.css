@@ -1,4 +1,3 @@
-@import "./variables.scss";
 @import "./typography.scss";
 
 body {
@@ -22,6 +21,6 @@ body {
 }
 
 .nav-link-active {
-  border-bottom: 3px solid #61cf9e;
+  border-bottom: 3px solid var(--light-green-accent);
   max-width: fit-content;
 }

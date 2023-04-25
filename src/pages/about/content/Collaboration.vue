@@ -46,7 +46,7 @@ export default {
   }
 
   &__subtitle {
-    color: #61cf9e;
+    color: var(--light-green-accent);
   }
 
   &__buttons {

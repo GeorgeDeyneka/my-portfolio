@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 .project {
   overflow: hidden;
-  background-color: #171717;
+  background-color: var(--dark-gray-bg);
   border-radius: 4px;
   transition: all 0.3s ease;
 
@@ -35,7 +35,7 @@ export default {
 
   &__link {
     text-decoration: none;
-    color: #fff;
+    color: var(--white);
   }
 
   &__title {

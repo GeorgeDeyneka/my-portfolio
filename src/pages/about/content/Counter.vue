@@ -71,7 +71,7 @@ export default {
     &__plus {
       font-size: 50px;
       font-weight: 600;
-      color: #75fa7f;
+      color: var(--green-accent);
       opacity: 0;
       animation: fade-in 2s 1s ease-out forwards;
     }

@@ -44,7 +44,7 @@ export default {
     &__subtitle {
       padding: 5px 10px;
       font-size: 16px;
-      color: #fff;
+      color: var(--white);
     }
 
     &__item {

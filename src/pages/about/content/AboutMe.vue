@@ -68,11 +68,11 @@ export default {
 
     &__link {
       text-decoration: none;
-      color: #61cf9e;
+      color: var(--light-green-accent);
     }
 
     &__subtitle {
-      color: #61cf9e;
+      color: var(--light-green-accent);
     }
 
     &__title {

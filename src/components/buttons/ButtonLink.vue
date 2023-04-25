@@ -57,7 +57,7 @@ export default {
   max-width: fit-content;
 
   &:hover {
-    background-color: #1d1d1e;
+    background-color: var(--light-gray-hover);
   }
 }
 </style>

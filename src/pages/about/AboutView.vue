@@ -52,7 +52,7 @@ export default {
     &__paragraph {
       font-size: 18px;
       padding: 15px 0;
-      color: #aaa;
+      color: var(--gray-text);
       max-width: 600px;
     }
   }

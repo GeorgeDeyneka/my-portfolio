@@ -32,8 +32,8 @@ export default {};
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 10px solid #61cf9e;
-      border-color: #61cf9e transparent #61cf9e transparent;
+      border: 10px solid var(--light-green-accent);
+      border-color: var(--light-green-accent) transparent var(--light-green-accent) transparent;
       animation: spinner 800ms infinite;
     }
   }

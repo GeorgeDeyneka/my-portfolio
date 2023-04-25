@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .icon-svg {
   display: block;
-  fill: #fff;
+  fill: var(--white);
   flex-shrink: 0;
 
   &:hover {

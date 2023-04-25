@@ -5,6 +5,7 @@ import router from "./router";
 import "./assets/main.css";
 import SvgSprite from "./components/icons/SvgSprite.vue";
 import store from "./store";
+import "@/assets/variables.scss";
 
 const app = createApp(App);
 
