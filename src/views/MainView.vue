@@ -40,6 +40,8 @@ export default {
 @media (min-width: 320px) {
   .main {
     padding: 24px;
+    flex: 1 1 auto;
+    width: 100%;
     padding-top: 0;
   }
 }
@@ -47,8 +49,6 @@ export default {
 @media (min-width: 768px) {
   .main {
     max-width: 1100px;
-    width: 100%;
-    flex: 1 1 auto;
     margin: 0 auto;
   }
 }
