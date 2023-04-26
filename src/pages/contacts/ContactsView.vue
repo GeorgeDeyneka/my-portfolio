@@ -16,11 +16,11 @@ export default {
 </script>
 
 <template>
-  <h1 class="cont__title">My Contacts</h1>
+  <div class="wrapper">
+    <h1 class="cont__title">My Contacts</h1>
 
-  <ContactList :arrData="contactData" />
-
-
+    <ContactList :arrData="contactData" />
+  </div>
 </template>
 
 <style lang="scss" scoped>

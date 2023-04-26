@@ -60,9 +60,15 @@ export default {
 
 @media (min-width: 768px) {
   .container {
-    padding: 20px 0;
+    padding: 20px 40px;
     max-width: 1100px;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px 0;
   }
 }
 </style>

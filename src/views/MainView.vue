@@ -1,13 +1,15 @@
 <script>
 import { RouterView } from "vue-router";
-import HeaderVue from "../components/Header.vue";
+import Header from "../components/Header.vue";
 import store from "../store";
 import { debounce } from "lodash";
+import Footer from "../components/Footer.vue";
 
 export default {
   components: {
-    HeaderVue,
+    Header,
     RouterView,
+    Footer,
   },
 
   mounted() {
@@ -27,29 +29,32 @@ export default {
 </script>
 
 <template>
-  <HeaderVue />
-  <div class="container">
+  <Header />
+  <main class="main">
     <RouterView />
-  </div>
+  </main>
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
 @media (min-width: 320px) {
-  .container {
+  .main {
     padding: 24px;
     padding-top: 0;
   }
 }
 
 @media (min-width: 768px) {
-  .container {
+  .main {
     max-width: 1100px;
+    width: 100%;
+    flex: 1 1 auto;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .main {
     padding: 0;
   }
 }
