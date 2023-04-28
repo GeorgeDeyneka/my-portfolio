@@ -9,7 +9,7 @@ export default {
     return {
       statistics: COUNT_STATISTICS,
       textData: PARAGRAPH_CONTENT,
-      BtnHire: BUTTON_DATA.hireMe,
+      btnHire: BUTTON_DATA.hireMe,
     };
   },
 
@@ -26,7 +26,7 @@ export default {
     <h2 class="about__title">
       I can deliver results that exceed your expectations.
     </h2>
-    <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
+    <ButtonLink :text="btnHire.text" :link="btnHire.link" />
 
     <div class="about__text-wrapper">
       <p class="about__text" v-for="text of textData">

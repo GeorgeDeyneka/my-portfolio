@@ -2,11 +2,13 @@
 import { CONTACTS_LINKS } from "../data/contactsData";
 import ContactsList from "../pages/contacts/ContactsList.vue";
 import ButtonLink from "./buttons/ButtonLink.vue";
+import { BUTTON_DATA } from "../data/buttonsData";
 
 export default {
   data() {
     return {
       contactData: CONTACTS_LINKS,
+      btnHire: BUTTON_DATA.hireMe,
     };
   },
   components: {
@@ -34,7 +36,7 @@ export default {
       </div>
 
       <div class="footer__item hire-btn">
-        <ButtonLink text="Hire Me Now!" link="#" />
+        <ButtonLink :text="btnHire.text" :link="btnHire.link" />
       </div>
     </div>
   </footer>

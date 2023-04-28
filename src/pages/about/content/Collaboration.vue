@@ -6,8 +6,8 @@ import { BUTTON_DATA } from "/src/data/buttonsData";
 export default {
   data() {
     return {
-      BtnGetIn: BUTTON_DATA.getInTouch,
-      BtnHire: BUTTON_DATA.hireMe,
+      btnGetIn: BUTTON_DATA.getInTouch,
+      btnHire: BUTTON_DATA.hireMe,
     };
   },
 
@@ -24,8 +24,8 @@ export default {
     <h2 class="collab__title">Lets talk to Collaboration!</h2>
 
     <div class="collab__buttons">
-      <ButtonNav :text="BtnGetIn.text" :route="BtnGetIn.link" />
-      <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
+      <ButtonNav :text="btnGetIn.text" :route="btnGetIn.link" />
+      <ButtonLink :text="btnHire.text" :link="btnHire.link" />
     </div>
   </div>
 </template>
