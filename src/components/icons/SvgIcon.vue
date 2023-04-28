@@ -30,7 +30,7 @@ export default {
   <svg
     :style="{
       '--hover-color': hoverColor || item?.hoverColor,
-      '--fill-color': fillColor,
+      '--fill-color': fillColor || item?.fillColor,
       width: item.width || `${size}px`,
       height: `${size}px`,
     }"

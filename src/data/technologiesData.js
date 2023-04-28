@@ -135,6 +135,7 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "GitHub",
         path: "#icon-github",
+        fillColor: "#fff",
         hoverColor: "#fff",
       },
     ],
@@ -146,6 +147,10 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Gulp",
         path: "#icon-gulp",
+      },
+      {
+        name: "Vite",
+        path: "#icon-vite",
       },
       {
         name: "Webpack",
