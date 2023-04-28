@@ -1,16 +1,22 @@
 <script>
 import TechList from "./TechList.vue";
-import { TECHNOLOGIES_SVG } from "/src/data/technologiesData";
+import TechStack from "./content/TechStack.vue";
+import {
+  TECHNOLOGIES_SVG,
+  PARAGRAPH_CONTENT,
+} from "/src/data/technologiesData";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     TechList,
-  },
+    TechStack
+},
 
   data() {
     return {
       techData: TECHNOLOGIES_SVG,
+      textData: PARAGRAPH_CONTENT,
     };
   },
 
@@ -25,22 +31,30 @@ export default {
 
 <template>
   <div class="wrapper">
-    <h1 class="tech__title">I have work experience with:</h1>
+    <TechStack :textData="textData"/>
 
-    <TechList
-      v-for="item of techData"
-      :iconSize="iconSize"
-      :key="item"
-      :title="item.title"
-      :arrData="item.data"
-    />
+    <div class="tech__experience experience">
+      <h3 class="experience__subtitle">Experience</h3>
+      <h2 class="experience__title">I have work experience with:</h2>
+
+      <TechList
+        v-for="item of techData"
+        :iconSize="iconSize"
+        :key="item"
+        :title="item.title"
+        :arrData="item.data"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.tech {
+.experience {
+  padding: 60px 0;
+
   &__title {
-    padding: 20px 0;
+    font-size: 30px;
+    padding: 10px 0;
   }
 }
 </style>

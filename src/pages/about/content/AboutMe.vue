@@ -22,14 +22,14 @@ export default {
 
 <template>
   <div class="about">
-    <h3 class="about__subtitle">About Me</h3>
+    <h3>About Me</h3>
     <h2 class="about__title">
       I can deliver results that exceed your expectations.
     </h2>
     <ButtonLink :text="btnHire.text" :link="btnHire.link" />
 
     <div class="about__text-wrapper">
-      <p class="about__text" v-for="text of textData">
+      <p v-for="text of textData">
         {{ text.content }}
       </p>
 
@@ -55,9 +55,6 @@ export default {
   }
 
   &__text {
-    font-size: 16px;
-    padding: 10px 0;
-
     &-wrapper {
       max-width: 550px;
       padding: 45px 0;
@@ -67,10 +64,6 @@ export default {
 
   &__link {
     text-decoration: none;
-    color: var(--light-green-accent);
-  }
-
-  &__subtitle {
     color: var(--light-green-accent);
   }
 

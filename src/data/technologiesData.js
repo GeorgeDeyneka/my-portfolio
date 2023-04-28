@@ -1,3 +1,14 @@
+export const PARAGRAPH_CONTENT = [
+  {
+    content:
+      "Here are the technologies with which I have worked and have some experience. You will see the main stack, frameworks, databases, libraries and more.",
+  },
+  {
+    content:
+      "This means that I am ready to work on a project if it contains the following technologies, or create a project from scratch and implement these technologies.",
+  },
+];
+
 export const TECHNOLOGIES_SVG = [
   {
     title: "Frameworks",

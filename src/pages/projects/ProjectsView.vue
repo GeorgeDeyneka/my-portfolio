@@ -60,7 +60,7 @@ export default defineComponent({
   &__wrapper {
     display: grid;
     justify-content: center;
-    padding: 35px 0;
+    padding: 50px 0;
     gap: 35px;
     grid-template-columns: repeat(auto-fill, 312px);
   }

@@ -47,6 +47,10 @@ export default {
   color: var(--gray-text);
   background-color: var(--dark-gray-bg);
 
+  .text > strong {
+    color: var(--light-green-accent);
+  }
+
   .network {
     &__list {
       display: flex;

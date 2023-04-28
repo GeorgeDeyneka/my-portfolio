@@ -55,6 +55,18 @@
 }
 
 p {
+  font-size: 16px;
+  color: var(--gray-text);
+  padding: 10px 0;
+}
+
+h3 {
+  color: var(--light-green-accent);
+}
+
+h4 {
   font-size: 18px;
+  padding: 15px 0;
+  font-weight: 400;
   color: var(--gray-text);
 }

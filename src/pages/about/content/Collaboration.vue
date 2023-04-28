@@ -20,7 +20,7 @@ export default {
 
 <template>
   <div class="collab">
-    <h3 class="collab__subtitle">Collaboration</h3>
+    <h3>Collaboration</h3>
     <h2 class="collab__title">Lets talk to Collaboration!</h2>
 
     <div class="collab__buttons">
@@ -43,10 +43,6 @@ export default {
     max-width: 650px;
     text-align: center;
     line-height: 1.3;
-  }
-
-  &__subtitle {
-    color: var(--light-green-accent);
   }
 
   &__buttons {

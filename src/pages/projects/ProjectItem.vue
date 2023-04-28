@@ -17,7 +17,7 @@ export default {
   <div class="project">
     <RouterLink class="project__link" :to="'/projects/' + projectItem.id">
       <img class="project__image" :src="projectItem.imgUrls[0]" alt="" />
-      <h3 class="project__title">{{ projectItem.title }}</h3>
+      <h4 class="project__title">{{ projectItem.title }}</h4>
     </RouterLink>
   </div>
 </template>
@@ -39,8 +39,7 @@ export default {
   }
 
   &__title {
-    font-size: 18px;
-    padding: 10px;
+    padding: 15px 10px;
   }
 }
 </style>

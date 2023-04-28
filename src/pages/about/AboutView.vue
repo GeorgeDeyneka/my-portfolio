@@ -12,13 +12,13 @@ export default {
 
 <template>
   <div class="wrapper">
-    <div class="about">
-      <h1 class="about__main-title">George Deyneka</h1>
+    <div class="start">
+      <h1 class="start__title">George Deyneka</h1>
 
-      <p class="about__paragraph">
+      <h4>
         Hello, my name is George. Nice to meet you! I would like to welcome you
         with my personal portfolio.
-      </p>
+      </h4>
     </div>
 
     <AboutMe />
@@ -41,28 +41,21 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.about {
+.start {
   padding: 50px 0;
+  max-width: 550px;
 
-  &__main-title {
+  &__title {
     padding: 60px 0;
     font-size: 65px;
-  }
-
-  &__paragraph {
-    font-size: 18px;
-    padding: 15px 0;
-    color: var(--gray-text);
-    max-width: 600px;
   }
 }
 
 @media (min-width: 768px) {
-  .about {
-    &__main-title {
+  .start {
+    &__title {
       padding: 70px 0 40px;
       font-size: 80px;
-      max-width: 600px;
       line-height: 1.3;
     }
   }
