@@ -32,7 +32,13 @@ export default {
 
 <template>
   <ul class="cont__list">
-    <li class="cont__item" v-for="item of arrData">
+    <li
+      class="cont__item"
+      :class="{
+        'item-padding': showTitle,
+      }"
+      v-for="item of arrData"
+    >
       <a class="cont__link" :href="item.link" target="_blank">
         <SvgIcon :fillColor="fillColor" :hoverColor="hoverColor" :item="item" />
         <h2 v-if="showTitle" class="cont__subtitle">{{ item.title }}</h2>
@@ -42,6 +48,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.item-padding {
+  padding: 10px 0;
+}
+
 .cont {
   &__list {
     padding: 20px 0;
@@ -63,7 +73,6 @@ export default {
 
   &__item {
     list-style: none;
-    padding: 10px 0;
   }
 }
 
