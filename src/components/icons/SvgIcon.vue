@@ -20,6 +20,7 @@ export default {
       '--hover-color': item?.hoverColor,
       width: item.width || `${size}px`,
       height: `${size}px`,
+      fill: item?.fill,
     }"
     class="icon-svg"
   >

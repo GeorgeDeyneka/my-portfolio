@@ -37,13 +37,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 320px) {
-  .main {
-    padding: 24px;
-    flex: 1 1 auto;
-    width: 100%;
-    padding-top: 0;
-  }
+.main {
+  padding: 24px;
+  flex: 1 1 auto;
+  width: 100%;
+  padding-top: 0;
 }
 
 @media (min-width: 768px) {

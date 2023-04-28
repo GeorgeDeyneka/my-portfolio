@@ -35,7 +35,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 0 150px;
 
   &__title {
     font-size: 45px;

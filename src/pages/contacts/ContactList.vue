@@ -27,30 +27,28 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 320px) {
-  .cont {
-    &__list {
-      padding: 20px 0;
-    }
+.cont {
+  &__list {
+    padding: 20px 0;
+  }
 
-    &__link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      max-width: fit-content;
-    }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    max-width: fit-content;
+  }
 
-    &__subtitle {
-      padding: 5px 10px;
-      font-size: 16px;
-      color: var(--white);
-    }
+  &__subtitle {
+    padding: 5px 10px;
+    font-size: 16px;
+    color: var(--white);
+  }
 
-    &__item {
-      list-style: none;
-      padding: 10px 0;
-    }
+  &__item {
+    list-style: none;
+    padding: 10px 0;
   }
 }
 

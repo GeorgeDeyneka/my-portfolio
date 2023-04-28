@@ -63,6 +63,10 @@ export const TECHNOLOGIES_SVG = [
         path: "#icon-ang-mat",
       },
       {
+        name: "Vuex",
+        path: "#icon-vuex",
+      },
+      {
         name: "jQuery",
         path: "#icon-jquery",
       },
@@ -131,7 +135,7 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "GitHub",
         path: "#icon-github",
-        hoverColor: "#fff"
+        hoverColor: "#fff",
       },
     ],
   },
@@ -146,7 +150,7 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Webpack",
         path: "#icon-webpack",
-        width: '225px'
+        width: "225px",
       },
     ],
   },

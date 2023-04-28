@@ -41,52 +41,50 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 320px) {
-  .about {
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+
+  &__counter {
     display: flex;
-    flex-direction: column;
-    padding: 50px 0;
+    gap: 60px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    &__counter {
-      display: flex;
-      gap: 60px;
-      padding: 20px 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+  &__text {
+    font-size: 16px;
+    padding: 10px 0;
 
-    &__text {
-      font-size: 16px;
-      padding: 10px 0;
-
-      &-wrapper {
-        max-width: 550px;
-        padding: 45px 0;
-        align-self: end;
-      }
-    }
-
-    &__link {
-      text-decoration: none;
-      color: var(--light-green-accent);
-    }
-
-    &__subtitle {
-      color: var(--light-green-accent);
-    }
-
-    &__title {
-      font-size: 30px;
+    &-wrapper {
       max-width: 550px;
-      padding: 10px 0 40px;
+      padding: 45px 0;
+      align-self: end;
     }
   }
 
-  @media (min-width: 768px) {
-    .about {
-      &__counter {
-        justify-content: flex-start;
-      }
+  &__link {
+    text-decoration: none;
+    color: var(--light-green-accent);
+  }
+
+  &__subtitle {
+    color: var(--light-green-accent);
+  }
+
+  &__title {
+    font-size: 30px;
+    max-width: 550px;
+    padding: 10px 0 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    &__counter {
+      justify-content: flex-start;
     }
   }
 }

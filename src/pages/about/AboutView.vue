@@ -41,21 +41,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 320px) {
-  .about {
-    padding: 50px 0;
+.about {
+  padding: 50px 0;
 
-    &__main-title {
-      padding: 60px 0;
-      font-size: 65px;
-    }
+  &__main-title {
+    padding: 60px 0;
+    font-size: 65px;
+  }
 
-    &__paragraph {
-      font-size: 18px;
-      padding: 15px 0;
-      color: var(--gray-text);
-      max-width: 600px;
-    }
+  &__paragraph {
+    font-size: 18px;
+    padding: 15px 0;
+    color: var(--gray-text);
+    max-width: 600px;
   }
 }
 
