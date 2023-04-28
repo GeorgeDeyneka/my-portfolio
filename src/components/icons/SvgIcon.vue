@@ -10,6 +10,18 @@ export default {
       type: Number,
       default: 50,
     },
+
+    hoverColor: {
+      type: String,
+      required: false
+    },
+
+    fillColor: {
+      type: String,
+      required: false,
+    },
+
+
   },
 };
 </script>
@@ -17,10 +29,10 @@ export default {
 <template>
   <svg
     :style="{
-      '--hover-color': item?.hoverColor,
+      '--hover-color': hoverColor || item?.hoverColor,
+      '--fill-color': fillColor,
       width: item.width || `${size}px`,
       height: `${size}px`,
-      fill: item?.fill,
     }"
     class="icon-svg"
   >
@@ -31,8 +43,8 @@ export default {
 <style lang="scss" scoped>
 .icon-svg {
   display: block;
-  fill: var(--white);
   flex-shrink: 0;
+  fill: var(--fill-color);
 
   &:hover {
     transition: fill 200ms ease-in;

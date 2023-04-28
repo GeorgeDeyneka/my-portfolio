@@ -7,6 +7,21 @@ export default {
       type: Array,
       required: true,
     },
+
+    showTitle: {
+      type: Boolean,
+      default: true,
+    },
+
+    fillColor: {
+      type: String,
+      default: "var(--white)",
+    },
+
+    hoverColor: {
+      type: String,
+      default: "",
+    },
   },
 
   components: {
@@ -19,8 +34,8 @@ export default {
   <ul class="cont__list">
     <li class="cont__item" v-for="item of arrData">
       <a class="cont__link" :href="item.link" target="_blank">
-        <SvgIcon :item="item" />
-        <h2 class="cont__subtitle">{{ item.title }}</h2>
+        <SvgIcon :fillColor="fillColor" :hoverColor="hoverColor" :item="item" />
+        <h2 v-if="showTitle" class="cont__subtitle">{{ item.title }}</h2>
       </a>
     </li>
   </ul>

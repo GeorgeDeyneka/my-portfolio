@@ -26,18 +26,12 @@ export default {
 </script>
 
 <template>
-  <h2 v-if="title">{{ title }}:</h2>
+  <h2>{{ title }}:</h2>
 
-  <ul
-    :style="{
-      gap: Math.floor(iconSize / 3.3) + 'px',
-      margin: iconSize <= 50 ? 0 : '',
-    }"
-    class="tech__logos"
-  >
+  <ul class="tech__logos">
     <li class="tech__item" v-for="item of arrData" :key="item">
       <SvgIcon :item="item" :size="iconSize" />
-      <p v-if="item.name" class="tech__name">{{ item.name }}</p>
+      <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
 </template>
@@ -63,6 +57,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding: 20px 0;
+    gap: 30px;
   }
 }
 

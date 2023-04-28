@@ -1,17 +1,17 @@
 <script>
-import TechList from "../pages/technologies/TechList.vue";
-import { DEVELOPED_WITH_DATA } from "../data/footerData";
-import { ARR_ROUTES } from "../data/routesData";
+import { CONTACTS_LINKS } from "../data/contactsData";
+import ContactsList from "../pages/contacts/ContactsList.vue";
+import ButtonLink from "./buttons/ButtonLink.vue";
 
 export default {
   data() {
     return {
-      devWithData: DEVELOPED_WITH_DATA,
-      navLinks: ARR_ROUTES,
+      contactData: CONTACTS_LINKS,
     };
   },
   components: {
-    TechList,
+    ButtonLink,
+    ContactsList,
   },
 };
 </script>
@@ -19,9 +19,22 @@ export default {
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="footer__tech technologies">
-        <h2 class="technologies__title">Developed with:</h2>
-        <TechList :arrData="devWithData" :iconSize="50" />
+      <p class="footer__item text">
+        Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>
+      </p>
+
+      <div class="footer__item network">
+        <ContactsList
+          fillColor="#c3c3c3"
+          hoverColor="#75fa7f"
+          :showTitle="false"
+          :arrData="contactData"
+          class="network__list"
+        />
+      </div>
+
+      <div class="footer__item hire-btn">
+        <ButtonLink text="Hire Me Now!" link="#" />
       </div>
     </div>
   </footer>
@@ -31,31 +44,43 @@ export default {
 .footer {
   color: var(--gray-text);
   background-color: var(--dark-gray-bg);
-}
 
-.technologies {
-  max-width: 350px;
-  background-color: var(--black);
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-
-  &__title {
-    color: var(--white);
-    border-bottom: 2px solid var(--light-green-accent);
-    padding: 5px 0;
+  .network {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px;
+  gap: 20px;
   display: flex;
-  justify-content: space-between
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
+  .footer {
+    &__item {
+      min-width: 280px;
+    }
+
+    .text {
+      max-width: 280px;
+    }
+
+    .hire-btn {
+      display: flex;
+      justify-content: center;
+    }
+  }
   .container {
     padding: 10px 0;
   }
