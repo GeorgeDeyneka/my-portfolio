@@ -25,6 +25,10 @@ export const TECHNOLOGIES_SVG = [
         name: "Nest.js",
         path: "#icon-nest",
       },
+      {
+        name: "Node.js",
+        path: "#icon-node-js",
+      },
     ],
   },
 
@@ -160,13 +164,12 @@ export const TECHNOLOGIES_SVG = [
         path: "#icon-gulp",
       },
       {
-        name: "Vite",
-        path: "#icon-vite",
-      },
-      {
         name: "Webpack",
         path: "#icon-webpack",
-        width: "225px",
+      },
+      {
+        name: "Vite",
+        path: "#icon-vite",
       },
     ],
   },

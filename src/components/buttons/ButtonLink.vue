@@ -53,6 +53,7 @@ export default {
   color: var(--white);
   font-weight: 500;
   transition: background-color 200ms ease-in;
+  white-space: nowrap;
   cursor: pointer;
   max-width: fit-content;
 

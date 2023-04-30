@@ -13,15 +13,13 @@ export default {
 
     hoverColor: {
       type: String,
-      required: false
+      required: false,
     },
 
     fillColor: {
       type: String,
       required: false,
     },
-
-
   },
 };
 </script>
@@ -31,7 +29,7 @@ export default {
     :style="{
       '--hover-color': hoverColor || item?.hoverColor,
       '--fill-color': fillColor || item?.fillColor,
-      width: item.width || `${size}px`,
+      width: `${size}px`,
       height: `${size}px`,
     }"
     class="icon-svg"
