@@ -4,7 +4,7 @@ import TechStack from "./content/TechStack.vue";
 import {
   TECHNOLOGIES_SVG,
   PARAGRAPH_CONTENT,
-} from "/src/data/technologiesData";
+} from "@/data/technologiesData";
 import { mapGetters } from "vuex";
 
 export default {

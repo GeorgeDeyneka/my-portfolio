@@ -60,7 +60,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "/src/assets/keyframes.scss";
+@import "@/assets/keyframes.scss";
 
 .count {
   text-align: center;

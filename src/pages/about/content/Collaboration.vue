@@ -1,7 +1,7 @@
 <script>
 import ButtonLink from "../../../components/buttons/ButtonLink.vue";
 import ButtonNav from "../../../components/buttons/ButtonNav.vue";
-import { BUTTON_DATA } from "/src/data/buttonsData";
+import { BUTTON_DATA } from "@/data/buttonsData";
 
 export default {
   data() {

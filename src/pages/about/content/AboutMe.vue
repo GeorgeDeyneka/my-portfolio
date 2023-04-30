@@ -1,8 +1,8 @@
 <script>
 import ButtonLink from "../../../components/buttons/ButtonLink.vue";
 import Counter from "./Counter.vue";
-import { BUTTON_DATA } from "/src/data/buttonsData";
-import { COUNT_STATISTICS, PARAGRAPH_CONTENT } from "/src/data/aboutData";
+import { BUTTON_DATA } from "@/data/buttonsData";
+import { COUNT_STATISTICS, PARAGRAPH_CONTENT } from "@/data/aboutData";
 
 export default {
   data() {

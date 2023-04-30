@@ -7,7 +7,7 @@ export default {};
 </template>
 
 <style lang="scss" scoped>
-@import "src/assets/mixins.scss";
+@import "@/assets/mixins.scss";
 
 .close-btn {
   @include burger-button;
