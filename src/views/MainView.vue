@@ -31,12 +31,25 @@ export default {
 <template>
   <Header />
   <main class="main">
-    <RouterView />
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </main>
   <Footer />
 </template>
 
 <style lang="scss" scoped>
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 200ms ease-out;
+}
 .main {
   padding: 24px;
   flex: 1 1 auto;
