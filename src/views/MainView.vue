@@ -48,7 +48,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 200ms ease-out;
+  transition: opacity 100ms ease-out;
 }
 .main {
   padding: 24px;
