@@ -1,23 +1,28 @@
 <script>
 import ProjectItem from "./ProjectItem.vue";
-import { defineComponent, computed, ref } from "vue";
 import { useStore } from "vuex";
 
-export default defineComponent({
-  setup() {
-    const store = useStore();
-    store.dispatch("fetchItems");
-    const arrProjects = computed(() => store.state.items);
-
+export default {
+  data() {
     return {
-      arrProjects,
+      store: useStore(),
     };
+  },
+
+  mounted() {
+    this.store.dispatch("fetchItems");
+  },
+
+  computed: {
+    arrProjects() {
+      return this.store.state.items;
+    },
   },
 
   components: {
     ProjectItem,
   },
-});
+};
 </script>
 
 <template>

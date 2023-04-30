@@ -1,14 +1,11 @@
 <script>
 import { useStore } from "vuex";
-import { defineComponent, computed } from "vue";
 import router from "@/router";
 
-export default defineComponent({
-  setup() {
-    const store = useStore();
-
+export default {
+  data() {
     return {
-      dataItem: computed(() => store.state.item),
+      store: useStore(),
     };
   },
 
@@ -20,6 +17,12 @@ export default defineComponent({
     },
   },
 
+  computed: {
+    dataItem() {
+      return this.store.state.item;
+    },
+  },
+
   mounted() {
     this.$store
       .dispatch("fetchItem", Number(this.$route.params.id))
@@ -27,12 +30,21 @@ export default defineComponent({
         this.checkItemAndRedirect(resp);
       });
   },
-});
+};
 </script>
 
 <template>
-  <h1>Details Page # {{ $route.params.id }}</h1>
-  <p>{{ dataItem.title }}</p>
+  <div class="wrapper">
+    <h1>{{ dataItem.title }}</h1>
+    <p class="project__text">{{ dataItem.shortDesc }}</p>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.project {
+  &__text {
+    padding: 40px 0;
+    max-width: 600px;
+  }
+}
+</style>

@@ -18,7 +18,7 @@ export default {
 
 <template>
   <div class="wrapper">
-    <h1 class="projects__title">Projects I have worked on:</h1>
+    <h1>Projects I have worked on:</h1>
     <Suspense>
       <template #default>
         <ProjectsList />
@@ -34,10 +34,5 @@ export default {
 .wrapper {
   position: relative;
   min-height: 600px;
-}
-.projects {
-  &__title {
-    padding: 20px 0;
-  }
 }
 </style>

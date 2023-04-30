@@ -9,13 +9,13 @@ export default {
 
   data() {
     return {
-      showComponent: false,
+      showTitle: false,
     };
   },
 
   methods: {
     onImageLoad() {
-      this.showComponent = true;
+      this.showTitle = true;
     },
   },
 };
@@ -31,7 +31,7 @@ export default {
         alt=""
       />
       <div class="project__info">
-        <h4 v-if="showComponent">{{ projectItem.title }}</h4>
+        <h4 v-if="showTitle">{{ projectItem.title }}</h4>
         <div v-else class="skeleton__title"></div>
       </div>
     </RouterLink>
@@ -40,27 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/keyframes.scss";
-
-.skeleton {
-  &__title {
-    position: relative;
-    min-height: 27px;
-    width: 100%;
-    background-color: var(--gray-skeleton);
-    animation: pulse 2500ms ease-in-out infinite;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--gray-skeleton);
-    }
-  }
-}
 .project {
   min-height: 228px;
   overflow: hidden;
@@ -86,6 +65,27 @@ export default {
 
     & > h4 {
       padding: 0;
+    }
+  }
+}
+
+.skeleton {
+  &__title {
+    position: relative;
+    min-height: 27px;
+    width: 100%;
+    background-color: var(--gray-skeleton);
+    animation: pulse 2500ms ease-in-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gray-skeleton);
     }
   }
 }
