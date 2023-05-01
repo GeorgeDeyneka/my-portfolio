@@ -1,8 +1,8 @@
 <script>
 import { CONTACTS_LINKS } from "../data/contactsData";
-import ContactsList from "../pages/contacts/ContactsList.vue";
 import ButtonLink from "./buttons/ButtonLink.vue";
 import { BUTTON_DATA } from "../data/buttonsData";
+import ContactItem from "./contact-item/ContactItem.vue";
 
 export default {
   data() {
@@ -13,8 +13,8 @@ export default {
   },
   components: {
     ButtonLink,
-    ContactsList,
-  },
+    ContactItem
+},
 };
 </script>
 
@@ -25,15 +25,15 @@ export default {
         Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>
       </p>
 
-      <div class="footer__item network">
-        <ContactsList
+      <ul class="footer__item network">
+        <ContactItem
           fillColor="#c3c3c3"
           hoverColor="#75fa7f"
           :showTitle="false"
-          :arrData="contactData"
-          class="network__list"
+          v-for="item of contactData"
+          :linkItem="item"
         />
-      </div>
+      </ul>
 
       <div class="footer__item hire-btn">
         <ButtonLink :text="btnHire.text" :link="btnHire.link" />
@@ -52,13 +52,11 @@ export default {
   }
 
   .network {
-    &__list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
   }
 }
 .container {

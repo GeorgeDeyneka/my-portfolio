@@ -39,14 +39,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@mixin svg-hover {
+  transition: fill 200ms ease-in;
+  fill: var(--hover-color);
+}
+
 .icon-svg {
   display: block;
   flex-shrink: 0;
   fill: var(--fill-color);
 
   &:hover {
-    transition: fill 200ms ease-in;
-    fill: var(--hover-color);
+    @include svg-hover;
   }
+}
+
+.hovered {
+  @include svg-hover;
 }
 </style>
