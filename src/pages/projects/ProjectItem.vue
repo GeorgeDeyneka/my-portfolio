@@ -55,10 +55,6 @@ export default {
 
   &:hover {
     transform: scale(1.05);
-    background-color: var(--black-header-bg);
-    .pop-up {
-      transform: translateY(0%);
-    }
   }
 
   &__image {
@@ -96,9 +92,24 @@ export default {
       background-color: var(--gray-skeleton);
     }
   }
+}
+
+.pop-up {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .project {
+    &:hover {
+      .pop-up {
+        transform: translateY(0%);
+      }
+    }
+  }
 
   .pop-up {
     position: absolute;
+    display: block;
     bottom: 0;
     left: 0;
     right: 0;

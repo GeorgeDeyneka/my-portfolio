@@ -16,6 +16,12 @@ export default {
     window.addEventListener("resize", this.updateScreenWidth);
   },
 
+  updated() {
+    this.$nextTick(() => {
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "instant" }), 200);
+    });
+  },
+
   beforeUnmount() {
     window.removeEventListener("resize", this.updateScreenWidth);
   },
@@ -48,7 +54,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 150ms ease-out;
+  transition: opacity 200ms ease-out;
 }
 .main {
   padding: 24px;
