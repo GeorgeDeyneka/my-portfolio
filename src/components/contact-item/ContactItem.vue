@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss" scoped>
 .item-padding {
-  padding: 10px 0;
+  padding: 6px 0;
 }
 
 .item-column {
