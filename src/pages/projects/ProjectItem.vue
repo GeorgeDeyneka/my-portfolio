@@ -32,7 +32,12 @@ export default {
       />
       <div class="project__info">
         <h4 v-if="showTitle">{{ projectItem.title }}</h4>
-        <div v-else class="skeleton__title"></div>
+        <div v-else class="project__skeleton"></div>
+        <div v-if="showTitle" class="pop-up">
+          <p class="pop-up__text">
+            {{ projectItem.shortDesc }}
+          </p>
+        </div>
       </div>
     </RouterLink>
   </div>
@@ -41,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/keyframes.scss";
 .project {
+  position: relative;
   min-height: 228px;
   overflow: hidden;
   background-color: var(--dark-gray-bg);
@@ -49,6 +55,10 @@ export default {
 
   &:hover {
     transform: scale(1.05);
+    background-color: var(--black-header-bg);
+    .pop-up {
+      transform: translateY(0%);
+    }
   }
 
   &__image {
@@ -62,16 +72,14 @@ export default {
 
   &__info {
     padding: 15px 10px;
+    position: relative;
 
     & > h4 {
       padding: 0;
     }
   }
-}
 
-.skeleton {
-  &__title {
-    position: relative;
+  &__skeleton {
     min-height: 27px;
     width: 100%;
     background-color: var(--gray-skeleton);
@@ -86,6 +94,23 @@ export default {
       width: 100%;
       height: 2px;
       background-color: var(--gray-skeleton);
+    }
+  }
+
+  .pop-up {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    max-height: 150px;
+    background-color: var(--black-pop-up-bg);
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+
+    &__text {
+      color: var(--light-gray-text);
     }
   }
 }
