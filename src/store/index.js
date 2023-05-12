@@ -37,6 +37,10 @@ export default createStore({
     setItem(state, item) {
       state.item = item;
     },
+
+    resetItem(state) {
+      state.item = {};
+    },
   },
 
   getters: {
@@ -45,14 +49,13 @@ export default createStore({
 
   actions: {
     async fetchItems({ commit }) {
-      
       const items = [];
       const snapshot = await db.ref("projects").once("value");
-        snapshot.forEach((childSnapshot) => {
-          const childData = childSnapshot.val();
-          items.push(childData);
-        });
-        commit("setItems", items);
+      snapshot.forEach((childSnapshot) => {
+        const childData = childSnapshot.val();
+        items.push(childData);
+      });
+      commit("setItems", items);
     },
 
     async fetchItem({ commit }, id) {

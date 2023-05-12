@@ -26,7 +26,7 @@ export default {
     <RouterLink class="project__link" :to="'/projects/' + projectItem.id">
       <img
         class="project__image"
-        :src="projectItem.imgUrls[0]"
+        :src="projectItem.imgUrls[0].url"
         @load="onImageLoad"
         alt=""
       />
