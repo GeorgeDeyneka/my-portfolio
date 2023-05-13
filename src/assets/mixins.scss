@@ -13,3 +13,9 @@
   background-color: transparent;
   flex-shrink: 0;
 }
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

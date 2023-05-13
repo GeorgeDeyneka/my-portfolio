@@ -103,13 +103,13 @@ export default {
     </swiper-container>
     <div class="project__references">
       <h2>Live page:</h2>
-      <a class="project__link" :href="dataItem.liveUrl">{{
+      <a class="project__link" target="_blank" :href="dataItem.liveUrl">{{
         dataItem.liveUrl
       }}</a>
     </div>
     <div class="project__references">
       <h2>Repository page:</h2>
-      <a class="project__link" :href="dataItem.repoUrl">{{
+      <a class="project__link" target="_blank" :href="dataItem.repoUrl">{{
         dataItem.repoUrl
       }}</a>
     </div>
@@ -117,6 +117,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/mixins.scss";
 .project {
   &__text {
     padding: 40px 0;
@@ -124,11 +125,14 @@ export default {
   }
 
   &__references {
+    @include ellipsis;
     margin: 30px 0;
+    max-width: 100%;
   }
 
   &__link {
-    color: var(--white);
+    color: var(--light-green-accent);
+    font-size: 18px;
     text-decoration: none;
   }
 }
