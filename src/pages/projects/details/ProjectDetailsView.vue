@@ -27,6 +27,13 @@ export default {
   data() {
     return {
       store: useStore(),
+      swiperStyles: {
+        "--swiper-navigation-color": "var(--light-green-accent)",
+        "--swiper-pagination-color": "var(--light-green-accent)",
+        "--swiper-pagination-bullet-inactive-color": "var(--light-gray-text)",
+        overflowX: "clip",
+        overflowY: "visible",
+      },
     };
   },
 
@@ -64,41 +71,47 @@ export default {
 
     <p class="project__text">{{ dataItem.shortDesc }}</p>
 
-    <div class="container__swiper">
-      <swiper-container
-        :spaceBetween="50"
-        :keyboard="{
-          enabled: true,
-        }"
-        lazy="true"
-        :style="{
-          '--swiper-navigation-color': 'var(--light-green-accent)',
-          '--swiper-pagination-color': 'var(--light-green-accent)',
-          '--swiper-pagination-bullet-inactive-color': 'var(--light-gray-text)',
-        }"
-        :pagination="{
-          clickable: true,
-        }"
-        class="mySwiper"
-        :navigation="true"
-      >
-        <swiper-slide v-for="item of dataItem.imgUrls" lazy="true">
-          <div class="project__slide slide">
-            <img
-              class="slide__image"
-              :src="item.url"
-              alt="project-demo"
-              loading="lazy"
-            />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              rem laboriosam aut perferendis commodi? Assumenda fugiat animi
-              quasi non asperiores? Praesentium, reprehenderit? Possimus est
-              unde blanditiis, placeat architecto dicta. Totam.
-            </p>
+    <swiper-container
+      :style="swiperStyles"
+      :spaceBetween="50"
+      :keyboard="{
+        enabled: true,
+      }"
+      lazy="true"
+      :navigation="true"
+    >
+      <!-- :pagination="{
+        clickable: true,
+      }" -->
+      <swiper-slide v-for="item of dataItem.imgUrls" lazy="true">
+        <div class="project__slide slide">
+          <img
+            class="slide__image"
+            :src="item.url"
+            alt="project-demo"
+            loading="lazy"
+          />
+          <div class="slide__description">
+            <ul class="slide__list">
+              <li class="slide__item" v-for="text of item.description">
+                {{ text }}
+              </li>
+            </ul>
           </div>
-        </swiper-slide>
-      </swiper-container>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+    <div class="project__references">
+      <h2>Live page:</h2>
+      <a class="project__link" :href="dataItem.liveUrl">{{
+        dataItem.liveUrl
+      }}</a>
+    </div>
+    <div class="project__references">
+      <h2>Repository page:</h2>
+      <a class="project__link" :href="dataItem.repoUrl">{{
+        dataItem.repoUrl
+      }}</a>
     </div>
   </div>
 </template>
@@ -109,14 +122,48 @@ export default {
     padding: 40px 0;
     max-width: 600px;
   }
-}
 
+  &__references {
+    margin: 30px 0;
+  }
+
+  &__link {
+    color: var(--white);
+    text-decoration: none;
+  }
+}
 .slide {
   background-color: var(--dark-gray-swiper-bg);
   margin: 50px 0;
 
-  &__image {
-    min-height: calc(100% * 0.54);
+  &__description {
+    position: relative;
+    min-height: 86px;
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 25px 0;
+    padding: 0 30px 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    max-height: 68px;
+    background-color: var(--dark-gray-swiper-bg);
+    transition: max-height 300ms ease-out;
+
+    &:hover {
+      max-height: 200px;
+      overflow: auto;
+    }
+  }
+
+  &__item {
+    padding: 5px 0;
+    font-size: 17px;
+    color: var(--gray-text);
   }
 }
 
@@ -125,7 +172,11 @@ export default {
     margin: 35px 60px;
     border-radius: 4px;
     min-height: auto;
-    padding: 10px;
+    padding: 10px 0;
+
+    &__image {
+      padding: 0 10px;
+    }
   }
 }
 </style>
