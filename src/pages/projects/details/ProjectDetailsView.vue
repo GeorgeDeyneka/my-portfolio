@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import ButtonShowFullText from "@/components/buttons/ButtonShowFullText.vue";
 import Swiper from "./details-swiper/Swiper.vue";
 
 register();

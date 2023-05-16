@@ -3,7 +3,12 @@ export default {
   props: {
     item: {
       type: Object,
-      required: true,
+      required: false,
+    },
+
+    stringPath: {
+      type: String,
+      required: false,
     },
 
     size: {
@@ -34,7 +39,7 @@ export default {
     }"
     class="icon-svg"
   >
-    <use :href="item.path"></use>
+    <use :href="stringPath || item.path"></use>
   </svg>
 </template>
 

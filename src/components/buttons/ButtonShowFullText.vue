@@ -1,24 +1,29 @@
 <script>
+import SvgIcon from "../icons/SvgIcon.vue";
+
 export default {
   data() {
     return {
       rotateFlag: false,
     };
   },
-
   methods: {
     rotateIcon() {
       return (this.rotateFlag = !this.rotateFlag);
     },
   },
+  components: { SvgIcon },
 };
 </script>
 
 <template>
   <button class="btn" @click="rotateIcon">
-    <svg class="icon" :class="{ rotate: rotateFlag }">
-      <use href="#icon-arrow"></use>
-    </svg>
+    <SvgIcon
+      stringPath="#icon-arrow"
+      class="icon"
+      :size="24"
+      :class="{ rotate: rotateFlag }"
+    />
   </button>
 </template>
 
@@ -51,7 +56,5 @@ export default {
 .icon {
   transform: rotate(-90deg);
   stroke: var(--light-green-accent);
-  width: 24px;
-  height: 24px;
 }
 </style>
