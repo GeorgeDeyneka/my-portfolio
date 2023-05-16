@@ -104,7 +104,15 @@ export default {
               :class="showTextFlag ? 'full-list' : 'short-list'"
             >
               <ul class="slide__list">
-                <li class="slide__item" v-for="text of item.description">
+                <li
+                  class="slide__item"
+                  v-for="(text, index) of item.description"
+                >
+                  <span
+                    class="slide__item-hint"
+                    v-if="!showTextFlag && index === 0"
+                    >(Click on the arrow and scroll)</span
+                  >
                   {{ text }}
                 </li>
               </ul>
@@ -192,7 +200,7 @@ export default {
       overflow: hidden;
       max-height: 60px;
       background-color: var(--dark-gray-swiper-bg);
-      transition: max-height 300ms ease-out;
+      transition: max-height 300ms ease-in;
     }
   }
 
@@ -200,6 +208,10 @@ export default {
     padding: 5px 0;
     font-size: 17px;
     color: var(--gray-text);
+
+    &-hint {
+      color: var(--light-green-accent);
+    }
   }
 }
 
@@ -210,11 +222,20 @@ export default {
 }
 
 .short-list {
-  // display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
 }
 
 @media (min-width: 768px) {
