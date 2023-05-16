@@ -32,8 +32,8 @@ export default {
 <template>
   <svg
     :style="{
-      '--hover-color': hoverColor || item?.hoverColor,
       '--fill-color': fillColor || item?.fillColor,
+      '--hover-color': hoverColor || item?.hoverColor || 'var(--fill-color)',
       width: `${size}px`,
       height: `${size}px`,
     }"

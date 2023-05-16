@@ -22,6 +22,8 @@ export default {
       stringPath="#icon-arrow"
       class="icon"
       :size="24"
+      fillColor="var(--light-green-accent)"
+      hoverColor="var(--light-green-accent)"
       :class="{ rotate: rotateFlag }"
     />
   </button>
@@ -30,10 +32,10 @@ export default {
 <style lang="scss" scoped>
 @keyframes rotateAnimation {
   0% {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(-270deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -54,7 +56,6 @@ export default {
 }
 
 .icon {
-  transform: rotate(-90deg);
-  stroke: var(--light-green-accent);
+  transform: rotate(180deg);
 }
 </style>

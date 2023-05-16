@@ -15,15 +15,10 @@ export default {
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
     <defs>
-      <symbol id="icon-arrow" viewBox="0 0 8 12">
+      <symbol id="icon-arrow" viewBox="6 8 20 16">
         <path
-          fill="none"
-          stroke-linejoin="round"
-          stroke-linecap="round"
-          stroke-miterlimit="4"
-          stroke-width="1.1143"
-          d="M6.429 11.143l-5.143-5.143 5.143-5.143"
-        ></path>
+          d="M24,21a1,1,0,0,1-.71-.29L16,13.41l-7.29,7.3a1,1,0,1,1-1.42-1.42l8-8a1,1,0,0,1,1.42,0l8,8a1,1,0,0,1,0,1.42A1,1,0,0,1,24,21Z"
+        />
       </symbol>
       <symbol id="icon-telegram" viewBox="0 0 512 512">
         <path

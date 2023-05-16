@@ -4,6 +4,7 @@ import router from "@/router";
 import LoadSpinner from "@/components/LoadSpinner.vue";
 import { Suspense } from "vue";
 import { defineAsyncComponent } from "vue";
+import ButtonBack from "../../components/buttons/ButtonBack.vue";
 
 const Swiper = defineAsyncComponent(() =>
   import("./details-swiper/Swiper.vue")
@@ -53,6 +54,7 @@ export default {
     ProjectReference,
     LoadSpinner,
     Suspense,
+    ButtonBack,
   },
 
   mounted() {
@@ -74,7 +76,10 @@ export default {
     <Suspense>
       <template #default>
         <div>
-          <h1>{{ dataItem.title }}</h1>
+          <div class="project__title">
+            <ButtonBack route="/projects" />
+            <h1>{{ dataItem.title }}</h1>
+          </div>
 
           <p class="project__text">{{ dataItem.shortDesc }}</p>
 
@@ -100,6 +105,12 @@ export default {
   min-height: 600px;
 }
 .project {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
   &__text {
     padding: 40px 0;
     max-width: 600px;

@@ -1,5 +1,5 @@
 <script>
-import ButtonShowFullText from "../../../../components/buttons/ButtonShowFullText.vue";
+import ButtonShowFullText from "@/components/buttons/ButtonShowFullText.vue";
 
 export default {
   props: {
