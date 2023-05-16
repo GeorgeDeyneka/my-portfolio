@@ -37,7 +37,8 @@ export default {
         <li class="list__item" v-for="(text, index) of textData">
           <span class="list__hint" v-if="!showTextFlag && index === 0"
             >(Click on the arrow and scroll)</span
-          >{{ text }}
+          >
+          {{ text }}
         </li>
       </ul>
       <ButtonShowFullText class="list__btn-show" @click="showFullDescription" />

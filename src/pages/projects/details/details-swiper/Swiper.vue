@@ -1,6 +1,7 @@
 <script>
 import SwiperSlide from "./SwiperSlide.vue";
 import { register } from "swiper/element/bundle";
+import { mapGetters } from "vuex";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,6 +15,16 @@ export default {
     dataItem: {
       type: Object,
       required: true,
+    },
+  },
+
+  computed: {
+    ...mapGetters(["screenWidth"]),
+    minSlideHeight() {
+      if (this.screenWidth >= 1200) {
+        return 1200 * 0.4;
+      }
+      return this.screenWidth * 0.4;
     },
   },
 
@@ -45,7 +56,11 @@ export default {
     lazy="true"
     :navigation="true"
   >
-    <SwiperSlide v-for="item of dataItem.imgUrls" :infoItem="item" />
+    <SwiperSlide
+      :imageHeight="minSlideHeight"
+      v-for="item of dataItem.imgUrls"
+      :infoItem="item"
+    />
   </swiper-container>
 </template>
 

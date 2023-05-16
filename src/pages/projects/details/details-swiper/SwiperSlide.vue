@@ -7,6 +7,11 @@ export default {
       type: Object,
       required: true,
     },
+
+    imageHeight: {
+      type: Number,
+      required: true,
+    },
   },
 
   components: {
@@ -21,6 +26,7 @@ export default {
       <img
         class="slide__image"
         :src="infoItem.url"
+        :style="{ 'min-height': `${imageHeight}px` }"
         alt="project-demo"
         loading="lazy"
       />
