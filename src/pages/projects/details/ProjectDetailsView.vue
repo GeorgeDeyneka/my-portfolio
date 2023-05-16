@@ -1,15 +1,8 @@
 <script>
 import { useStore } from "vuex";
 import router from "@/router";
-import { register } from "swiper/element/bundle";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
 import Swiper from "./details-swiper/Swiper.vue";
-
-register();
+import ProjectReference from "./ProjectReference.vue";
 
 export default {
   data() {
@@ -30,10 +23,25 @@ export default {
     dataItem() {
       return this.store.state.item;
     },
+
+    referencesData() {
+      const liveUrl = this.dataItem.liveUrl;
+      const repoUrl = this.dataItem.repoUrl;
+
+      if (liveUrl && repoUrl) {
+        return [
+          { title: "Live Page", url: liveUrl },
+          { title: "Repository Page", url: repoUrl },
+        ];
+      }
+
+      return [];
+    },
   },
 
   components: {
-    Swiper
+    Swiper,
+    ProjectReference,
   },
 
   mounted() {
@@ -58,40 +66,19 @@ export default {
 
     <Swiper :dataItem="dataItem" />
 
-    <div class="project__references">
-      <h2>Live page:</h2>
-      <a class="project__link" target="_blank" :href="dataItem.liveUrl">{{
-        dataItem.liveUrl
-      }}</a>
-    </div>
-    <div class="project__references">
-      <h2>Repository page:</h2>
-      <a class="project__link" target="_blank" :href="dataItem.repoUrl">{{
-        dataItem.repoUrl
-      }}</a>
-    </div>
+    <ProjectReference
+      v-for="item of referencesData"
+      :title="item.title"
+      :urlLink="item.url"
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/mixins.scss";
-
 .project {
   &__text {
     padding: 40px 0;
     max-width: 600px;
-  }
-
-  &__references {
-    @include ellipsis;
-    margin: 30px 0;
-    max-width: 100%;
-  }
-
-  &__link {
-    color: var(--light-green-accent);
-    font-size: 18px;
-    text-decoration: none;
   }
 }
 </style>

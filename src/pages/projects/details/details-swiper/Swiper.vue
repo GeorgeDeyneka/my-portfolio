@@ -1,5 +1,13 @@
 <script>
 import SwiperSlide from "./SwiperSlide.vue";
+import { register } from "swiper/element/bundle";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
+
+register();
 
 export default {
   props: {
