@@ -1,6 +1,6 @@
 <script>
 import { Suspense } from "vue";
-import LoadSpinner from "../../components/LoadSpinner.vue";
+import LoadSpinner from "@/components/LoadSpinner.vue";
 import { defineAsyncComponent } from "vue";
 
 const ProjectsList = defineAsyncComponent(() =>

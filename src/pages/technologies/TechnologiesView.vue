@@ -1,17 +1,14 @@
 <script>
 import TechList from "./TechList.vue";
 import TechStack from "./content/TechStack.vue";
-import {
-  TECHNOLOGIES_SVG,
-  PARAGRAPH_CONTENT,
-} from "@/data/technologiesData";
+import { TECHNOLOGIES_SVG, PARAGRAPH_CONTENT } from "@/data/technologiesData";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     TechList,
-    TechStack
-},
+    TechStack,
+  },
 
   data() {
     return {
@@ -31,7 +28,7 @@ export default {
 
 <template>
   <div class="wrapper">
-    <TechStack :textData="textData"/>
+    <TechStack :textData="textData" />
 
     <div class="tech__experience experience">
       <h3 class="experience__subtitle">Experience</h3>

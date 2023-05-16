@@ -1,8 +1,17 @@
 <script>
 import { useStore } from "vuex";
 import router from "@/router";
-import Swiper from "./details-swiper/Swiper.vue";
-import ProjectReference from "./ProjectReference.vue";
+import LoadSpinner from "@/components/LoadSpinner.vue";
+import { Suspense } from "vue";
+import { defineAsyncComponent } from "vue";
+
+const Swiper = defineAsyncComponent(() =>
+  import("./details-swiper/Swiper.vue")
+);
+
+const ProjectReference = defineAsyncComponent(() =>
+  import("./ProjectReference.vue")
+);
 
 export default {
   data() {
@@ -42,6 +51,8 @@ export default {
   components: {
     Swiper,
     ProjectReference,
+    LoadSpinner,
+    Suspense,
   },
 
   mounted() {
@@ -60,21 +71,34 @@ export default {
 
 <template>
   <div class="wrapper">
-    <h1>{{ dataItem.title }}</h1>
+    <Suspense>
+      <template #default>
+        <div>
+          <h1>{{ dataItem.title }}</h1>
 
-    <p class="project__text">{{ dataItem.shortDesc }}</p>
+          <p class="project__text">{{ dataItem.shortDesc }}</p>
 
-    <Swiper :dataItem="dataItem" />
+          <Swiper :dataItem="dataItem" />
 
-    <ProjectReference
-      v-for="item of referencesData"
-      :title="item.title"
-      :urlLink="item.url"
-    />
+          <ProjectReference
+            v-for="item of referencesData"
+            :title="item.title"
+            :urlLink="item.url"
+          />
+        </div>
+      </template>
+      <template #fallback>
+        <LoadSpinner />
+      </template>
+    </Suspense>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  position: relative;
+  min-height: 600px;
+}
 .project {
   &__text {
     padding: 40px 0;
