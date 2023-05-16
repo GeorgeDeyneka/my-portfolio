@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import ButtonShowFullText from "@/components/buttons/ButtonShowFullText.vue";
 
 register();
 
@@ -34,6 +35,7 @@ export default {
         overflowX: "clip",
         overflowY: "visible",
       },
+      showTextFlag: false,
     };
   },
 
@@ -43,12 +45,20 @@ export default {
         return router.push({ name: "404-page" });
       }
     },
+
+    showFullDescription() {
+      return (this.showTextFlag = !this.showTextFlag);
+    },
   },
 
   computed: {
     dataItem() {
       return this.store.state.item;
     },
+  },
+
+  components: {
+    ButtonShowFullText,
   },
 
   mounted() {
@@ -80,9 +90,6 @@ export default {
       lazy="true"
       :navigation="true"
     >
-      <!-- :pagination="{
-        clickable: true,
-      }" -->
       <swiper-slide v-for="item of dataItem.imgUrls" lazy="true">
         <div class="project__slide slide">
           <img
@@ -92,15 +99,25 @@ export default {
             loading="lazy"
           />
           <div class="slide__description">
-            <ul class="slide__list">
-              <li class="slide__item" v-for="text of item.description">
-                {{ text }}
-              </li>
-            </ul>
+            <div
+              class="slide__list-wrapper"
+              :class="showTextFlag ? 'full-list' : 'short-list'"
+            >
+              <ul class="slide__list">
+                <li class="slide__item" v-for="text of item.description">
+                  {{ text }}
+                </li>
+              </ul>
+              <ButtonShowFullText
+                class="slide__show-btn"
+                @click="showFullDescription"
+              />
+            </div>
           </div>
         </div>
       </swiper-slide>
     </swiper-container>
+
     <div class="project__references">
       <h2>Live page:</h2>
       <a class="project__link" target="_blank" :href="dataItem.liveUrl">{{
@@ -118,6 +135,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/mixins.scss";
+
 .project {
   &__text {
     padding: 40px 0;
@@ -136,31 +154,45 @@ export default {
     text-decoration: none;
   }
 }
+
 .slide {
   background-color: var(--dark-gray-swiper-bg);
   margin: 50px 0;
 
   &__description {
     position: relative;
-    min-height: 86px;
+    min-height: 16px;
+  }
+
+  &__image {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid var(--gray-skeleton);
+    border-bottom: none;
+  }
+
+  &__show-btn {
+    position: absolute;
+    right: 10px;
+    top: 2px;
   }
 
   &__list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    margin: 25px 0;
-    padding: 0 30px 10px;
-    border-radius: 4px;
-    overflow: hidden;
-    max-height: 68px;
-    background-color: var(--dark-gray-swiper-bg);
-    transition: max-height 300ms ease-out;
+    padding: 0 10px;
+    margin: 0;
 
-    &:hover {
-      max-height: 200px;
-      overflow: auto;
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border: 1px solid var(--gray-skeleton);
+      border-top: none;
+      padding: 0 55px 0px 20px;
+      border-radius: 0 0 4px 4px;
+      overflow: hidden;
+      max-height: 60px;
+      background-color: var(--dark-gray-swiper-bg);
+      transition: max-height 300ms ease-out;
     }
   }
 
@@ -171,15 +203,40 @@ export default {
   }
 }
 
+.full-list {
+  display: block;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.short-list {
+  // display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 768px) {
   .slide {
     margin: 35px 60px;
     border-radius: 4px;
     min-height: auto;
-    padding: 10px 0;
 
     &__image {
-      padding: 0 10px;
+      padding: 10px 0;
+    }
+
+    &__description {
+      min-height: 56px;
+    }
+
+    &__list {
+      &-wrapper {
+        margin-bottom: 25px;
+        padding: 2px 55px 10px 30px;
+        min-height: 68px;
+      }
     }
   }
 }
