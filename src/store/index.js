@@ -37,6 +37,10 @@ export default createStore({
     setItem(state, item) {
       state.item = item;
     },
+
+    resetItem(state) {
+      state.item = {};
+    },
   },
 
   getters: {
@@ -55,9 +59,18 @@ export default createStore({
     },
 
     async fetchItem({ commit }, id) {
-      const snapshot = await db.ref("projects").once("value");
-      const item = Object.values(snapshot.val()).find((elem) => elem.id == id);
-      commit("setItem", item);
+      const snapshot = await db
+        .ref("projects")
+        .orderByChild("id")
+        .equalTo(id)
+        .once("value");
+
+      if (!snapshot.val()) {
+        return null;
+      }
+
+      const item = Object.values(snapshot.val())[0];
+      return commit("setItem", item);
     },
   },
 });

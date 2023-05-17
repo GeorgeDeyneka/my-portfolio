@@ -1,49 +1,32 @@
 <script>
-import ProjectItem from "./ProjectItem.vue";
-import { defineComponent, computed, ref } from "vue";
-import { useStore } from "vuex";
-import LoadSpinner from "../../components/LoadSpinner.vue";
+import { Suspense } from "vue";
+import LoadSpinner from "@/components/LoadSpinner.vue";
+import { defineAsyncComponent } from "vue";
 
-export default defineComponent({
-  setup() {
-    const store = useStore();
-    const arrProjects = computed(() => store.state.items);
+const ProjectsList = defineAsyncComponent(() =>
+  import("@/pages/projects/ProjectsList.vue")
+);
 
-    return {
-      arrProjects,
-    };
-  },
-
-  data() {
-    return {
-      loading: true,
-    };
-  },
-
-  mounted() {
-    this.$store.dispatch("fetchItems").then(() => {
-      this.loading = false;
-    });
-  },
-
+export default {
   components: {
-    ProjectItem,
     LoadSpinner,
+    ProjectsList,
+    Suspense,
   },
-});
+};
 </script>
 
 <template>
   <div class="wrapper">
-    <LoadSpinner v-if="loading" />
-    <h1 class="projects__title">Projects I have worked on:</h1>
-    <div class="projects__wrapper">
-      <ProjectItem
-        v-for="item of arrProjects"
-        :projectItem="item"
-        :key="item"
-      />
-    </div>
+    <h1>Projects I have worked on:</h1>
+    <Suspense>
+      <template #default>
+        <ProjectsList />
+      </template>
+      <template #fallback>
+        <LoadSpinner />
+      </template>
+    </Suspense>
   </div>
 </template>
 
@@ -51,18 +34,5 @@ export default defineComponent({
 .wrapper {
   position: relative;
   min-height: 600px;
-}
-.projects {
-  &__title {
-    padding: 20px 0;
-  }
-
-  &__wrapper {
-    display: grid;
-    justify-content: center;
-    padding: 35px 0;
-    gap: 35px;
-    grid-template-columns: repeat(auto-fill, 312px);
-  }
 }
 </style>

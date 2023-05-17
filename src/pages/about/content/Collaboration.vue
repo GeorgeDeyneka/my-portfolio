@@ -1,13 +1,13 @@
 <script>
 import ButtonLink from "../../../components/buttons/ButtonLink.vue";
 import ButtonNav from "../../../components/buttons/ButtonNav.vue";
-import { BUTTON_DATA } from "/src/data/buttonsData";
+import { BUTTON_DATA } from "@/data/buttonsData";
 
 export default {
   data() {
     return {
-      BtnGetIn: BUTTON_DATA.getInTouch,
-      BtnHire: BUTTON_DATA.hireMe,
+      btnGetIn: BUTTON_DATA.getInTouch,
+      btnHire: BUTTON_DATA.hireMe,
     };
   },
 
@@ -20,12 +20,12 @@ export default {
 
 <template>
   <div class="collab">
-    <h3 class="collab__subtitle">Collaboration</h3>
+    <h3>Collaboration</h3>
     <h2 class="collab__title">Lets talk to Collaboration!</h2>
 
     <div class="collab__buttons">
-      <ButtonNav :text="BtnGetIn.text" :route="BtnGetIn.link" />
-      <ButtonLink :text="BtnHire.text" :link="BtnHire.link" />
+      <ButtonNav :text="btnGetIn.text" :route="btnGetIn.link" />
+      <ButtonLink :text="btnHire.text" :link="btnHire.link" />
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 0 150px;
 
   &__title {
     font-size: 45px;
@@ -43,10 +43,6 @@ export default {
     max-width: 650px;
     text-align: center;
     line-height: 1.3;
-  }
-
-  &__subtitle {
-    color: #61cf9e;
   }
 
   &__buttons {

@@ -1,3 +1,14 @@
+export const PARAGRAPH_CONTENT = [
+  {
+    content:
+      "Here are the technologies with which I have worked and have some experience. You will see the main stack, frameworks, databases, libraries and more.",
+  },
+  {
+    content:
+      "This means that I am ready to work on a project if it contains the following technologies, or create a project from scratch and implement these technologies.",
+  },
+];
+
 export const TECHNOLOGIES_SVG = [
   {
     title: "Frameworks",
@@ -13,6 +24,10 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Nest.js",
         path: "#icon-nest",
+      },
+      {
+        name: "Node.js",
+        path: "#icon-node-js",
       },
     ],
   },
@@ -61,6 +76,10 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Angular Material",
         path: "#icon-ang-mat",
+      },
+      {
+        name: "Vuex",
+        path: "#icon-vuex",
       },
       {
         name: "jQuery",
@@ -131,7 +150,8 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "GitHub",
         path: "#icon-github",
-        hoverColor: "#fff"
+        fillColor: "#fff",
+        hoverColor: "#fff",
       },
     ],
   },
@@ -146,7 +166,10 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Webpack",
         path: "#icon-webpack",
-        width: '225px'
+      },
+      {
+        name: "Vite",
+        path: "#icon-vite",
       },
     ],
   },

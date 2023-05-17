@@ -3,12 +3,27 @@ export default {
   props: {
     item: {
       type: Object,
-      required: true,
+      required: false,
+    },
+
+    stringPath: {
+      type: String,
+      required: false,
     },
 
     size: {
       type: Number,
       default: 50,
+    },
+
+    hoverColor: {
+      type: String,
+      required: false,
+    },
+
+    fillColor: {
+      type: String,
+      required: false,
     },
   },
 };
@@ -17,25 +32,34 @@ export default {
 <template>
   <svg
     :style="{
-      '--hover-color': item?.hoverColor,
-      width: item.width || `${size}px`,
+      '--fill-color': fillColor || item?.fillColor,
+      '--hover-color': hoverColor || item?.hoverColor || 'var(--fill-color)',
+      width: `${size}px`,
       height: `${size}px`,
     }"
     class="icon-svg"
   >
-    <use :href="item.path"></use>
+    <use :href="stringPath || item.path"></use>
   </svg>
 </template>
 
 <style lang="scss" scoped>
+@mixin svg-hover {
+  transition: fill 200ms ease-in;
+  fill: var(--hover-color);
+}
+
 .icon-svg {
   display: block;
-  fill: #fff;
   flex-shrink: 0;
+  fill: var(--fill-color);
 
   &:hover {
-    transition: fill 200ms ease-in;
-    fill: var(--hover-color);
+    @include svg-hover;
   }
+}
+
+.hovered {
+  @include svg-hover;
 }
 </style>

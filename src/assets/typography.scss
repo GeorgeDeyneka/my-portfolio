@@ -55,6 +55,22 @@
 }
 
 p {
+  font-size: 17px;
+  color: var(--gray-text);
+  padding: 12px 0;
+}
+
+h1 {
+  padding: 20px 0;
+}
+
+h3 {
+  color: var(--light-green-accent);
+}
+
+h4 {
   font-size: 18px;
-  color: #aaa;
+  padding: 15px 0;
+  font-weight: 400;
+  color: var(--gray-text);
 }

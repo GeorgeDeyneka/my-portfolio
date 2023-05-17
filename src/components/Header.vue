@@ -41,19 +41,30 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/variables.scss";
 
-@media (min-width: 320px) {
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
 
-  .header {
-    font-family: Poppins;
-  }
+.header {
+  background-color: var(--black-header-bg);
+  top: 0;
+  position: sticky;
+  z-index: 900;
+  font-family: Poppins;
 }
 
 @media (min-width: 768px) {
+  .container {
+    padding: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
   .container {
     padding: 20px 0;
   }

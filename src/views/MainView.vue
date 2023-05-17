@@ -1,17 +1,25 @@
 <script>
 import { RouterView } from "vue-router";
-import HeaderVue from "../components/Header.vue";
+import Header from "../components/Header.vue";
 import store from "../store";
 import { debounce } from "lodash";
+import Footer from "../components/Footer.vue";
 
 export default {
   components: {
-    HeaderVue,
+    Header,
     RouterView,
+    Footer,
   },
 
   mounted() {
     window.addEventListener("resize", this.updateScreenWidth);
+  },
+
+  updated() {
+    this.$nextTick(() => {
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "instant" }), 200);
+    });
   },
 
   beforeUnmount() {
@@ -27,29 +35,43 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <HeaderVue />
-    <RouterView />
-  </div>
+  <Header />
+  <main class="main">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </main>
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 320px) {
-  .container {
-    padding: 24px;
-  }
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 200ms ease-out;
+}
+.main {
+  padding: 24px;
+  flex: 1 1 auto;
+  width: 100%;
+  padding-top: 0;
 }
 
 @media (min-width: 768px) {
-  .container {
-    padding: 24px 40px;
+  .main {
     max-width: 1100px;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .main {
     padding: 0;
   }
 }

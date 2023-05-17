@@ -2,9 +2,10 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import VueLazyload from "vue-lazyload";
 import router from "./router";
-import "./assets/main.css";
 import SvgSprite from "./components/icons/SvgSprite.vue";
 import store from "./store";
+import "./assets/main.css";
+import "@/assets/variables.scss";
 
 const app = createApp(App);
 

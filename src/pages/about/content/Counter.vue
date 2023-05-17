@@ -60,31 +60,29 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "/src/assets/keyframes.scss";
+@import "@/assets/keyframes.scss";
 
-@media (min-width: 320px) {
-  .count {
-    text-align: center;
-    max-width: fit-content;
-    padding: 10px;
+.count {
+  text-align: center;
+  max-width: fit-content;
+  padding: 10px;
 
-    &__plus {
-      font-size: 50px;
-      font-weight: 600;
-      color: #75fa7f;
-      opacity: 0;
-      animation: fade-in 2s 1s ease-out forwards;
-    }
+  &__plus {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--green-accent);
+    opacity: 0;
+    animation: fade-in 2s 1s ease-out forwards;
+  }
 
-    &__number {
-      font-size: 50px;
-      font-weight: 600;
-      display: inline-block;
-    }
+  &__number {
+    font-size: 50px;
+    font-weight: 600;
+    display: inline-block;
+  }
 
-    &__text {
-      font-size: inherit;
-    }
+  &__text {
+    font-size: inherit;
   }
 }
 </style>

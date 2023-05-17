@@ -1,10 +1,10 @@
 <script>
-import ContactList from "./ContactList.vue";
+import ContactsList from "./ContactsList.vue";
 import { CONTACTS_LINKS } from "../../data/contactsData";
 
 export default {
   components: {
-    ContactList,
+    ContactsList,
   },
 
   data() {
@@ -16,17 +16,11 @@ export default {
 </script>
 
 <template>
-  <h1 class="cont__title">My Contacts</h1>
+  <div class="wrapper">
+    <h1>My Contacts</h1>
 
-  <ContactList :arrData="contactData" />
-
-
+    <ContactsList :arrData="contactData" />
+  </div>
 </template>
 
-<style lang="scss" scoped>
-.cont {
-  &__title {
-    padding: 20px 0;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

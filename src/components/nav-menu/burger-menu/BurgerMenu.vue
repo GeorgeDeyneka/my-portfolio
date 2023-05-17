@@ -1,5 +1,5 @@
 <script>
-import { ARR_ROUTES } from "/src/data/routesData";
+import { ARR_ROUTES } from "@/data/routesData";
 import CloseBtn from "./CloseBtn.vue";
 import OpenBtn from "./OpenBtn.vue";
 
@@ -52,12 +52,12 @@ export default {
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 300px;
   top: 0;
   left: 0;
   gap: 35px;
-  background-color: #000000;
+  background-color: var(--black);
   transform: translateX(-100%);
   transition: transform 0.4s ease-out;
   z-index: 1000;
@@ -82,7 +82,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 999;

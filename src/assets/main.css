@@ -1,8 +1,7 @@
-@import "./variables.scss";
 @import "./typography.scss";
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   color: var(--white);
   background-color: var(--black);
   transition: color 0.5s, background-color 0.5s;
@@ -21,7 +20,13 @@ body {
   font-size: 18px;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .nav-link-active {
-  border-bottom: 3px solid #61cf9e;
+  border-bottom: 3px solid var(--light-green-accent);
   max-width: fit-content;
 }

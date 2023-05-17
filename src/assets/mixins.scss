@@ -2,7 +2,7 @@
   width: 40px;
   height: 4px;
   border-radius: 2px;
-  background-color: #61cf9e;
+  background-color: var(--light-green-accent);
 }
 
 @mixin burger-button {
@@ -12,4 +12,10 @@
   border: none;
   background-color: transparent;
   flex-shrink: 0;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

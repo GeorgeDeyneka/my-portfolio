@@ -53,11 +53,12 @@ export default {
   color: var(--white);
   font-weight: 500;
   transition: background-color 200ms ease-in;
+  white-space: nowrap;
   cursor: pointer;
   max-width: fit-content;
 
   &:hover {
-    background-color: #1d1d1e;
+    background-color: var(--light-gray-hover);
   }
 }
 </style>

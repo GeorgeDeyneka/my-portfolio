@@ -4,14 +4,15 @@ import SvgSprite from "./components/icons/SvgSprite.vue";
 
 export default {
   components: {
-SvgSprite
-  }
-}
+    SvgSprite,
+  },
+};
 </script>
 
 <template>
   <RouterView />
-  <SvgSprite/>
+  <SvgSprite />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+</style>
