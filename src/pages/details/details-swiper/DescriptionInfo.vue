@@ -16,8 +16,12 @@ export default {
   },
 
   methods: {
+    handleClick() {
+      this.$refs["btn-show"].$el.click();
+    },
+
     showFullDescription() {
-      return (this.showTextFlag = !this.showTextFlag);
+      this.showTextFlag = !this.showTextFlag;
     },
   },
 
@@ -32,16 +36,21 @@ export default {
     <div
       class="description__wrapper"
       :class="showTextFlag ? 'full-list' : 'short-list'"
+      @click="handleClick"
     >
       <ul class="list">
         <li class="list__item" v-for="(text, index) of textData">
           <span class="list__hint" v-if="!showTextFlag && index === 0"
-            >(Click on the arrow and scroll)</span
+            >(Click and scroll)</span
           >
           {{ text }}
         </li>
       </ul>
-      <ButtonShowFullText class="list__btn-show" @click="showFullDescription" />
+      <ButtonShowFullText
+        ref="btn-show"
+        class="list__btn-show"
+        @click.stop="showFullDescription"
+      />
     </div>
   </div>
 </template>
@@ -55,11 +64,12 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 10;
     border: 1px solid var(--gray-skeleton);
     border-top: none;
     padding: 0 55px 0px 20px;
     border-radius: 0 0 4px 4px;
+    cursor: pointer;
     overflow: hidden;
     max-height: 60px;
     background-color: var(--dark-gray-swiper-bg);
@@ -83,6 +93,7 @@ export default {
 
   &__btn-show {
     position: absolute;
+    z-index: 12;
     right: 10px;
     top: 2px;
   }
