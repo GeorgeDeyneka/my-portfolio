@@ -6,7 +6,7 @@ export const CONTACTS_LINKS = [
     hoverColor: "#42abff",
   },
   {
-    link: "https://www.linkedin.com/in/george-deyneka-910003238/?locale=en_US",
+    link: "https://www.linkedin.com/in/george-deyneka/",
     path: "#icon-linked-in",
     title: "George Deyneka",
     hoverColor: "#0B66C2",
