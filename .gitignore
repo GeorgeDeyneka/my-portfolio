@@ -29,8 +29,6 @@ coverage
 
 # Firebase
 .firebase
-.firebaserc
-firebase.json
 database.rules.json
 
 # Other
