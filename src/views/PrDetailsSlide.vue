@@ -2,6 +2,10 @@
 import PrDetailsSlideDesc from "@/views/PrDetailsSlideDesc.vue";
 
 export default {
+  components: {
+    PrDetailsSlideDesc,
+  },
+
   props: {
     infoItem: {
       type: Object,
@@ -12,10 +16,6 @@ export default {
       type: Number,
       required: true,
     },
-  },
-
-  components: {
-    PrDetailsSlideDesc,
   },
 };
 </script>
@@ -30,7 +30,7 @@ export default {
         alt="project-demo"
         loading="lazy"
       />
-      <PrDetailsSlideDesc :textData="infoItem.description" />
+      <PrDetailsSlideDesc :text-data="infoItem.description" />
     </div>
   </swiper-slide>
 </template>

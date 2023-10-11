@@ -149,9 +149,7 @@ export const TECHNOLOGIES_SVG = [
       },
       {
         name: "GitHub",
-        path: "#icon-github",
-        fillColor: "#fff",
-        hoverColor: "#fff",
+        path: "#icon-github-bw",
       },
     ],
   },

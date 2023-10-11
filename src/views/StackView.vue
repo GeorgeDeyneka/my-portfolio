@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <StackDesc :textData="textData" />
+    <StackDesc :text-data="textData" />
 
     <div class="tech__experience experience">
       <h3 class="experience__subtitle">Experience</h3>
@@ -8,10 +8,10 @@
 
       <StackList
         v-for="item of techData"
-        :iconSize="iconSize"
         :key="item"
+        :icon-size="iconSize"
         :title="item.title"
-        :arrData="item.data"
+        :arr-data="item.data"
       />
     </div>
   </div>
@@ -26,7 +26,7 @@ import { mapGetters } from "vuex";
 export default {
   components: {
     StackDesc,
-    StackList
+    StackList,
   },
 
   data() {

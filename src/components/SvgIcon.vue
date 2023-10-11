@@ -1,28 +1,23 @@
 <template>
   <svg
     :style="{
-      '--fill-color': fillColor || item?.fillColor,
-      '--hover-color': hoverColor || item?.hoverColor || 'var(--fill-color)',
+      '--fill-color': fillColor,
+      '--hover-color': hoverColor,
       width: `${size}px`,
       height: `${size}px`,
     }"
     class="icon-svg"
   >
-    <use :href="stringPath || item.path"></use>
+    <use :href="stringPath" />
   </svg>
 </template>
 
 <script>
 export default {
   props: {
-    item: {
-      type: Object,
-      required: false,
-    },
-
     stringPath: {
       type: String,
-      required: false,
+      required: true,
     },
 
     size: {
@@ -32,12 +27,12 @@ export default {
 
     hoverColor: {
       type: String,
-      required: false,
+      default: null,
     },
 
     fillColor: {
       type: String,
-      required: false,
+      default: null,
     },
   },
 };

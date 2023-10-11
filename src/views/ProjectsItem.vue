@@ -4,8 +4,8 @@
       <img
         class="project__image"
         :src="projectItem.imgUrls[0].url"
-        @load="onImageLoad"
         alt=""
+        @load="onImageLoad"
       />
       <div class="project__info">
         <h4 v-if="showTitle">{{ projectItem.title }}</h4>

@@ -6,10 +6,10 @@
 
     <nav class="navbar__list">
       <RouterLink
-        class="nav-link navbar__link"
-        exact-active-class="nav-link-active"
         v-for="route of arrRoutes"
         :key="route"
+        class="nav-link navbar__link"
+        exact-active-class="nav-link-active"
         :to="route.path"
         @click="toggleMenu"
         >{{ route.name }}</RouterLink
@@ -17,7 +17,7 @@
     </nav>
   </div>
 
-  <div v-if="isOpen" @click="toggleMenu" class="navbar__overlay"></div>
+  <div v-if="isOpen" class="navbar__overlay" @click="toggleMenu"></div>
 </template>
 
 <script>
@@ -26,6 +26,11 @@ import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
 
 export default {
+  components: {
+    MenuBtnClose,
+    MenuBtnOpen,
+  },
+
   data() {
     return {
       isOpen: false,
@@ -38,11 +43,6 @@ export default {
       this.isOpen = !this.isOpen;
       document.body.style.overflow = this.isOpen ? "hidden" : "";
     },
-  },
-
-  components: {
-    MenuBtnClose,
-    MenuBtnOpen,
   },
 };
 </script>

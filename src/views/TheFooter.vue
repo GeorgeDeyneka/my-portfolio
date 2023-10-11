@@ -7,12 +7,12 @@
 
       <ul class="footer__item network">
         <ContactItem
-          fillColor="#c3c3c3"
-          hoverColor="#75fa7f"
-          :showTitle="false"
           v-for="item of contactData"
           :key="item"
-          :linkItem="item"
+          fill-color="#c3c3c3"
+          hover-color="#75fa7f"
+          :show-title="false"
+          :link-item="item"
         />
       </ul>
 
@@ -30,19 +30,18 @@ import ButtonLink from "@/components/ButtonLink.vue";
 import ContactItem from "@/components/ContactItem.vue";
 
 export default {
+  components: {
+    ButtonLink,
+    ContactItem,
+  },
   data() {
     return {
       contactData: CONTACTS_LINKS,
       btnHire: BUTTON_DATA.hireMe,
     };
   },
-  components: {
-    ButtonLink,
-    ContactItem
-  },
 };
 </script>
-
 
 <style lang="scss" scoped>
 .footer {

@@ -1,11 +1,11 @@
 <template>
   <button class="btn" @click="rotateIcon">
     <SvgIcon
-      stringPath="#icon-arrow"
+      string-path="#icon-arrow"
       class="icon"
       :size="24"
-      fillColor="var(--light-green-accent)"
-      hoverColor="var(--light-green-accent)"
+      fill-color="var(--light-green-accent)"
+      hover-color="var(--light-green-accent)"
       :class="{ rotate: rotateFlag }"
     />
   </button>
@@ -15,17 +15,19 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 
 export default {
+  components: { SvgIcon },
+
   data() {
     return {
       rotateFlag: false,
     };
   },
+  
   methods: {
     rotateIcon() {
       return (this.rotateFlag = !this.rotateFlag);
     },
   },
-  components: { SvgIcon },
 };
 </script>
 

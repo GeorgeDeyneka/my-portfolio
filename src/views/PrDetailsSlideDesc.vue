@@ -6,8 +6,8 @@
       @click="handleClick"
     >
       <ul class="list">
-        <li class="list__item" v-for="(text, index) of textData" :key="index">
-          <span class="list__hint" v-if="!showTextFlag && index === 0"
+        <li v-for="(text, index) of textData" :key="index" class="list__item">
+          <span v-if="!showTextFlag && index === 0" class="list__hint"
             >(Click and scroll)</span
           >
           {{ text }}
@@ -27,6 +27,10 @@
 import ButtonShowText from "@/components/ButtonShowText.vue";
 
 export default {
+  components: {
+    ButtonShowText,
+  },
+
   props: {
     textData: {
       type: Array,
@@ -48,10 +52,6 @@ export default {
     showFullDescription() {
       this.showTextFlag = !this.showTextFlag;
     },
-  },
-
-  components: {
-    ButtonShowText,
   },
 };
 </script>

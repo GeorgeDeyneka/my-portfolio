@@ -1,6 +1,11 @@
 <template>
   <ul class="contacts__list">
-    <ContactItem v-for="item of arrData" :linkItem="item" :key="item" />
+    <ContactItem
+      v-for="item of arrData"
+      :key="item"
+      :hover-color="item.hoverColor"
+      :link-item="item"
+    />
   </ul>
 </template>
 
@@ -8,15 +13,15 @@
 import ContactItem from "@/components/ContactItem.vue";
 
 export default {
+  components: {
+    ContactItem,
+  },
+
   props: {
     arrData: {
       type: Array,
       required: true,
     },
-  },
-
-  components: {
-    ContactItem,
   },
 };
 </script>

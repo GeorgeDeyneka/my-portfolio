@@ -1,17 +1,16 @@
 <script>
 export default {
-  data() {
-    return {
-      count: 0,
-    };
-  },
-
   props: {
     item: {
       required: true,
       type: Object,
       visible: false,
     },
+  },
+  data() {
+    return {
+      count: 0,
+    };
   },
 
   mounted() {
@@ -28,11 +27,11 @@ export default {
   },
 
   methods: {
-    checkVisible(entries, observer) {
+    checkVisible(entries) {
       const entry = entries.find((entry) => entry.isIntersecting);
 
       if (entry && !this.visible) {
-        this.startCount(this.item.endNum, 1500);
+        this.startCount(this.item.endNum, 1000);
         this.visible = true;
       }
     },
@@ -52,7 +51,7 @@ export default {
 </script>
 
 <template>
-  <div class="count" ref="counter">
+  <div ref="counter" class="count">
     <h2 class="count__number" v-html="count"></h2>
     <span class="count__plus">+</span>
     <p class="count__text">{{ item.title }}</p>

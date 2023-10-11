@@ -10,17 +10,17 @@
 
           <p class="project__text">{{ dataItem.shortDesc }}</p>
 
-          <PrDetailsSwiper :dataItem="dataItem" />
+          <PrDetailsSwiper :data-item="dataItem" />
 
           <div
-            class="project__links"
             v-if="dataItem.liveUrl && dataItem.repoUrl"
+            class="project__links"
           >
             <PrDetailsReferences
               v-for="item of referencesData"
               :key="item"
               :title="item.title"
-              :urlLink="item.url"
+              :url-link="item.url"
             />
           </div>
         </div>
@@ -40,20 +40,20 @@ import LoadSpinner from "@/components/LoadSpinner.vue";
 import ButtonBack from "@/components/ButtonBack.vue";
 
 const PrDetailsSwiper = defineAsyncComponent(() =>
-  import("@/views/PrDetailsSwiper.vue")
+  import("@/views/PrDetailsSwiper.vue"),
 );
 
 const PrDetailsReferences = defineAsyncComponent(() =>
-  import("@/views/PrDetailsReferences.vue")
+  import("@/views/PrDetailsReferences.vue"),
 );
 
 export default {
-  methods: {
-    checkItemAndRedirect(resp) {
-      if (resp === null) {
-        return this.$router.push({ name: "not-found" });
-      }
-    },
+  components: {
+    PrDetailsSwiper,
+    PrDetailsReferences,
+    LoadSpinner,
+    ButtonBack,
+    Suspense,
   },
 
   computed: {
@@ -69,14 +69,6 @@ export default {
     },
   },
 
-  components: {
-    PrDetailsSwiper,
-    PrDetailsReferences,
-    LoadSpinner,
-    ButtonBack,
-    Suspense,
-  },
-
   mounted() {
     this.$store
       .dispatch("fetchItem", Number(this.$route.params.id))
@@ -87,6 +79,13 @@ export default {
 
   beforeUnmount() {
     return this.$store.commit("resetItem");
+  },
+  methods: {
+    checkItemAndRedirect(resp) {
+      if (resp === null) {
+        return this.$router.push({ name: "not-found" });
+      }
+    },
   },
 };
 </script>

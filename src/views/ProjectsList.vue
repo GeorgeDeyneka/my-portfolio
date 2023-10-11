@@ -1,6 +1,10 @@
 <template>
   <div class="list-wrapper">
-    <ProjectsItem v-for="item of arrProjects" :projectItem="item" :key="item" />
+    <ProjectsItem
+      v-for="item of arrProjects"
+      :key="item"
+      :project-item="item"
+    />
   </div>
 </template>
 
@@ -8,8 +12,8 @@
 import ProjectsItem from "@/views/ProjectsItem.vue";
 
 export default {
-  mounted() {
-    this.$store.dispatch("fetchItems");
+  components: {
+    ProjectsItem,
   },
 
   computed: {
@@ -18,8 +22,8 @@ export default {
     },
   },
 
-  components: {
-    ProjectsItem,
+  mounted() {
+    this.$store.dispatch("fetchItems");
   },
 };
 </script>

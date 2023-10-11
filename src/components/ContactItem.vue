@@ -9,10 +9,10 @@
       @mouseleave="hoverChild"
     >
       <SvgIcon
-        :fillColor="fillColor"
+        :fill-color="fillColor"
         :class="{ hovered: isChildHover }"
-        :hoverColor="hoverColor"
-        :item="linkItem"
+        :hover-color="hoverColor"
+        :string-path="linkItem.path"
       />
       <h2 v-if="showTitle" class="cont__subtitle">{{ linkItem.title }}</h2>
     </a>
@@ -23,6 +23,8 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 
 export default {
+  components: { SvgIcon },
+
   props: {
     linkItem: {
       required: true,
@@ -56,8 +58,6 @@ export default {
       this.isChildHover = !this.isChildHover;
     },
   },
-
-  components: { SvgIcon },
 };
 </script>
 

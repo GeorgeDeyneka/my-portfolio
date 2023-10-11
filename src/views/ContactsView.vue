@@ -2,7 +2,7 @@
   <div class="wrapper">
     <h1>My Contacts</h1>
 
-    <ContactsList :arrData="contactData" />
+    <ContactsList :arr-data="contactData" />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <swiper-container
     :style="swiperStyles"
-    :spaceBetween="50"
+    :space-between="50"
     :keyboard="{
       enabled: true,
     }"
@@ -9,10 +9,10 @@
     :navigation="true"
   >
     <PrDetailsSlide
-      :imageHeight="minSlideHeight"
       v-for="item of dataItem.imgUrls"
       :key="item"
-      :infoItem="item"
+      :image-height="minSlideHeight"
+      :info-item="item"
     />
   </swiper-container>
 </template>
@@ -30,20 +30,14 @@ import "swiper/css/thumbs";
 register();
 
 export default {
+  components: {
+    PrDetailsSlide,
+  },
+
   props: {
     dataItem: {
       type: Object,
       required: true,
-    },
-  },
-
-  computed: {
-    ...mapGetters(["screenWidth"]),
-    minSlideHeight() {
-      if (this.screenWidth >= 1200) {
-        return 1200 * 0.4;
-      }
-      return this.screenWidth * 0.4;
     },
   },
 
@@ -59,8 +53,14 @@ export default {
     };
   },
 
-  components: {
-    PrDetailsSlide,
+  computed: {
+    ...mapGetters(["screenWidth"]),
+    minSlideHeight() {
+      if (this.screenWidth >= 1200) {
+        return 1200 * 0.4;
+      }
+      return this.screenWidth * 0.4;
+    },
   },
 };
 </script>

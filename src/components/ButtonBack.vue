@@ -3,8 +3,8 @@
     <SvgIcon
       class="icon"
       :size="30"
-      stringPath="#icon-arrow"
-      fillColor="var(--white)"
+      string-path="#icon-arrow"
+      fill-color="var(--white)"
     />
     {{ text }}
   </RouterLink>
@@ -14,18 +14,19 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 
 export default {
+  components: { SvgIcon },
+
   props: {
     text: {
       type: String,
       default: "",
     },
+
     route: {
       type: String,
       required: true,
     },
   },
-
-  components: { SvgIcon },
 };
 </script>
 

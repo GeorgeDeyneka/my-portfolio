@@ -2,9 +2,9 @@
   <nav class="menu__nav">
     <RouterLink
       v-for="route of arrRoutes"
+      :key="route"
       class="nav-link"
       exact-active-class="nav-link-active"
-      :key="route"
       :to="route.path"
       >{{ route.name }}</RouterLink
     >
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ARR_ROUTES } from "@/data/routesData"
+import { ARR_ROUTES } from "@/data/routesData";
 
 export default {
   data() {

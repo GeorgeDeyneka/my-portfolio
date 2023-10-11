@@ -16,16 +16,16 @@ import ButtonNav from "@/components/ButtonNav.vue";
 import { BUTTON_DATA } from "@/data/buttonsData";
 
 export default {
+  components: {
+    ButtonNav,
+    ButtonLink,
+  },
+
   data() {
     return {
       btnGetIn: BUTTON_DATA.getInTouch,
       btnHire: BUTTON_DATA.hireMe,
     };
-  },
-
-  components: {
-    ButtonNav,
-    ButtonLink,
   },
 };
 </script>

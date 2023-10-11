@@ -2,8 +2,8 @@
   <h2>{{ title }}:</h2>
 
   <ul class="tech__logos">
-    <li class="tech__item" v-for="item of arrData" :key="item">
-      <SvgIcon :item="item" :size="iconSize" />
+    <li v-for="item of arrData" :key="item" class="tech__item">
+      <SvgIcon :size="iconSize" :string-path="item.path" />
       <p class="tech__name">{{ item.name }}</p>
     </li>
   </ul>
@@ -13,10 +13,14 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 
 export default {
+  components: {
+    SvgIcon,
+  },
+
   props: {
     title: {
       type: String,
-      required: false,
+      required: true,
     },
 
     arrData: {
@@ -28,10 +32,6 @@ export default {
       type: Number,
       required: true,
     },
-  },
-
-  components: {
-    SvgIcon,
   },
 };
 </script>

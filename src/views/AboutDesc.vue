@@ -12,7 +12,7 @@
       </p>
 
       <div class="about__counter">
-        <Counter v-for="item of statistics" :item="item" :key="item"/>
+        <AboutCounter v-for="item of statistics" :key="item" :item="item" />
       </div>
     </div>
   </div>
@@ -20,22 +20,22 @@
 
 <script>
 import ButtonLink from "@/components/ButtonLink.vue";
-import Counter from "./AboutCounter.vue";
+import AboutCounter from "@/views/AboutCounter.vue";
 import { BUTTON_DATA } from "@/data/buttonsData";
 import { COUNT_STATISTICS, PARAGRAPH_CONTENT } from "@/data/aboutData";
 
 export default {
+  components: {
+    AboutCounter,
+    ButtonLink,
+  },
+
   data() {
     return {
       statistics: COUNT_STATISTICS,
       textData: PARAGRAPH_CONTENT,
       btnHire: BUTTON_DATA.hireMe,
     };
-  },
-
-  components: {
-    Counter,
-    ButtonLink,
   },
 };
 </script>
