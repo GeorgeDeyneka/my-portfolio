@@ -1,15 +1,28 @@
+<template>
+  <TheHeader />
+
+  <main class="main">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </main>
+
+  <TheFooter />
+</template>
+
 <script>
 import { RouterView } from "vue-router";
-import Header from "../components/Header.vue";
-import store from "../store";
 import { debounce } from "lodash";
-import Footer from "../components/Footer.vue";
+import TheHeader from "@/views/TheHeader.vue";
+import TheFooter from "@/views/TheFooter.vue";
 
 export default {
   components: {
-    Header,
-    RouterView,
-    Footer,
+    TheHeader,
+    TheFooter,
+    RouterView
   },
 
   mounted() {
@@ -28,23 +41,11 @@ export default {
 
   methods: {
     updateScreenWidth: debounce(function () {
-      store.commit("setScreenWidth", window.innerWidth);
+      this.$store.commit('setScreenWidth', window.innerWidth)
     }, 200),
   },
 };
 </script>
-
-<template>
-  <Header />
-  <main class="main">
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </main>
-  <Footer />
-</template>
 
 <style lang="scss" scoped>
 .fade-enter-from,
@@ -56,6 +57,7 @@ export default {
 .fade-leave-active {
   transition: opacity 200ms ease-out;
 }
+
 .main {
   padding: 24px;
   flex: 1 1 auto;

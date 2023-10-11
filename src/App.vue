@@ -1,6 +1,5 @@
 <script>
-import { RouterView } from "vue-router";
-import SvgSprite from "./components/icons/SvgSprite.vue";
+import SvgSprite from "@/views/SvgSprite.vue";
 
 export default {
   components: {

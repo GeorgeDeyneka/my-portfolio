@@ -22,8 +22,8 @@ export const TECHNOLOGIES_SVG = [
         path: "#icon-vue",
       },
       {
-        name: "Nest.js",
-        path: "#icon-nest",
+        name: "Nuxt.js",
+        path: "#icon-nuxt",
       },
       {
         name: "Node.js",
@@ -80,6 +80,10 @@ export const TECHNOLOGIES_SVG = [
       {
         name: "Vuex",
         path: "#icon-vuex",
+      },
+      {
+        name: "i18n",
+        path: "#icon-i18n",
       },
       {
         name: "jQuery",
@@ -149,9 +153,7 @@ export const TECHNOLOGIES_SVG = [
       },
       {
         name: "GitHub",
-        path: "#icon-github",
-        fillColor: "#fff",
-        hoverColor: "#fff",
+        path: "#icon-github-bw",
       },
     ],
   },
@@ -177,6 +179,10 @@ export const TECHNOLOGIES_SVG = [
   {
     title: "Package Managers",
     data: [
+      {
+        name: "Yarn",
+        path: "#icon-yarn",
+      },
       {
         name: "NPM",
         path: "#icon-npm",
