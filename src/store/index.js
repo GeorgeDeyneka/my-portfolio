@@ -51,6 +51,7 @@ export default createStore({
     async fetchItems({ commit }) {
       const items = [];
       const snapshot = await db.ref("projects").once("value");
+      // check db for address "projects-test/pet/ua"
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
         items.push(childData);
@@ -61,6 +62,7 @@ export default createStore({
     async fetchItem({ commit }, id) {
       const snapshot = await db
         .ref("projects")
+        // check db for address "projects-test/pet/ua"
         .orderByChild("id")
         .equalTo(id)
         .once("value");

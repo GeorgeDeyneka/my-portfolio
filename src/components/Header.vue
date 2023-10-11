@@ -39,8 +39,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/variables.scss";
-
 .container {
   display: flex;
   align-items: center;
