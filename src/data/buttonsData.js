@@ -7,10 +7,5 @@ export const BUTTON_DATA = {
   getInTouch: {
     text: "Get In Touch",
     link: "/contacts",
-  },
-
-  downloadCV: {
-    text: "Download CV",
-    link: "https://drive.google.com/u/1/uc?id=1xFofPXShHbUfT7SISAzqGvd3oOdeCYLY&export=download",
-  },
+  }
 };

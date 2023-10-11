@@ -1,7 +1,3 @@
-<script>
-export default {};
-</script>
-
 <template>
   <div class="spinner">
     <div class="spinner__circle"></div>
