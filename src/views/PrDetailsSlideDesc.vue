@@ -75,6 +75,7 @@ export default {
     max-height: 60px;
     background-color: var(--dark-gray-swiper-bg);
     transition: max-height 300ms ease-in;
+    min-width: 100%;
   }
 }
 
