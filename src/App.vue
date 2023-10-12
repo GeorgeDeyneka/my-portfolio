@@ -1,17 +1,16 @@
-<script>
+<script setup>
+import { useI18n } from "vue-i18n";
 import SvgSprite from "@/views/SvgSprite.vue";
 
-export default {
-  components: {
-    SvgSprite,
-  },
-};
+/* eslint-disable no-unused-vars */
+const { t } = useI18n({ useScope: "global" });
 </script>
 
 <template>
-  <RouterView />
-  <SvgSprite />
+  <div class="app">
+    <RouterView />
+    <SvgSprite />
+  </div>
 </template>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

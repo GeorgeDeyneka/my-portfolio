@@ -9,12 +9,19 @@
       >{{ route.name }}</RouterLink
     >
   </nav>
+
+  <LangSwitcher />
 </template>
 
 <script>
 import { ARR_ROUTES } from "@/data/routesData";
+import LangSwitcher from "../components/LangSwitcher.vue";
 
 export default {
+  components: {
+    LangSwitcher,
+  },
+
   data() {
     return {
       arrRoutes: ARR_ROUTES,

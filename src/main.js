@@ -5,8 +5,24 @@ import router from "./router";
 import store from "./store";
 import SvgSprite from "@/views/SvgSprite.vue";
 import "@/assets/styles/global.scss";
+import { createI18n, useI18n } from "vue-i18n";
+import { langs, defaultLocale } from "@/lang/i18n";
 
-const app = createApp(App);
+const messages = Object.assign(langs);
+
+const i18n = createI18n({
+  legacy: false,
+  locale: defaultLocale,
+  fallbackLocale: "en",
+  messages,
+});
+
+const app = createApp(App, {
+  setup() {
+    const { t } = useI18n();
+    return t;
+  },
+});
 
 app.use(VueLazyload, {
   lazyComponent: true,
@@ -19,4 +35,4 @@ app.use(router);
 
 app.component("SvgSprite", SvgSprite);
 
-app.mount("#app");
+app.use(i18n).mount("#app");
