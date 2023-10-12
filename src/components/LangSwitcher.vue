@@ -58,6 +58,7 @@ export default {
   methods: {
     changeLocale(lang) {
       this.$i18n.locale = lang;
+      sessionStorage.setItem("lang", this.$i18n.locale);
     },
 
     hoverChild() {

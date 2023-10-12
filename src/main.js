@@ -10,9 +10,11 @@ import { langs, defaultLocale } from "@/lang/i18n";
 
 const messages = Object.assign(langs);
 
+const storageLang = sessionStorage.getItem("lang");
+
 const i18n = createI18n({
   legacy: false,
-  locale: defaultLocale,
+  locale: storageLang || defaultLocale,
   fallbackLocale: "en",
   messages,
 });
