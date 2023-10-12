@@ -7,10 +7,14 @@
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  padding: 40px 0;
+}
+
 .error {
   &__title {
-    padding: 80px 0;
-    font-size: 80px;
+    padding: 40px 0;
+    font-size: 100px;
   }
 
   &__link {
