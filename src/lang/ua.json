@@ -1,3 +1,20 @@
 {
-  "title": "ua lang"
+  "nav": [
+    {
+      "name": "Про Мене",
+      "path": "/"
+    },
+    {
+      "name": "Проекти",
+      "path": "/projects"
+    },
+    {
+      "name": "Технології",
+      "path": "/stack"
+    },
+    {
+      "name": "Контакти",
+      "path": "/contacts"
+    }
+  ]
 }

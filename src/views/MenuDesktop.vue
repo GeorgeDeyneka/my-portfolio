@@ -1,7 +1,7 @@
 <template>
   <nav class="menu__nav">
     <RouterLink
-      v-for="route of arrRoutes"
+      v-for="route in $tm('nav')"
       :key="route"
       class="nav-link"
       exact-active-class="nav-link-active"
@@ -10,18 +10,6 @@
     >
   </nav>
 </template>
-
-<script>
-import { ARR_ROUTES } from "@/data/routesData";
-
-export default {
-  data() {
-    return {
-      arrRoutes: ARR_ROUTES,
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .menu {

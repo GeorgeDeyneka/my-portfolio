@@ -6,7 +6,7 @@
 
     <nav class="navbar__list">
       <RouterLink
-        v-for="route of arrRoutes"
+        v-for="route in $tm('nav')"
         :key="route"
         class="nav-link navbar__link"
         exact-active-class="nav-link-active"
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import { ARR_ROUTES } from "@/data/routesData";
 import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
 
@@ -34,7 +33,6 @@ export default {
   data() {
     return {
       isOpen: false,
-      arrRoutes: ARR_ROUTES,
     };
   },
 

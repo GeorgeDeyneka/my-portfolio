@@ -21,8 +21,8 @@ const i18n = createI18n({
 
 const app = createApp(App, {
   setup() {
-    const { t } = useI18n();
-    return t;
+    const { t, tm } = useI18n();
+    return { t, tm };
   },
 });
 

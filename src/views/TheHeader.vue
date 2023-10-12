@@ -63,7 +63,8 @@ export default {
   top: 0;
   position: sticky;
   z-index: 900;
-  font-family: Poppins;
+  font-family: Mulish;
+  // font-family: Poppins;
 
   &__actions {
     display: flex;
