@@ -3,12 +3,16 @@
     <div class="container">
       <MenuMobile v-if="screenWidth < 768" />
       <MenuDesktop v-else />
-      <ButtonLink
-        link="public/resume.pdf"
-        text="Download CV"
-        download="George_Deyneka_(Frontend)_EN.pdf"
-        size="small"
-      />
+
+      <div class="header__actions">
+        <LangSwitcher />
+        <ButtonLink
+          link="public/resume.pdf"
+          text="Download CV"
+          download="George_Deyneka_(Frontend)_EN.pdf"
+          size="small"
+        />
+      </div>
     </div>
   </header>
 </template>
@@ -17,6 +21,7 @@
 import ButtonLink from "@/components/ButtonLink.vue";
 import MenuMobile from "@/views/MenuMobile.vue";
 import MenuDesktop from "@/views/MenuDesktop.vue";
+import LangSwitcher from "@/components/LangSwitcher.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -24,6 +29,7 @@ export default {
     ButtonLink,
     MenuMobile,
     MenuDesktop,
+    LangSwitcher,
   },
 
   computed: {
@@ -58,5 +64,11 @@ export default {
   position: sticky;
   z-index: 900;
   font-family: Poppins;
+
+  &__actions {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
 }
 </style>
