@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .start {
   padding: 50px 0;
   max-width: 550px;
@@ -48,12 +50,8 @@ export default {
   &__title {
     padding: 60px 0;
     font-size: 65px;
-  }
-}
 
-@media (min-width: 768px) {
-  .start {
-    &__title {
+    @media #{$tablet} {
       padding: 70px 0 40px;
       font-size: 80px;
       line-height: 1.3;

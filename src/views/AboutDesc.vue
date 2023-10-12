@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .about {
   display: flex;
   flex-direction: column;
@@ -52,6 +54,10 @@ export default {
     padding: 20px 0;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media #{$tablet} {
+      justify-content: flex-start;
+    }
   }
 
   &__text {
@@ -71,14 +77,6 @@ export default {
     font-size: 30px;
     max-width: 550px;
     padding: 10px 0 40px;
-  }
-}
-
-@media (min-width: 768px) {
-  .about {
-    &__counter {
-      justify-content: flex-start;
-    }
   }
 }
 </style>

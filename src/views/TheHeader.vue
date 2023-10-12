@@ -33,11 +33,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px;
+
+  @media #{$tablet} {
+    padding: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media #{$desktop} {
+    padding: 20px 0;
+  }
 }
 
 .header {
@@ -46,19 +58,5 @@ export default {
   position: sticky;
   z-index: 900;
   font-family: Poppins;
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 20px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 20px 0;
-  }
 }
 </style>

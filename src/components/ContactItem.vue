@@ -62,6 +62,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .item-padding {
   padding: 6px 0;
 }
@@ -82,28 +84,24 @@ export default {
     padding: 5px;
     text-decoration: none;
     max-width: fit-content;
+
+    @media #{$tablet} {
+      gap: 20px;
+    }
   }
 
   &__subtitle {
     padding: 5px 10px;
     font-size: 16px;
     color: var(--white);
+
+    @media #{$tablet} {
+      font-size: 22.5px;
+    }
   }
 
   &__item {
     list-style: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .cont {
-    &__link {
-      gap: 20px;
-    }
-
-    &__subtitle {
-      font-size: 22.5px;
-    }
   }
 }
 </style>

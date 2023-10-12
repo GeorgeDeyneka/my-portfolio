@@ -4,8 +4,7 @@ import VueLazyload from "vue-lazyload";
 import router from "./router";
 import store from "./store";
 import SvgSprite from "@/views/SvgSprite.vue";
-import "@/assets/styles/main.css";
-import "@/assets/styles/base/variables.scss";
+import "@/assets/styles/global.scss";
 
 const app = createApp(App);
 
@@ -14,10 +13,10 @@ app.use(VueLazyload, {
   preLoad: 1.3,
 });
 
-app.use(store)
+app.use(store);
 
 app.use(router);
 
-app.component("svg-sprite", SvgSprite);
+app.component("SvgSprite", SvgSprite);
 
 app.mount("#app");

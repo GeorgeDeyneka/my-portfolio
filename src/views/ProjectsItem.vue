@@ -45,6 +45,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/styles/base/keyframes.scss";
+@import "@/assets/styles/base/variables.scss";
+
 .project {
   position: relative;
   min-height: 228px;
@@ -55,6 +57,12 @@ export default {
 
   &:hover {
     transform: scale(1.05);
+
+    .pop-up {
+      @media #{$desktop} {
+        transform: translateY(0%);
+      }
+    }
   }
 
   &__image {
@@ -96,18 +104,8 @@ export default {
 
 .pop-up {
   display: none;
-}
 
-@media (min-width: 1200px) {
-  .project {
-    &:hover {
-      .pop-up {
-        transform: translateY(0%);
-      }
-    }
-  }
-
-  .pop-up {
+  @media #{$desktop} {
     position: absolute;
     display: block;
     bottom: 0;
@@ -119,10 +117,10 @@ export default {
     padding: 10px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+  }
 
-    &__text {
-      color: var(--light-gray-text);
-    }
+  &__text {
+    color: var(--light-gray-text);
   }
 }
 </style>

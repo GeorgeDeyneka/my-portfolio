@@ -44,12 +44,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .footer {
   color: var(--gray-text);
   background-color: var(--dark-gray-bg);
 
-  .text > strong {
-    color: var(--light-green-accent);
+  &__item {
+    @media #{$desktop} {
+      min-width: 280px;
+    }
+  }
+
+  .text {
+    @media #{$desktop} {
+      max-width: 280px;
+    }
+
+    & > strong {
+      color: var(--light-green-accent);
+    }
   }
 
   .network {
@@ -59,36 +73,27 @@ export default {
     margin: 0;
     padding: 0;
   }
-}
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 1200px) {
-  .footer {
-    &__item {
-      min-width: 280px;
-    }
-
-    .text {
-      max-width: 280px;
-    }
-
-    .hire-btn {
+  .hire-btn {
+    @media #{$desktop} {
       display: flex;
       justify-content: center;
     }
   }
+
   .container {
-    padding: 10px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media #{$desktop} {
+      padding: 10px 0;
+    }
   }
 }
 </style>

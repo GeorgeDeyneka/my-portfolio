@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .collab {
   display: flex;
   flex-direction: column;
@@ -43,6 +45,10 @@ export default {
     max-width: 650px;
     text-align: center;
     line-height: 1.3;
+
+    @media #{$tablet} {
+      font-size: 80px;
+    }
   }
 
   &__buttons {
@@ -51,16 +57,8 @@ export default {
     justify-content: center;
     gap: 20px;
     align-items: center;
-  }
-}
 
-@media (min-width: 768px) {
-  .collab {
-    &__title {
-      font-size: 80px;
-    }
-
-    &__buttons {
+    @media #{$tablet} {
       gap: 40px;
     }
   }
