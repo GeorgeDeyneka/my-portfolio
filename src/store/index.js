@@ -62,7 +62,6 @@ export default createStore({
 
     async fetchItem({ commit }, payload) {
       const { id, locale } = payload;
-      console.log(locale);
       const snapshot = await db
         .ref(`projects-test/pet/${locale}`)
         .orderByChild("id")
