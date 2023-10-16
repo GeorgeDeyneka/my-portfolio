@@ -69,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/styles/base/variables.scss";
+
 .switcher {
   border-radius: 4px;
   font-family: inherit;
@@ -76,6 +78,14 @@ export default {
   font-size: 18px;
   position: relative;
   display: flex;
+  margin-bottom: 40px;
+  max-width: fit-content;
+  margin-left: -10px;
+
+  @media #{$tablet} {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
 
   &:hover {
     border-radius: 4px 4px 0 0;
@@ -98,7 +108,12 @@ export default {
     align-items: center;
     cursor: pointer;
     position: relative;
-    padding-right: 6px;
+    gap: 10px;
+
+    @media #{$tablet} {
+      gap: 0;
+      padding-right: 6px;
+    }
 
     &::before {
       content: "";
@@ -137,9 +152,15 @@ export default {
     align-items: center;
     display: inline-block;
     width: 100%;
-    padding: 4px 12px;
+    padding: 10px;
     cursor: pointer;
     user-select: none;
+    font-size: 20px;
+
+    @media #{$tablet} {
+      padding: 4px 12px;
+      font-size: 18px;
+    }
   }
 
   .icon-svg {

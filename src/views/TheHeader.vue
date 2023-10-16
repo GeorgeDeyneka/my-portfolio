@@ -1,11 +1,11 @@
 <template>
   <header class="header">
     <div class="container">
-      <MenuMobile v-if="screenWidth < 768" />
+      <MenuMobile v-if="screenWidth < 1024" />
       <MenuDesktop v-else />
 
       <div class="header__actions">
-        <LangSwitcher />
+        <LangSwitcher v-if="screenWidth >= 768" />
         <ButtonLink
           :link="$t('button.resume.link')"
           :text="$t('button.resume.text')"

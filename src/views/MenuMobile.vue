@@ -15,6 +15,8 @@
         >{{ route.name }}</RouterLink
       >
     </nav>
+
+    <LangSwitcher v-if="screenWidth < 768" />
   </div>
 
   <div v-if="isOpen" class="navbar__overlay" @click="toggleMenu"></div>
@@ -23,17 +25,24 @@
 <script>
 import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
+import LangSwitcher from "@/components/LangSwitcher.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     MenuBtnClose,
     MenuBtnOpen,
+    LangSwitcher,
   },
 
   data() {
     return {
       isOpen: false,
     };
+  },
+
+  computed: {
+    ...mapGetters(["screenWidth"]),
   },
 
   methods: {
@@ -64,6 +73,7 @@ export default {
 
   &.opened {
     transform: translateX(0);
+    overflow-y: auto;
   }
 
   &__list {
