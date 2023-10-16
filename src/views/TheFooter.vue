@@ -17,7 +17,10 @@
       </ul>
 
       <div class="footer__item hire-btn">
-        <ButtonLink :text="btnHire.text" :link="btnHire.link" />
+        <ButtonLink
+          :text="$t('button.hire.text')"
+          :link="$t('button.hire.link')"
+        />
       </div>
     </div>
   </footer>
@@ -25,7 +28,6 @@
 
 <script>
 import { CONTACTS_LINKS } from "../data/contactsData";
-import { BUTTON_DATA } from "../data/buttonsData";
 import ButtonLink from "@/components/ButtonLink.vue";
 import ContactItem from "@/components/ContactItem.vue";
 
@@ -37,8 +39,11 @@ export default {
   data() {
     return {
       contactData: CONTACTS_LINKS,
-      btnHire: BUTTON_DATA.hireMe,
     };
+  },
+
+  computed() {
+    console.log(typeof btnHire);
   },
 };
 </script>

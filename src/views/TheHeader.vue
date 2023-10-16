@@ -7,8 +7,8 @@
       <div class="header__actions">
         <LangSwitcher />
         <ButtonLink
-          link="public/resume.pdf"
-          text="Download CV"
+          :link="$t('button.resume.link')"
+          :text="$t('button.resume.text')"
           download="George_Deyneka_(Frontend)_EN.pdf"
           size="small"
         />

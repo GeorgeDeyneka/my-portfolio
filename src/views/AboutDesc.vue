@@ -1,18 +1,22 @@
 <template>
   <div class="about">
-    <h3>About Me</h3>
-    <h2 class="about__title">
-      I can deliver results that exceed your expectations.
-    </h2>
-    <ButtonLink :text="btnHire.text" :link="btnHire.link" />
+    <h3>{{ $t("about.results.subtitle") }}</h3>
+
+    <h2 class="about__title">{{ $t("about.results.subtitle") }}</h2>
+
+    <ButtonLink :text="$t('button.hire.text')" :link="$t('button.hire.link')" />
 
     <div class="about__text-wrapper">
-      <p v-for="text of textData" :key="text">
-        {{ text.content }}
+      <p v-for="text of $tm('about.results.desc')" :key="text">
+        {{ text }}
       </p>
 
       <div class="about__counter">
-        <AboutCounter v-for="item of statistics" :key="item" :item="item" />
+        <AboutCounter
+          v-for="item of $tm('about.results.counter')"
+          :key="item"
+          :item="item"
+        />
       </div>
     </div>
   </div>
@@ -21,21 +25,11 @@
 <script>
 import ButtonLink from "@/components/ButtonLink.vue";
 import AboutCounter from "@/views/AboutCounter.vue";
-import { BUTTON_DATA } from "@/data/buttonsData";
-import { COUNT_STATISTICS, PARAGRAPH_CONTENT } from "@/data/aboutData";
 
 export default {
   components: {
     AboutCounter,
     ButtonLink,
-  },
-
-  data() {
-    return {
-      statistics: COUNT_STATISTICS,
-      textData: PARAGRAPH_CONTENT,
-      btnHire: BUTTON_DATA.hireMe,
-    };
   },
 };
 </script>

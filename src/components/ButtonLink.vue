@@ -16,13 +16,13 @@
 export default {
   props: {
     text: {
-      required: true,
       type: String,
+      required: true,
     },
 
     link: {
-      required: true,
       type: String,
+      required: true,
     },
 
     size: {
