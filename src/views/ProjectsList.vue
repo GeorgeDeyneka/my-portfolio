@@ -22,8 +22,18 @@ export default {
     },
   },
 
+  watch: {
+    "$i18n.locale": "fetchDataOnLocaleChange",
+  },
+
   mounted() {
-    this.$store.dispatch("fetchItems");
+    this.fetchDataOnLocaleChange();
+  },
+
+  methods: {
+    fetchDataOnLocaleChange() {
+      this.$store.dispatch("fetchItems", this.$i18n.locale);
+    },
   },
 };
 </script>

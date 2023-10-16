@@ -12,7 +12,7 @@ const messages = Object.assign(langs);
 
 const storageLang = sessionStorage.getItem("lang");
 
-const i18n = createI18n({
+export const i18n = createI18n({
   warnHtmlMessage: false,
   legacy: false,
   locale: storageLang || defaultLocale,
