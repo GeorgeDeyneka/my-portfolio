@@ -1,13 +1,11 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="footer__item text">
-        Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>
-      </p>
+      <p class="footer__item text" v-html="$t('footer.desc')" />
 
       <ul class="footer__item network">
         <ContactItem
-          v-for="item of contactData"
+          v-for="item of contacts"
           :key="item"
           fill-color="#c3c3c3"
           hover-color="#75fa7f"
@@ -27,7 +25,7 @@
 </template>
 
 <script>
-import { CONTACTS_LINKS } from "../data/contactsData";
+import { contacts } from "@/lang/data";
 import ButtonLink from "@/components/ButtonLink.vue";
 import ContactItem from "@/components/ContactItem.vue";
 
@@ -36,14 +34,11 @@ export default {
     ButtonLink,
     ContactItem,
   },
+
   data() {
     return {
-      contactData: CONTACTS_LINKS,
+      contacts,
     };
-  },
-
-  computed() {
-    console.log(typeof btnHire);
   },
 };
 </script>
@@ -62,12 +57,12 @@ export default {
   }
 
   .text {
-    @media #{$desktop} {
-      max-width: 280px;
+    &::v-deep > strong {
+      color: var(--light-green-accent);
     }
 
-    & > strong {
-      color: var(--light-green-accent);
+    @media #{$desktop} {
+      max-width: 280px;
     }
   }
 

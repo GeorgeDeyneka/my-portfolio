@@ -63,5 +63,32 @@
       "title": "Lets talk to Collaboration!",
       "subtitle": "Collaboration"
     }
+  },
+  "tech": {
+    "stack": {
+      "title": "Technologies that I use",
+      "subtitle": "Stack",
+      "desc": [
+        "Here are the technologies with which I have worked and have some experience. You will see the main stack, frameworks, databases, libraries and more.",
+        "This means that I am ready to work on a project if it contains the following technologies, or create a project from scratch and implement these technologies."
+      ]
+    },
+    "exp": {
+      "title": "I have work experience with:",
+      "subtitle": "Experience"
+    }
+  },
+  "projects": {
+    "title": "Projects I have worked on:"
+  },
+  "details": {
+    "linkLive": "Live Page",
+    "linkRepo": "Repository Page"
+  },
+  "contacts": {
+    "title": "My Contacts"
+  },
+  "footer": {
+    "desc": "Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>"
   }
 }

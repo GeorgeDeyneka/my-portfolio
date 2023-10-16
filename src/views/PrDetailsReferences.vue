@@ -1,3 +1,10 @@
+<template>
+  <div class="reference">
+    <h2>{{ title }}:</h2>
+    <a class="reference__link" target="_blank" :href="urlLink">{{ urlLink }}</a>
+  </div>
+</template>
+
 <script>
 export default {
   props: {
@@ -13,13 +20,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="reference">
-    <h2>{{ title }}:</h2>
-    <a class="reference__link" target="_blank" :href="urlLink">{{ urlLink }}</a>
-  </div>
-</template>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/base/mixins.scss";

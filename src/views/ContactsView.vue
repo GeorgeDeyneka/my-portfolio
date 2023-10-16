@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper">
-    <h1>My Contacts</h1>
+    <h1>{{ $t("contacts.title") }}</h1>
 
-    <ContactsList :arr-data="contactData" />
+    <ContactsList :arr-data="contacts" />
   </div>
 </template>
 
 <script>
 import ContactsList from "@/views/ContactsList.vue";
-import { CONTACTS_LINKS } from "@/data/contactsData";
+import { contacts } from "@/lang/data";
 
 export default {
   components: {
@@ -17,7 +17,7 @@ export default {
 
   data() {
     return {
-      contactData: CONTACTS_LINKS,
+      contacts,
     };
   },
 };

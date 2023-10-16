@@ -63,8 +63,8 @@ export default {
 
     referencesData() {
       return [
-        { title: "Live Page", url: this.dataItem.liveUrl },
-        { title: "Repository Page", url: this.dataItem.repoUrl },
+        { title: this.$t("details.linkLive"), url: this.dataItem.liveUrl },
+        { title: this.$t("details.linkRepo"), url: this.dataItem.repoUrl },
       ];
     },
   },
