@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <li class="project">
     <RouterLink class="project__link" :to="'/projects/' + projectItem.id">
       <img
         class="project__image"
@@ -17,7 +17,7 @@
         </div>
       </div>
     </RouterLink>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -72,11 +72,17 @@ export default {
   &__link {
     text-decoration: none;
     color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
   }
 
   &__info {
     padding: 15px 10px;
     position: relative;
+    width: 100%;
+    flex: 1;
 
     & > h4 {
       padding: 0;
