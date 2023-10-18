@@ -29,9 +29,18 @@ defineProps({
   color: var(--black);
   font-weight: 600;
 
-  &:hover {
-    background-color: var(--black);
-    color: var(--green-accent);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--black);
+      color: var(--green-accent);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--black);
+      color: var(--green-accent);
+    }
   }
 }
 </style>

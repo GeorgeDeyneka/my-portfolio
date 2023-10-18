@@ -47,8 +47,16 @@ defineProps({
   flex-shrink: 0;
   fill: var(--fill-color);
 
-  &:hover {
-    @include svg-hover;
+  @media (hover: hover) {
+    &:hover {
+      @include svg-hover;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @include svg-hover;
+    }
   }
 }
 

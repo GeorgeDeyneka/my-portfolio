@@ -1,9 +1,10 @@
 <template>
-  <div class="switcher">
+  <div class="switcher" :class="{ active: isOpen }">
     <div
       class="switcher__btn"
       @mouseenter="onHoverChild"
       @mouseleave="onHoverChild"
+      @click="toggleSwitcher"
     >
       <a class="switcher__link">
         {{ currentLocale }}
@@ -41,11 +42,17 @@ import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import SvgIcon from "./SvgIcon.vue";
 
+const isOpen = ref(false);
 const langs = ref(["en", "ua"]);
 const isChildHover = ref(false);
 const { locale } = useI18n();
 
 const currentLocale = computed(() => locale.value);
+
+const toggleSwitcher = () => {
+  isOpen.value = !isOpen.value;
+  console.log(isOpen.value);
+};
 
 const changeLocale = (lang) => {
   locale.value = lang;
@@ -74,18 +81,38 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
     margin-left: 0;
   }
 
-  &:hover {
-    border-radius: 4px 4px 0 0;
-    transition: all 300ms ease-out;
-    color: var(--light-green-accent);
+  @media (hover: hover) {
+    &:hover {
+      border-radius: 4px 4px 0 0;
+      transition: all 300ms ease-out;
+      color: var(--light-green-accent);
 
-    .switcher__list {
-      display: flex;
+      .switcher__list {
+        display: flex;
+      }
+
+      .switcher__btn {
+        &::before {
+          display: block;
+        }
+      }
     }
+  }
 
-    .switcher__btn {
-      &::before {
-        display: block;
+  @media (hover: none) {
+    &.active {
+      border-radius: 4px 4px 0 0;
+      transition: all 300ms ease-out;
+      color: var(--light-green-accent);
+
+      .switcher__list {
+        display: flex;
+      }
+
+      .switcher__btn {
+        &::before {
+          display: block;
+        }
       }
     }
   }

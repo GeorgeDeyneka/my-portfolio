@@ -49,13 +49,21 @@ const onImageLoad = () => {
   border-radius: 4px;
   transition: all 0.3s ease;
 
-  &:hover {
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
 
-    .pop-up {
-      @media #{$desktop} {
-        transform: translateY(0%);
+      .pop-up {
+        @media #{$desktop} {
+          transform: translateY(0%);
+        }
       }
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      transform: scale(1.05);
     }
   }
 

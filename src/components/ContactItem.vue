@@ -58,10 +58,20 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 }
 
 .item-column {
-  &:hover {
-    transition: background-color 300ms ease-out;
-    background-color: var(--dark-gray-hover);
-    border-radius: 4px;
+  @media (hover: hover) {
+    &:hover {
+      transition: background-color 300ms ease-out;
+      background-color: var(--dark-gray-hover);
+      border-radius: 4px;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      transition: background-color 300ms ease-out;
+      background-color: var(--dark-gray-hover);
+      border-radius: 4px;
+    }
   }
 }
 

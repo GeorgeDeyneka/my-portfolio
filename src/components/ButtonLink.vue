@@ -55,8 +55,16 @@ defineProps({
   cursor: pointer;
   max-width: fit-content;
 
-  &:hover {
-    background-color: var(--light-gray-hover);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--light-gray-hover);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--light-gray-hover);
+    }
   }
 }
 </style>
