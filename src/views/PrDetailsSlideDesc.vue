@@ -57,9 +57,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .description {
   position: relative;
   min-height: 16px;
+
+  @media #{$tablet} {
+    min-height: 56px;
+  }
 
   &__wrapper {
     position: absolute;
@@ -75,6 +81,13 @@ export default {
     max-height: 60px;
     background-color: var(--dark-gray-swiper-bg);
     transition: max-height 300ms ease-in;
+    min-width: 100%;
+
+    @media #{$tablet} {
+      margin-bottom: 25px;
+      padding: 2px 55px 10px 30px;
+      min-height: 68px;
+    }
   }
 }
 
@@ -120,18 +133,6 @@ export default {
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.9) 100%
     );
-  }
-}
-
-@media (min-width: 768px) {
-  .description {
-    min-height: 56px;
-
-    &__wrapper {
-      margin-bottom: 25px;
-      padding: 2px 55px 10px 30px;
-      min-height: 68px;
-    }
   }
 }
 </style>

@@ -1,14 +1,18 @@
 <template>
   <header class="header">
     <div class="container">
-      <MenuMobile v-if="screenWidth < 768" />
+      <MenuMobile v-if="screenWidth < 1024" />
       <MenuDesktop v-else />
-      <ButtonLink
-        link="public/resume.pdf"
-        text="Download CV"
-        download="George_Deyneka_(Frontend)_EN.pdf"
-        size="small"
-      />
+
+      <div class="header__actions">
+        <LangSwitcher v-if="screenWidth >= 768" />
+        <ButtonLink
+          :link="$t('button.resume.link')"
+          :text="$t('button.resume.text')"
+          download="George_Deyneka_(Frontend)_EN.pdf"
+          size="small"
+        />
+      </div>
     </div>
   </header>
 </template>
@@ -17,6 +21,7 @@
 import ButtonLink from "@/components/ButtonLink.vue";
 import MenuMobile from "@/views/MenuMobile.vue";
 import MenuDesktop from "@/views/MenuDesktop.vue";
+import LangSwitcher from "@/components/LangSwitcher.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -24,6 +29,7 @@ export default {
     ButtonLink,
     MenuMobile,
     MenuDesktop,
+    LangSwitcher,
   },
 
   computed: {
@@ -33,11 +39,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px;
+
+  @media #{$tablet} {
+    padding: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media #{$desktop} {
+    padding: 20px 0;
+  }
 }
 
 .header {
@@ -45,20 +63,13 @@ export default {
   top: 0;
   position: sticky;
   z-index: 900;
-  font-family: Poppins;
-}
+  font-family: Mulish;
+  // font-family: Poppins;
 
-@media (min-width: 768px) {
-  .container {
-    padding: 20px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 20px 0;
+  &__actions {
+    display: flex;
+    gap: 40px;
+    align-items: center;
   }
 }
 </style>

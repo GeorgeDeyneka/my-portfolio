@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
-    <StackDesc :text-data="textData" />
+    <StackDesc :text-list="$tm('tech.stack.desc')" />
 
     <div class="tech__experience experience">
-      <h3 class="experience__subtitle">Experience</h3>
-      <h2 class="experience__title">I have work experience with:</h2>
+      <h3 class="experience__subtitle">{{ $t("tech.exp.subtitle") }}</h3>
+      <h2 class="experience__title">{{ $t("tech.exp.title") }}</h2>
 
       <StackList
-        v-for="item of techData"
+        v-for="item of stack"
         :key="item"
         :icon-size="iconSize"
         :title="item.title"
@@ -20,7 +20,7 @@
 <script>
 import StackList from "@/views/StackList.vue";
 import StackDesc from "@/views/StackDesc.vue";
-import { TECHNOLOGIES_SVG, PARAGRAPH_CONTENT } from "@/data/technologiesData";
+import { stack } from "@/lang/data";
 import { mapGetters } from "vuex";
 
 export default {
@@ -31,8 +31,7 @@ export default {
 
   data() {
     return {
-      techData: TECHNOLOGIES_SVG,
-      textData: PARAGRAPH_CONTENT,
+      stack,
     };
   },
 

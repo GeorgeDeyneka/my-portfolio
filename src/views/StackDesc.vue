@@ -1,15 +1,15 @@
 <template>
   <div class="stack">
-    <h3 class="stack__subtitle">Stack</h3>
-    <h2 class="stack__title">Technologies that I use</h2>
-    <p v-for="text of textData" :key="text">{{ text.content }}</p>
+    <h3 class="stack__subtitle">{{ $t("tech.stack.subtitle") }}</h3>
+    <h2 class="stack__title">{{ $t("tech.stack.title") }}</h2>
+    <p v-for="item of textList" :key="item">{{ item }}</p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    textData: {
+    textList: {
       required: true,
       type: Array,
     },

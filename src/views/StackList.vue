@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .tech {
   &__item {
     display: flex;
@@ -51,6 +53,10 @@ export default {
     font-weight: 500;
     padding: 10px 0;
     font-size: 16px;
+
+    @media #{$tablet} {
+      font-size: 18px;
+    }
   }
 
   &__logos {
@@ -58,14 +64,6 @@ export default {
     flex-wrap: wrap;
     padding: 20px 0;
     gap: 30px;
-  }
-}
-
-@media (min-width: 768px) {
-  .tech {
-    &__name {
-      font-size: 18px;
-    }
   }
 }
 </style>

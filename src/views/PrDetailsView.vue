@@ -63,24 +63,36 @@ export default {
 
     referencesData() {
       return [
-        { title: "Live Page", url: this.dataItem.liveUrl },
-        { title: "Repository Page", url: this.dataItem.repoUrl },
+        { title: this.$t("details.linkLive"), url: this.dataItem.liveUrl },
+        { title: this.$t("details.linkRepo"), url: this.dataItem.repoUrl },
       ];
     },
   },
 
+  watch: {
+    "$i18n.locale": "fetchItemOnLocaleChange",
+  },
+
   mounted() {
-    this.$store
-      .dispatch("fetchItem", Number(this.$route.params.id))
-      .then((resp) => {
-        this.checkItemAndRedirect(resp);
-      });
+    this.fetchItemOnLocaleChange();
   },
 
   beforeUnmount() {
     return this.$store.commit("resetItem");
   },
+
   methods: {
+    fetchItemOnLocaleChange() {
+      this.$store
+        .dispatch("fetchItem", {
+          id: Number(this.$route.params.id),
+          locale: this.$i18n.locale,
+        })
+        .then((resp) => {
+          this.checkItemAndRedirect(resp);
+        });
+    },
+
     checkItemAndRedirect(resp) {
       if (resp === null) {
         return this.$router.push({ name: "not-found" });

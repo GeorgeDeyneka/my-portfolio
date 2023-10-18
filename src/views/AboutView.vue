@@ -1,16 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="start">
-      <h1 class="start__title">George Deyneka</h1>
-
-      <h4>
-        Hello, my name is George. Nice to meet you! I would like to welcome you
-        with my personal portfolio.
-      </h4>
-    </div>
-
+    <AboutStart />
     <AboutDesc />
-
     <AboutCollab />
 
     <!-- <p class="about__paragraph">
@@ -30,34 +21,14 @@
 
 <script>
 import AboutDesc from "@/views/AboutDesc.vue";
+import AboutStart from "@/views/AboutStart.vue";
 import AboutCollab from "@/views/AboutCollab.vue";
 
 export default {
   components: {
     AboutDesc,
     AboutCollab,
+    AboutStart,
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.start {
-  padding: 50px 0;
-  max-width: 550px;
-
-  &__title {
-    padding: 60px 0;
-    font-size: 65px;
-  }
-}
-
-@media (min-width: 768px) {
-  .start {
-    &__title {
-      padding: 70px 0 40px;
-      font-size: 80px;
-      line-height: 1.3;
-    }
-  }
-}
-</style>

@@ -22,7 +22,7 @@ export default {
   components: {
     TheHeader,
     TheFooter,
-    RouterView
+    RouterView,
   },
 
   mounted() {
@@ -41,13 +41,15 @@ export default {
 
   methods: {
     updateScreenWidth: debounce(function () {
-      this.$store.commit('setScreenWidth', window.innerWidth)
+      this.$store.commit("setScreenWidth", window.innerWidth);
     }, 200),
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
@@ -63,17 +65,13 @@ export default {
   flex: 1 1 auto;
   width: 100%;
   padding-top: 0;
-}
 
-@media (min-width: 768px) {
-  .main {
+  @media #{$tablet} {
     max-width: 1100px;
     margin: 0 auto;
   }
-}
 
-@media (min-width: 1200px) {
-  .main {
+  @media #{$desktop} {
     padding: 0;
   }
 }

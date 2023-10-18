@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
-    <h1>Projects I have worked on:</h1>
+    <h1>{{ $t("projects.title") }}</h1>
+
     <Suspense>
       <template #default>
         <ProjectsList />
@@ -18,7 +19,7 @@ import { defineAsyncComponent } from "vue";
 import LoadSpinner from "@/components/LoadSpinner.vue";
 
 const ProjectsList = defineAsyncComponent(() =>
-  import("@/views/ProjectsList.vue")
+  import("@/views/ProjectsList.vue"),
 );
 
 export default {

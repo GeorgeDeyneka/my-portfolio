@@ -1,10 +1,20 @@
 @import "@/assets/styles/base/typography.scss";
+@import "@/assets/styles/base/variables.scss";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
 
 body {
   height: 100vh;
   color: var(--white);
   background-color: var(--black);
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   line-height: 1.5;
   font-family: "Mulish";
   font-size: 15px;
@@ -23,10 +33,4 @@ body {
 .nav-link-active {
   border-bottom: 3px solid var(--light-green-accent);
   max-width: fit-content;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
 }

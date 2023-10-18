@@ -1,0 +1,94 @@
+{
+  "button": {
+    "resume": {
+      "text": "Download CV",
+      "link": "public/resume.pdf"
+    },
+    "contacts": {
+      "text": "Get In Touch",
+      "link": "/contacts"
+    },
+    "hire": {
+      "text": "Hire Me Now!",
+      "link": "mailto:zhoradeynecka{'@'}gmail.com"
+    }
+  },
+  "nav": [
+    {
+      "name": "About",
+      "path": "/"
+    },
+    {
+      "name": "Projects",
+      "path": "/projects"
+    },
+    {
+      "name": "Technologies",
+      "path": "/stack"
+    },
+    {
+      "name": "Contacts",
+      "path": "/contacts"
+    }
+  ],
+  "about": {
+    "start": {
+      "title": "George Deyneka",
+      "desc": "Hello, my name is George. Nice to meet you! I would like to welcome you with my personal portfolio."
+    },
+    "results": {
+      "title": "I can deliver results that exceed your expectations.",
+      "subtitle": "About Me",
+      "counter": [
+        {
+          "text": "Projects completed",
+          "endNum": 15
+        },
+        {
+          "text": "Years experience",
+          "endNum": 1
+        },
+        {
+          "text": "Certificates",
+          "endNum": 2
+        }
+      ],
+      "desc": [
+        "I am a front-end developer with 1 year of experience. My core skills include developing web applications using the Angular or Vue.js frameworks.",
+        "I am proficient in adaptive layout, SPA development, working with the server and asynchronous code. I work with modern frameworks and also have experience building applications written in Vanilla JavaScript. I also work with databases like MongoDB and Firebase Realtime Database.",
+        "It is worth mentioning the observance of such important development principles as DRY, KISS and SOLID. Of course, I work with the GIT version control system."
+      ]
+    },
+    "collab": {
+      "title": "Lets talk to Collaboration!",
+      "subtitle": "Collaboration"
+    }
+  },
+  "tech": {
+    "stack": {
+      "title": "Technologies that I use",
+      "subtitle": "Stack",
+      "desc": [
+        "Here are the technologies with which I have worked and have some experience. You will see the main stack, frameworks, databases, libraries and more.",
+        "This means that I am ready to work on a project if it contains the following technologies, or create a project from scratch and implement these technologies."
+      ]
+    },
+    "exp": {
+      "title": "I have work experience with:",
+      "subtitle": "Experience"
+    }
+  },
+  "projects": {
+    "title": "Projects I have worked on:"
+  },
+  "details": {
+    "linkLive": "Live Page",
+    "linkRepo": "Repository Page"
+  },
+  "contacts": {
+    "title": "My Contacts"
+  },
+  "footer": {
+    "desc": "Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>"
+  }
+}

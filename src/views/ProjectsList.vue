@@ -1,11 +1,11 @@
 <template>
-  <div class="list-wrapper">
+  <ul class="list-wrapper">
     <ProjectsItem
       v-for="item of arrProjects"
       :key="item"
       :project-item="item"
     />
-  </div>
+  </ul>
 </template>
 
 <script>
@@ -22,8 +22,18 @@ export default {
     },
   },
 
+  watch: {
+    "$i18n.locale": "fetchDataOnLocaleChange",
+  },
+
   mounted() {
-    this.$store.dispatch("fetchItems");
+    this.fetchDataOnLocaleChange();
+  },
+
+  methods: {
+    fetchDataOnLocaleChange() {
+      this.$store.dispatch("fetchItems", this.$i18n.locale);
+    },
   },
 };
 </script>
@@ -33,6 +43,7 @@ export default {
   display: grid;
   justify-content: center;
   padding: 50px 0;
+  align-items: stretch;
   gap: 35px;
   grid-template-columns: repeat(auto-fill, 312px);
 }

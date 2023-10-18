@@ -6,7 +6,7 @@
 
     <nav class="navbar__list">
       <RouterLink
-        v-for="route of arrRoutes"
+        v-for="route in $tm('nav')"
         :key="route"
         class="nav-link navbar__link"
         exact-active-class="nav-link-active"
@@ -15,27 +15,34 @@
         >{{ route.name }}</RouterLink
       >
     </nav>
+
+    <LangSwitcher v-if="screenWidth < 768" />
   </div>
 
   <div v-if="isOpen" class="navbar__overlay" @click="toggleMenu"></div>
 </template>
 
 <script>
-import { ARR_ROUTES } from "@/data/routesData";
 import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
+import LangSwitcher from "@/components/LangSwitcher.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     MenuBtnClose,
     MenuBtnOpen,
+    LangSwitcher,
   },
 
   data() {
     return {
       isOpen: false,
-      arrRoutes: ARR_ROUTES,
     };
+  },
+
+  computed: {
+    ...mapGetters(["screenWidth"]),
   },
 
   methods: {
@@ -66,6 +73,7 @@ export default {
 
   &.opened {
     transform: translateX(0);
+    overflow-y: auto;
   }
 
   &__list {

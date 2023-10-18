@@ -1,11 +1,17 @@
 <template>
   <div class="collab">
-    <h3>Collaboration</h3>
-    <h2 class="collab__title">Lets talk to Collaboration!</h2>
+    <h3>{{ $t("about.collab.subtitle") }}</h3>
+    <h2 class="collab__title">{{ $t("about.collab.title") }}</h2>
 
     <div class="collab__buttons">
-      <ButtonNav :text="btnGetIn.text" :route="btnGetIn.link" />
-      <ButtonLink :text="btnHire.text" :link="btnHire.link" />
+      <ButtonNav
+        :text="$t('button.contacts.text')"
+        :route="$t('button.contacts.link')"
+      />
+      <ButtonLink
+        :text="$t('button.hire.text')"
+        :link="$t('button.hire.link')"
+      />
     </div>
   </div>
 </template>
@@ -13,24 +19,18 @@
 <script>
 import ButtonLink from "@/components/ButtonLink.vue";
 import ButtonNav from "@/components/ButtonNav.vue";
-import { BUTTON_DATA } from "@/data/buttonsData";
 
 export default {
   components: {
     ButtonNav,
     ButtonLink,
   },
-
-  data() {
-    return {
-      btnGetIn: BUTTON_DATA.getInTouch,
-      btnHire: BUTTON_DATA.hireMe,
-    };
-  },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/base/variables.scss";
+
 .collab {
   display: flex;
   flex-direction: column;
@@ -43,6 +43,10 @@ export default {
     max-width: 650px;
     text-align: center;
     line-height: 1.3;
+
+    @media #{$tablet} {
+      font-size: 80px;
+    }
   }
 
   &__buttons {
@@ -51,16 +55,8 @@ export default {
     justify-content: center;
     gap: 20px;
     align-items: center;
-  }
-}
 
-@media (min-width: 768px) {
-  .collab {
-    &__title {
-      font-size: 80px;
-    }
-
-    &__buttons {
+    @media #{$tablet} {
       gap: 40px;
     }
   }
