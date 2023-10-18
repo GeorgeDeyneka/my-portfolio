@@ -6,15 +6,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    textList: {
-      required: true,
-      type: Array,
-    },
+<script setup>
+defineProps({
+  textList: {
+    required: true,
+    type: Array,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

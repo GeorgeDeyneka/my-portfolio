@@ -20,26 +20,20 @@
   </li>
 </template>
 
-<script>
-export default {
-  props: {
-    projectItem: {
-      required: true,
-      type: Object,
-    },
-  },
+<script setup>
+import { ref } from "vue";
 
-  data() {
-    return {
-      showTitle: false,
-    };
+defineProps({
+  projectItem: {
+    required: true,
+    type: Object,
   },
+});
 
-  methods: {
-    onImageLoad() {
-      this.showTitle = true;
-    },
-  },
+const showTitle = ref(false);
+
+const onImageLoad = () => {
+  showTitle.value = true;
 };
 </script>
 

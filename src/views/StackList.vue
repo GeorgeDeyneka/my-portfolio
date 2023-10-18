@@ -9,31 +9,25 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from "@/components/SvgIcon.vue";
 
-export default {
-  components: {
-    SvgIcon,
+defineProps({
+  title: {
+    type: String,
+    required: true,
   },
 
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-
-    arrData: {
-      type: Array,
-      required: true,
-    },
-
-    iconSize: {
-      type: Number,
-      required: true,
-    },
+  arrData: {
+    type: Array,
+    required: true,
   },
-};
+
+  iconSize: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>

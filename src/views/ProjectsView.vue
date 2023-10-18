@@ -13,22 +13,13 @@
   </div>
 </template>
 
-<script>
-import { Suspense } from "vue";
+<script setup>
 import { defineAsyncComponent } from "vue";
 import LoadSpinner from "@/components/LoadSpinner.vue";
 
 const ProjectsList = defineAsyncComponent(() =>
   import("@/views/ProjectsList.vue"),
 );
-
-export default {
-  components: {
-    LoadSpinner,
-    ProjectsList,
-    Suspense,
-  },
-};
 </script>
 
 <style lang="scss" scoped>

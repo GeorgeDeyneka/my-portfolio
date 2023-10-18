@@ -17,25 +17,16 @@
   </header>
 </template>
 
-<script>
+<script setup>
 import ButtonLink from "@/components/ButtonLink.vue";
 import MenuMobile from "@/views/MenuMobile.vue";
 import MenuDesktop from "@/views/MenuDesktop.vue";
 import LangSwitcher from "@/components/LangSwitcher.vue";
-import { mapGetters } from "vuex";
+import { useStore } from "vuex";
+import { computed } from "vue";
 
-export default {
-  components: {
-    ButtonLink,
-    MenuMobile,
-    MenuDesktop,
-    LangSwitcher,
-  },
-
-  computed: {
-    ...mapGetters(["screenWidth"]),
-  },
-};
+const store = useStore();
+const screenWidth = computed(() => store.getters.screenWidth);
 </script>
 
 <style lang="scss" scoped>

@@ -22,36 +22,26 @@
   <div v-if="isOpen" class="navbar__overlay" @click="toggleMenu"></div>
 </template>
 
-<script>
+<script setup>
 import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
 import LangSwitcher from "@/components/LangSwitcher.vue";
-import { mapGetters } from "vuex";
+import { useStore } from "vuex";
+import { computed, onBeforeUnmount, ref } from "vue";
 
-export default {
-  components: {
-    MenuBtnClose,
-    MenuBtnOpen,
-    LangSwitcher,
-  },
+const isOpen = ref(false);
+const store = useStore();
+const screenWidth = computed(() => store.getters.screenWidth);
 
-  data() {
-    return {
-      isOpen: false,
-    };
-  },
-
-  computed: {
-    ...mapGetters(["screenWidth"]),
-  },
-
-  methods: {
-    toggleMenu() {
-      this.isOpen = !this.isOpen;
-      document.body.style.overflow = this.isOpen ? "hidden" : "";
-    },
-  },
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+  document.body.style.overflow = isOpen.value ? "hidden" : "";
 };
+
+onBeforeUnmount(() => {
+  isOpen.value = true;
+  toggleMenu();
+});
 </script>
 
 <style lang="scss" scoped>

@@ -5,20 +5,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    urlLink: {
-      type: String,
-      required: true,
-    },
-
-    title: {
-      type: String,
-      required: true,
-    },
+<script setup>
+defineProps({
+  urlLink: {
+    type: String,
+    required: true,
   },
-};
+
+  title: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
