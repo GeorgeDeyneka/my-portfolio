@@ -10,24 +10,19 @@
   </RouterLink>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from "@/components/SvgIcon.vue";
 
-export default {
-  components: { SvgIcon },
-
-  props: {
-    text: {
-      type: String,
-      default: "",
-    },
-
-    route: {
-      type: String,
-      required: true,
-    },
+defineProps({
+  text: {
+    type: String,
+    default: "",
   },
-};
+  route: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>

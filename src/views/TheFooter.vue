@@ -57,7 +57,7 @@ export default {
   }
 
   .text {
-    &::v-deep > strong {
+    &:deep(> strong) {
       color: var(--light-green-accent);
     }
 

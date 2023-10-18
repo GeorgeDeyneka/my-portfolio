@@ -5,8 +5,8 @@
       :class="[showTitle ? 'item-column' : 'item-row']"
       :href="linkItem.link"
       target="_blank"
-      @mouseenter="hoverChild"
-      @mouseleave="hoverChild"
+      @mouseenter="onHoverChild"
+      @mouseleave="onHoverChild"
     >
       <SvgIcon
         :fill-color="fillColor"
@@ -19,46 +19,35 @@
   </li>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from "@/components/SvgIcon.vue";
+import { ref } from "vue";
 
-export default {
-  components: { SvgIcon },
-
-  props: {
-    linkItem: {
-      required: true,
-      type: Object,
-    },
-
-    showTitle: {
-      type: Boolean,
-      default: true,
-    },
-
-    fillColor: {
-      type: String,
-      default: "var(--white)",
-    },
-
-    hoverColor: {
-      type: String,
-      default: "",
-    },
+defineProps({
+  linkItem: {
+    required: true,
+    type: Object,
   },
 
-  data() {
-    return {
-      isChildHover: false,
-    };
+  showTitle: {
+    type: Boolean,
+    default: true,
   },
 
-  methods: {
-    hoverChild() {
-      this.isChildHover = !this.isChildHover;
-    },
+  fillColor: {
+    type: String,
+    default: "var(--white)",
   },
-};
+
+  hoverColor: {
+    type: String,
+    default: "",
+  },
+});
+
+const isChildHover = ref(false);
+
+const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 </script>
 
 <style lang="scss" scoped>

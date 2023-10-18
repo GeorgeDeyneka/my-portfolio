@@ -12,28 +12,26 @@
   >
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
+<script setup>
+defineProps({
+  text: {
+    type: String,
+    required: true,
+  },
 
-    link: {
-      type: String,
-      required: true,
-    },
+  link: {
+    type: String,
+    required: true,
+  },
 
-    size: {
-      type: String,
-      default: "medium",
-      validator: function (value) {
-        return ["medium", "small"].indexOf(value) !== -1;
-      },
+  size: {
+    type: String,
+    default: "medium",
+    validator: function (value) {
+      return ["medium", "small"].indexOf(value) !== -1;
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

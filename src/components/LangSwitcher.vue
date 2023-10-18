@@ -2,8 +2,8 @@
   <div class="switcher">
     <div
       class="switcher__btn"
-      @mouseenter="hoverChild"
-      @mouseleave="hoverChild"
+      @mouseenter="onHoverChild"
+      @mouseleave="onHoverChild"
     >
       <a class="switcher__link">
         {{ currentLocale }}
@@ -20,8 +20,8 @@
 
     <ul
       class="switcher__list"
-      @mouseenter="hoverChild"
-      @mouseleave="hoverChild"
+      @mouseenter="onHoverChild"
+      @mouseleave="onHoverChild"
     >
       <li
         v-for="lang of langs"
@@ -36,36 +36,23 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import SvgIcon from "./SvgIcon.vue";
 
-export default {
-  components: { SvgIcon },
+const langs = ref(["en", "ua"]);
+const isChildHover = ref(false);
+const { locale } = useI18n();
 
-  data() {
-    return {
-      langs: ["en", "ua"],
-      isChildHover: false,
-    };
-  },
+const currentLocale = computed(() => locale.value);
 
-  computed: {
-    currentLocale() {
-      return this.$i18n.locale;
-    },
-  },
-
-  methods: {
-    changeLocale(lang) {
-      this.$i18n.locale = lang;
-      sessionStorage.setItem("lang", this.$i18n.locale);
-    },
-
-    hoverChild() {
-      this.isChildHover = !this.isChildHover;
-    },
-  },
+const changeLocale = (lang) => {
+  locale.value = lang;
+  sessionStorage.setItem("lang", locale.value);
 };
+
+const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 </script>
 
 <style lang="scss">

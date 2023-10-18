@@ -12,30 +12,28 @@
   </svg>
 </template>
 
-<script>
-export default {
-  props: {
-    stringPath: {
-      type: String,
-      required: true,
-    },
-
-    size: {
-      type: Number,
-      default: 50,
-    },
-
-    hoverColor: {
-      type: String,
-      default: null,
-    },
-
-    fillColor: {
-      type: String,
-      default: null,
-    },
+<script setup>
+defineProps({
+  stringPath: {
+    type: String,
+    required: true,
   },
-};
+
+  size: {
+    type: Number,
+    default: 50,
+  },
+
+  hoverColor: {
+    type: String,
+    default: null,
+  },
+
+  fillColor: {
+    type: String,
+    default: null,
+  },
+});
 </script>
 
 <style lang="scss" scoped>

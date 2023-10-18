@@ -11,24 +11,13 @@
   </button>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from "@/components/SvgIcon.vue";
+import { ref } from "vue";
 
-export default {
-  components: { SvgIcon },
+const rotateFlag = ref(false);
 
-  data() {
-    return {
-      rotateFlag: false,
-    };
-  },
-  
-  methods: {
-    rotateIcon() {
-      return (this.rotateFlag = !this.rotateFlag);
-    },
-  },
-};
+const rotateIcon = () => (rotateFlag.value = !rotateFlag.value);
 </script>
 
 <style lang="scss" scoped>
