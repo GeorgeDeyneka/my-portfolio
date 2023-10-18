@@ -13,7 +13,7 @@
       <svg-icon
         string-path="#icon-arrow"
         :size="20"
-        :class="{ hovered: isChildHover }"
+        :class="{ hovered: isChildHover || isOpen }"
         fill-color="var(--white)"
         hover-color="var(--light-green-accent)"
       />
