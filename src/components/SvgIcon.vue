@@ -2,7 +2,7 @@
   <svg
     :style="{
       '--fill-color': fillColor,
-      '--hover-color': hoverColor,
+      '--hover-color': hoverColor || fillColor,
       width: `${size}px`,
       height: `${size}px`,
     }"
@@ -12,30 +12,28 @@
   </svg>
 </template>
 
-<script>
-export default {
-  props: {
-    stringPath: {
-      type: String,
-      required: true,
-    },
-
-    size: {
-      type: Number,
-      default: 50,
-    },
-
-    hoverColor: {
-      type: String,
-      default: null,
-    },
-
-    fillColor: {
-      type: String,
-      default: null,
-    },
+<script setup>
+defineProps({
+  stringPath: {
+    type: String,
+    required: true,
   },
-};
+
+  size: {
+    type: Number,
+    default: 50,
+  },
+
+  hoverColor: {
+    type: String,
+    default: null,
+  },
+
+  fillColor: {
+    type: String,
+    default: null,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -49,8 +47,16 @@ export default {
   flex-shrink: 0;
   fill: var(--fill-color);
 
-  &:hover {
-    @include svg-hover;
+  @media (hover: hover) {
+    &:hover {
+      @include svg-hover;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @include svg-hover;
+    }
   }
 }
 

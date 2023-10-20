@@ -2,20 +2,18 @@
   <RouterLink class="btn" :to="route">{{ text }}</RouterLink>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true
-    },
+<script setup>
+defineProps({
+  text: {
+    type: String,
+    required: true,
+  },
 
-    route: {
-      type: String,
-      required: true
-    }
-  }
-};
+  route: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -31,9 +29,18 @@ export default {
   color: var(--black);
   font-weight: 600;
 
-  &:hover {
-    background-color: var(--black);
-    color: var(--green-accent);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--black);
+      color: var(--green-accent);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--black);
+      color: var(--green-accent);
+    }
   }
 }
 </style>

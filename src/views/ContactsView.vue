@@ -6,21 +6,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ContactsList from "@/views/ContactsList.vue";
 import { contacts } from "@/lang/data";
-
-export default {
-  components: {
-    ContactsList,
-  },
-
-  data() {
-    return {
-      contacts,
-    };
-  },
-};
 </script>
 
 <style lang="scss" scoped></style>

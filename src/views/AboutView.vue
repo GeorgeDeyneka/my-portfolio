@@ -19,16 +19,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import AboutDesc from "@/views/AboutDesc.vue";
 import AboutStart from "@/views/AboutStart.vue";
 import AboutCollab from "@/views/AboutCollab.vue";
-
-export default {
-  components: {
-    AboutDesc,
-    AboutCollab,
-    AboutStart,
-  },
-};
 </script>

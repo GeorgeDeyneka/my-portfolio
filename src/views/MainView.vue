@@ -12,39 +12,31 @@
   <TheFooter />
 </template>
 
-<script>
-import { RouterView } from "vue-router";
-import { debounce } from "lodash";
+<script setup>
 import TheHeader from "@/views/TheHeader.vue";
 import TheFooter from "@/views/TheFooter.vue";
+import { debounce } from "lodash";
+import { nextTick, onBeforeUnmount, onMounted, onUpdated } from "vue";
+import { useStore } from "vuex";
 
-export default {
-  components: {
-    TheHeader,
-    TheFooter,
-    RouterView,
-  },
+const store = useStore();
 
-  mounted() {
-    window.addEventListener("resize", this.updateScreenWidth);
-  },
+const updateScreenWidth = () =>
+  debounce(function () {
+    store.commit("setScreenWidth", window.innerWidth);
+  }, 200);
 
-  updated() {
-    this.$nextTick(() => {
-      setTimeout(() => window.scrollTo({ top: 0, behavior: "instant" }), 200);
-    });
-  },
+onMounted(() => window.addEventListener("resize", updateScreenWidth()));
 
-  beforeUnmount() {
-    window.removeEventListener("resize", this.updateScreenWidth);
-  },
+onUpdated(() =>
+  nextTick(() =>
+    setTimeout(() => window.scrollTo({ top: 0, behavior: "instant" }), 200),
+  ),
+);
 
-  methods: {
-    updateScreenWidth: debounce(function () {
-      this.$store.commit("setScreenWidth", window.innerWidth);
-    }, 200),
-  },
-};
+onBeforeUnmount(() =>
+  window.removeEventListener("resize", updateScreenWidth()),
+);
 </script>
 
 <style lang="scss" scoped>

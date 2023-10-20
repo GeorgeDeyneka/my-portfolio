@@ -22,16 +22,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ButtonLink from "@/components/ButtonLink.vue";
 import AboutCounter from "@/views/AboutCounter.vue";
-
-export default {
-  components: {
-    AboutCounter,
-    ButtonLink,
-  },
-};
 </script>
 
 <style lang="scss" scoped>

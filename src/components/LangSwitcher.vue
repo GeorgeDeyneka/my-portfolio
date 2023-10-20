@@ -1,9 +1,10 @@
 <template>
-  <div class="switcher">
+  <div class="switcher" :class="{ active: isOpen }">
     <div
       class="switcher__btn"
-      @mouseenter="hoverChild"
-      @mouseleave="hoverChild"
+      @mouseenter="onHoverChild"
+      @mouseleave="onHoverChild"
+      @click="toggleSwitcher"
     >
       <a class="switcher__link">
         {{ currentLocale }}
@@ -12,7 +13,7 @@
       <svg-icon
         string-path="#icon-arrow"
         :size="20"
-        :class="{ hovered: isChildHover }"
+        :class="{ hovered: isChildHover || isOpen }"
         fill-color="var(--white)"
         hover-color="var(--light-green-accent)"
       />
@@ -20,8 +21,8 @@
 
     <ul
       class="switcher__list"
-      @mouseenter="hoverChild"
-      @mouseleave="hoverChild"
+      @mouseenter="onHoverChild"
+      @mouseleave="onHoverChild"
     >
       <li
         v-for="lang of langs"
@@ -36,36 +37,28 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import SvgIcon from "./SvgIcon.vue";
 
-export default {
-  components: { SvgIcon },
+const isOpen = ref(false);
+const langs = ref(["en", "ua"]);
+const isChildHover = ref(false);
+const { locale } = useI18n();
 
-  data() {
-    return {
-      langs: ["en", "ua"],
-      isChildHover: false,
-    };
-  },
+const currentLocale = computed(() => locale.value);
 
-  computed: {
-    currentLocale() {
-      return this.$i18n.locale;
-    },
-  },
-
-  methods: {
-    changeLocale(lang) {
-      this.$i18n.locale = lang;
-      sessionStorage.setItem("lang", this.$i18n.locale);
-    },
-
-    hoverChild() {
-      this.isChildHover = !this.isChildHover;
-    },
-  },
+const toggleSwitcher = () => {
+  isOpen.value = !isOpen.value;
 };
+
+const changeLocale = (lang) => {
+  locale.value = lang;
+  sessionStorage.setItem("lang", locale.value);
+};
+
+const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 </script>
 
 <style lang="scss">
@@ -87,18 +80,38 @@ export default {
     margin-left: 0;
   }
 
-  &:hover {
-    border-radius: 4px 4px 0 0;
-    transition: all 300ms ease-out;
-    color: var(--light-green-accent);
+  @media (hover: hover) {
+    &:hover {
+      border-radius: 4px 4px 0 0;
+      transition: all 300ms ease-out;
+      color: var(--light-green-accent);
 
-    .switcher__list {
-      display: flex;
+      .switcher__list {
+        display: flex;
+      }
+
+      .switcher__btn {
+        &::before {
+          display: block;
+        }
+      }
     }
+  }
 
-    .switcher__btn {
-      &::before {
-        display: block;
+  @media (hover: none) {
+    &.active {
+      border-radius: 4px 4px 0 0;
+      transition: all 300ms ease-out;
+      color: var(--light-green-accent);
+
+      .switcher__list {
+        display: flex;
+      }
+
+      .switcher__btn {
+        &::before {
+          display: block;
+        }
       }
     }
   }

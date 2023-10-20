@@ -3,7 +3,7 @@
     <div
       class="description__wrapper"
       :class="showTextFlag ? 'full-list' : 'short-list'"
-      @click="handleClick"
+      @click="showFullDescription"
     >
       <ul class="list">
         <li v-for="(text, index) of textData" :key="index" class="list__item">
@@ -23,36 +23,25 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ButtonShowText from "@/components/ButtonShowText.vue";
+import { ref } from "vue";
 
-export default {
-  components: {
-    ButtonShowText,
+defineProps({
+  textData: {
+    type: Array,
+    required: true,
   },
+});
 
-  props: {
-    textData: {
-      type: Array,
-      required: true,
-    },
-  },
+// function handleClick() {
+//   this.$refs["btn-show"].$el.click();
+// }
 
-  data() {
-    return {
-      showTextFlag: false,
-    };
-  },
+const showTextFlag = ref(false);
 
-  methods: {
-    handleClick() {
-      this.$refs["btn-show"].$el.click();
-    },
-
-    showFullDescription() {
-      this.showTextFlag = !this.showTextFlag;
-    },
-  },
+const showFullDescription = () => {
+  showTextFlag.value = !showTextFlag.value;
 };
 </script>
 

@@ -33,73 +33,63 @@
   </div>
 </template>
 
-<script>
-import { Suspense } from "vue";
-import { defineAsyncComponent } from "vue";
+<script setup>
 import LoadSpinner from "@/components/LoadSpinner.vue";
 import ButtonBack from "@/components/ButtonBack.vue";
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  watch,
+  defineAsyncComponent,
+} from "vue";
+import { useRouter, useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import { useStore } from "vuex";
 
 const PrDetailsSwiper = defineAsyncComponent(() =>
   import("@/views/PrDetailsSwiper.vue"),
 );
-
 const PrDetailsReferences = defineAsyncComponent(() =>
   import("@/views/PrDetailsReferences.vue"),
 );
+const { locale, t } = useI18n();
+const store = useStore();
+const route = useRoute();
+const router = useRouter();
 
-export default {
-  components: {
-    PrDetailsSwiper,
-    PrDetailsReferences,
-    LoadSpinner,
-    ButtonBack,
-    Suspense,
-  },
+const dataItem = computed(() => store.state.item);
 
-  computed: {
-    dataItem() {
-      return this.$store.state.item;
-    },
+const referencesData = computed(() => [
+  { title: t("details.linkLive"), url: dataItem.value.liveUrl },
+  { title: t("details.linkRepo"), url: dataItem.value.repoUrl },
+]);
 
-    referencesData() {
-      return [
-        { title: this.$t("details.linkLive"), url: this.dataItem.liveUrl },
-        { title: this.$t("details.linkRepo"), url: this.dataItem.repoUrl },
-      ];
-    },
-  },
-
-  watch: {
-    "$i18n.locale": "fetchItemOnLocaleChange",
-  },
-
-  mounted() {
-    this.fetchItemOnLocaleChange();
-  },
-
-  beforeUnmount() {
-    return this.$store.commit("resetItem");
-  },
-
-  methods: {
-    fetchItemOnLocaleChange() {
-      this.$store
-        .dispatch("fetchItem", {
-          id: Number(this.$route.params.id),
-          locale: this.$i18n.locale,
-        })
-        .then((resp) => {
-          this.checkItemAndRedirect(resp);
-        });
-    },
-
-    checkItemAndRedirect(resp) {
-      if (resp === null) {
-        return this.$router.push({ name: "not-found" });
-      }
-    },
-  },
+const fetchItemOnLocaleChange = () => {
+  store
+    .dispatch("fetchItem", {
+      id: Number(route.params.id),
+      locale: locale.value,
+    })
+    .then((resp) => {
+      checkItemAndRedirect(resp);
+    });
 };
+
+const checkItemAndRedirect = (resp) => {
+  if (resp === null) {
+    return router.push({ name: "not-found" });
+  }
+};
+
+watch(
+  () => locale.value,
+  () => fetchItemOnLocaleChange(),
+);
+
+onMounted(() => fetchItemOnLocaleChange());
+
+onBeforeUnmount(() => store.commit("resetItem"));
 </script>
 
 <style lang="scss" scoped>

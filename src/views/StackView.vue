@@ -17,32 +17,19 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import StackList from "@/views/StackList.vue";
 import StackDesc from "@/views/StackDesc.vue";
 import { stack } from "@/lang/data";
-import { mapGetters } from "vuex";
+import { useStore } from "vuex";
+import { computed } from "vue";
 
-export default {
-  components: {
-    StackDesc,
-    StackList,
-  },
+const store = useStore();
+const screenWidth = computed(() => store.getters.screenWidth);
 
-  data() {
-    return {
-      stack,
-    };
-  },
-
-  computed: {
-    ...mapGetters(["screenWidth"]),
-
-    iconSize() {
-      return this.screenWidth < 768 ? 70 : 100;
-    },
-  },
-};
+const iconSize = computed(() => {
+  return screenWidth.value < 768 ? 70 : 100;
+});
 </script>
 
 <style lang="scss" scoped>

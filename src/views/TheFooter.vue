@@ -24,23 +24,10 @@
   </footer>
 </template>
 
-<script>
+<script setup>
 import { contacts } from "@/lang/data";
 import ButtonLink from "@/components/ButtonLink.vue";
 import ContactItem from "@/components/ContactItem.vue";
-
-export default {
-  components: {
-    ButtonLink,
-    ContactItem,
-  },
-
-  data() {
-    return {
-      contacts,
-    };
-  },
-};
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +44,7 @@ export default {
   }
 
   .text {
-    &::v-deep > strong {
+    &:deep(> strong) {
       color: var(--light-green-accent);
     }
 

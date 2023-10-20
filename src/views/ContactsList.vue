@@ -9,21 +9,15 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import ContactItem from "@/components/ContactItem.vue";
 
-export default {
-  components: {
-    ContactItem,
+defineProps({
+  arrData: {
+    type: Array,
+    required: true,
   },
-
-  props: {
-    arrData: {
-      type: Array,
-      required: true,
-    },
-  },
-};
+});
 </script>
 
 <style lang="scss" scoped>

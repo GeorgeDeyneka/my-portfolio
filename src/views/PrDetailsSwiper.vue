@@ -17,8 +17,8 @@
   </swiper-container>
 </template>
 
-<script>
-import { mapGetters } from "vuex";
+<script setup>
+import { useStore } from "vuex";
 import { register } from "swiper/element/bundle";
 import PrDetailsSlide from "@/views/PrDetailsSlide.vue";
 import "swiper/css";
@@ -26,43 +26,34 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import { computed, ref } from "vue";
 
 register();
 
-export default {
-  components: {
-    PrDetailsSlide,
+defineProps({
+  dataItem: {
+    type: Object,
+    required: true,
   },
+});
 
-  props: {
-    dataItem: {
-      type: Object,
-      required: true,
-    },
-  },
+const swiperStyles = ref({
+  "--swiper-navigation-color": "var(--light-green-accent)",
+  "--swiper-pagination-color": "var(--light-green-accent)",
+  "--swiper-pagination-bullet-inactive-color": "var(--light-gray-text)",
+  overflowX: "clip",
+  overflowY: "visible",
+});
 
-  data() {
-    return {
-      swiperStyles: {
-        "--swiper-navigation-color": "var(--light-green-accent)",
-        "--swiper-pagination-color": "var(--light-green-accent)",
-        "--swiper-pagination-bullet-inactive-color": "var(--light-gray-text)",
-        overflowX: "clip",
-        overflowY: "visible",
-      },
-    };
-  },
+const store = useStore();
+const screenWidth = store.getters.screenWidth;
 
-  computed: {
-    ...mapGetters(["screenWidth"]),
-    minSlideHeight() {
-      if (this.screenWidth >= 1200) {
-        return 1200 * 0.4;
-      }
-      return this.screenWidth * 0.4;
-    },
-  },
-};
+const minSlideHeight = computed(() => {
+  if (screenWidth >= 1200) {
+    return 1200 * 0.4;
+  }
+  return screenWidth * 0.4;
+});
 </script>
 
 <style lang="scss" scoped></style>

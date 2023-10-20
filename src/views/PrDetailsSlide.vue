@@ -1,25 +1,3 @@
-<script>
-import PrDetailsSlideDesc from "@/views/PrDetailsSlideDesc.vue";
-
-export default {
-  components: {
-    PrDetailsSlideDesc,
-  },
-
-  props: {
-    infoItem: {
-      type: Object,
-      required: true,
-    },
-
-    imageHeight: {
-      type: Number,
-      required: true,
-    },
-  },
-};
-</script>
-
 <template>
   <swiper-slide lazy="true">
     <div class="slide">
@@ -34,6 +12,22 @@ export default {
     </div>
   </swiper-slide>
 </template>
+
+<script setup>
+import PrDetailsSlideDesc from "@/views/PrDetailsSlideDesc.vue";
+
+defineProps({
+  infoItem: {
+    type: Object,
+    required: true,
+  },
+
+  imageHeight: {
+    type: Number,
+    required: true,
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/base/variables.scss";

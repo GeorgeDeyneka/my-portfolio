@@ -16,16 +16,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ButtonLink from "@/components/ButtonLink.vue";
 import ButtonNav from "@/components/ButtonNav.vue";
-
-export default {
-  components: {
-    ButtonNav,
-    ButtonLink,
-  },
-};
 </script>
 
 <style lang="scss" scoped>

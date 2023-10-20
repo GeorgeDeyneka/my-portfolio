@@ -6,57 +6,52 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    item: {
-      required: true,
-      type: Object,
-      visible: false,
-    },
+<script setup>
+import { onBeforeUnmount, onMounted, ref } from "vue";
+
+const props = defineProps({
+  item: {
+    required: true,
+    type: Object,
   },
+});
 
-  data() {
-    return {
-      count: 0,
-    };
-  },
+const count = ref(0);
+const counter = ref(null);
+const item = props.item;
+const visible = ref(false);
 
-  mounted() {
-    this.observer = new IntersectionObserver(this.checkVisible, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 1,
-    });
-    this.observer.observe(this.$refs.counter);
-  },
+const observer = new IntersectionObserver(checkVisible, {
+  root: null,
+  rootMargin: "0px",
+  threshold: 1,
+});
 
-  beforeUnmount() {
-    this.observer.disconnect();
-  },
+onMounted(() => {
+  observer.observe(counter.value);
+});
 
-  methods: {
-    checkVisible(entries) {
-      const entry = entries.find((entry) => entry.isIntersecting);
+onBeforeUnmount(() => observer.disconnect());
 
-      if (entry && !this.visible) {
-        this.startCount(this.item.endNum, 1000);
-        this.visible = true;
-      }
-    },
+function checkVisible(entries) {
+  const entry = entries.find((entry) => entry.isIntersecting);
 
-    startCount(endNum, ms) {
-      if (this.count == endNum) return;
+  if (entry && !visible.value) {
+    startCount(item.endNum, 1000);
+    visible.value = true;
+  }
+}
 
-      const time = Math.round(ms / (endNum / 1));
-      const interval = setInterval(() => {
-        this.count++;
+function startCount(endNum, ms) {
+  if (count.value == endNum) return;
 
-        if (this.count == endNum) clearInterval(interval);
-      }, time);
-    },
-  },
-};
+  const time = Math.round(ms / (endNum / 1));
+  const interval = setInterval(() => {
+    count.value++;
+
+    if (count.value == endNum) clearInterval(interval);
+  }, time);
+}
 </script>
 
 <style lang="scss" scoped>
