@@ -2,7 +2,7 @@
   <svg
     :style="{
       '--fill-color': fillColor,
-      '--hover-color': hoverColor,
+      '--hover-color': hoverColor || 'none',
       width: `${size}px`,
       height: `${size}px`,
     }"
