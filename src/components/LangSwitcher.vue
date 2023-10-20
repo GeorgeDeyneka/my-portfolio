@@ -51,7 +51,6 @@ const currentLocale = computed(() => locale.value);
 
 const toggleSwitcher = () => {
   isOpen.value = !isOpen.value;
-  console.log(isOpen.value);
 };
 
 const changeLocale = (lang) => {

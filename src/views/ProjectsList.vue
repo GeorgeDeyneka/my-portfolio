@@ -8,34 +8,27 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import ProjectsItem from "@/views/ProjectsItem.vue";
+import { computed, onMounted, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import { useStore } from "vuex";
 
-export default {
-  components: {
-    ProjectsItem,
-  },
+const { locale } = useI18n();
+const store = useStore();
 
-  computed: {
-    arrProjects() {
-      return this.$store.state.items;
-    },
-  },
+const arrProjects = computed(() => store.state.items);
 
-  watch: {
-    "$i18n.locale": "fetchDataOnLocaleChange",
-  },
-
-  mounted() {
-    this.fetchDataOnLocaleChange();
-  },
-
-  methods: {
-    fetchDataOnLocaleChange() {
-      this.$store.dispatch("fetchItems", this.$i18n.locale);
-    },
-  },
+const fetchDataOnLocaleChange = () => {
+  store.dispatch("fetchItems", locale.value);
 };
+
+watch(
+  () => locale.value,
+  () => fetchDataOnLocaleChange(),
+);
+
+onMounted(() => fetchDataOnLocaleChange());
 </script>
 
 <style lang="scss" scoped>
