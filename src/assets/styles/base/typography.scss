@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Mulish";
-  src: local("Mulish-Bold"),
+  src:
+    local("Mulish-Bold"),
     url("@/assets/fonts/Mulish/Mulish-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "Mulish";
-  src: local("Mulish-Medium"),
+  src:
+    local("Mulish-Medium"),
     url("@/assets/fonts/Mulish/Mulish-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -16,7 +18,8 @@
 
 @font-face {
   font-family: "Mulish";
-  src: local("Mulish-Regular"),
+  src:
+    local("Mulish-Regular"),
     url("@/assets/fonts/Mulish/Mulish-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -24,7 +27,8 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: local("DM Sans-Bold"),
+  src:
+    local("DM Sans-Bold"),
     url("@/assets/fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -32,7 +36,8 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: local("DM Sans-Medium"),
+  src:
+    local("DM Sans-Medium"),
     url("@/assets/fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -40,7 +45,8 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: local("DM Sans-Regular"),
+  src:
+    local("DM Sans-Regular"),
     url("@/assets/fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -48,7 +54,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: local("DM Sans-SemiBold"),
+  src:
+    local("DM Sans-SemiBold"),
     url("@/assets/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
@@ -56,7 +63,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: local("DM Sans-Medium"),
+  src:
+    local("DM Sans-Medium"),
     url("@/assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -64,7 +72,8 @@
 
 @font-face {
   font-family: "Poppins";
-  src: local("DM Sans-Regular"),
+  src:
+    local("DM Sans-Regular"),
     url("@/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -72,29 +81,9 @@
 
 @font-face {
   font-family: "Poppins";
-  src: local("DM Sans-Light"),
+  src:
+    local("DM Sans-Light"),
     url("@/assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
-}
-
-p {
-  font-size: 17px;
-  color: var(--gray-text);
-  padding: 12px 0;
-}
-
-h1 {
-  padding: 20px 0;
-}
-
-h3 {
-  color: var(--light-green-accent);
-}
-
-h4 {
-  font-size: 18px;
-  padding: 15px 0;
-  font-weight: 400;
-  color: var(--gray-text);
 }

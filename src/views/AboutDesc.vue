@@ -1,22 +1,34 @@
 <template>
   <div class="about">
-    <h3>{{ $t("about.results.subtitle") }}</h3>
+    <h3 class="green-subtitle">{{ $t("about.results.subtitle") }}</h3>
 
-    <h2 class="about__title">{{ $t("about.results.subtitle") }}</h2>
+    <h2 class="about__title title">{{ $t("about.results.title") }}</h2>
 
     <ButtonLink :text="$t('button.hire.text')" :link="$t('button.hire.link')" />
 
-    <div class="about__text-wrapper">
-      <p v-for="text of $tm('about.results.desc')" :key="text">
-        {{ text }}
-      </p>
+    <div class="about__content">
+      <figure class="about__img">
+        <img src="@/assets/images/modules.svg" alt="Modules" />
+      </figure>
 
-      <div class="about__counter">
-        <AboutCounter
-          v-for="item of $tm('about.results.counter')"
-          :key="item"
-          :item="item"
-        />
+      <div class="about__info">
+        <ul class="about__list list">
+          <li
+            v-for="text of $tm('about.results.desc')"
+            :key="text"
+            class="list__item li-text"
+          >
+            {{ text }}
+          </li>
+        </ul>
+
+        <ul class="about__counter">
+          <AboutCounter
+            v-for="item of $tm('about.results.counter')"
+            :key="item"
+            :item="item"
+          />
+        </ul>
       </div>
     </div>
   </div>
@@ -47,12 +59,33 @@ import AboutCounter from "@/views/AboutCounter.vue";
     }
   }
 
-  &__text {
-    &-wrapper {
-      max-width: 550px;
-      padding: 45px 0;
-      align-self: end;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media #{$desktop-sm} {
+      flex-direction: row;
     }
+  }
+
+  &__img {
+    padding-top: 20px;
+
+    @media #{$desktop-sm} {
+      padding-top: 20px;
+    }
+
+    img {
+      width: 400px;
+      height: auto;
+    }
+  }
+
+  &__info {
+    max-width: 550px;
+    padding: 45px 0;
+    align-self: end;
   }
 
   &__link {
@@ -61,9 +94,8 @@ import AboutCounter from "@/views/AboutCounter.vue";
   }
 
   &__title {
-    font-size: 30px;
     max-width: 550px;
-    padding: 10px 0 40px;
+    padding-bottom: 40px;
   }
 }
 </style>

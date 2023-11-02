@@ -1,6 +1,6 @@
 <template>
   <div class="collab">
-    <h3>{{ $t("about.collab.subtitle") }}</h3>
+    <h3 class="green-subtitle">{{ $t("about.collab.subtitle") }}</h3>
     <h2 class="collab__title">{{ $t("about.collab.title") }}</h2>
 
     <div class="collab__buttons">

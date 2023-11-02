@@ -34,7 +34,7 @@
   "about": {
     "start": {
       "title": "George Deyneka",
-      "desc": "Hello, my name is George. Nice to meet you! I would like to welcome you with my personal portfolio."
+      "desc": "Let's get to know each other! My name is George, and I Frontend developer. I want to introduce you to my personal portfolio."
     },
     "results": {
       "title": "I can deliver results that exceed your expectations.",
@@ -54,9 +54,21 @@
         }
       ],
       "desc": [
-        "I am a front-end developer with 1 year of experience. My core skills include developing web applications using the Angular or Vue.js frameworks.",
-        "I am proficient in adaptive layout, SPA development, working with the server and asynchronous code. I work with modern frameworks and also have experience building applications written in Vanilla JavaScript. I also work with databases like MongoDB and Firebase Realtime Database.",
+        "I'm a software engineer with more than half of year of commercial experience in web development. My commercial experience is building complex SSR applications using the Nuxt.js (Vue) framework.",
+        "I have experience in creating adaptive applications using the Mobile/Desktop First technique, SPA development, working with the server and asynchronous code.",
+        "I work with modern frameworks and also have experience building applications written in vanilla JavaScript. I've also had success using Firebase Realtime Database and other databases.",
         "It is worth mentioning the observance of such important development principles as DRY, KISS and SOLID. Of course, I work with the GIT version control system."
+      ]
+    },
+    "spec": {
+      "title": "My specialization is as follows:",
+      "subtitle": "Specializations",
+      "desc": [
+        "Creating responsive websites using mobile first/desktop first technique",
+        "Development of SPA and SSR applications based on Angular/Vue/Nuxt",
+        "Working with deployment platforms (Netlify, Firebase, Cloudflare and others)",
+        "Using project management tools (JIRA etc.)",
+        "Assessing the complexity of tasks and taking responsibility for them"
       ]
     },
     "collab": {
