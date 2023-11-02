@@ -1,6 +1,6 @@
 <template>
   <div class="reference">
-    <h2>{{ title }}:</h2>
+    <h2 class="reference__title">{{ title }}:</h2>
     <a class="reference__link" target="_blank" :href="urlLink">{{ urlLink }}</a>
   </div>
 </template>
@@ -31,6 +31,11 @@ defineProps({
     color: var(--light-green-accent);
     font-size: 18px;
     text-decoration: none;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 120%;
   }
 }
 </style>

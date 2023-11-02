@@ -2,6 +2,7 @@
   <div class="wrapper">
     <AboutStart />
     <AboutDesc />
+    <AboutSpec />
     <AboutCollab />
 
     <!-- <p class="about__paragraph">
@@ -23,4 +24,5 @@
 import AboutDesc from "@/views/AboutDesc.vue";
 import AboutStart from "@/views/AboutStart.vue";
 import AboutCollab from "@/views/AboutCollab.vue";
+import AboutSpec from "@/views/AboutSpec.vue";
 </script>

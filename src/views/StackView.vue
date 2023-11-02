@@ -3,8 +3,11 @@
     <StackDesc :text-list="$tm('tech.stack.desc')" />
 
     <div class="tech__experience experience">
-      <h3 class="experience__subtitle">{{ $t("tech.exp.subtitle") }}</h3>
-      <h2 class="experience__title">{{ $t("tech.exp.title") }}</h2>
+      <h3 class="experience__subtitle green-subtitle">
+        {{ $t("tech.exp.subtitle") }}
+      </h3>
+
+      <h2 class="title">{{ $t("tech.exp.title") }}</h2>
 
       <StackList
         v-for="item of stack"
@@ -35,10 +38,5 @@ const iconSize = computed(() => {
 <style lang="scss" scoped>
 .experience {
   padding: 60px 0;
-
-  &__title {
-    font-size: 30px;
-    padding: 10px 0;
-  }
 }
 </style>

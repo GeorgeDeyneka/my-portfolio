@@ -56,6 +56,7 @@ const toggleSwitcher = () => {
 const changeLocale = (lang) => {
   locale.value = lang;
   sessionStorage.setItem("lang", locale.value);
+  toggleSwitcher();
 };
 
 const onHoverChild = () => (isChildHover.value = !isChildHover.value);
