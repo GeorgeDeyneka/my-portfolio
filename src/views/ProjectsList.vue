@@ -17,7 +17,7 @@ import { useStore } from "vuex";
 const { locale } = useI18n();
 const store = useStore();
 
-const arrProjects = computed(() => store.state.items);
+const arrProjects = computed(() => store.state.databaseModule.items);
 
 const fetchDataOnLocaleChange = () => {
   store.dispatch("fetchItems", locale.value);

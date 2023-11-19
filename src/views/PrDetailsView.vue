@@ -58,7 +58,7 @@ const store = useStore();
 const route = useRoute();
 const router = useRouter();
 
-const dataItem = computed(() => store.state.item);
+const dataItem = computed(() => store.state.databaseModule.item);
 
 const referencesData = computed(() => [
   { title: t("details.linkLive"), url: dataItem.value.liveUrl },
