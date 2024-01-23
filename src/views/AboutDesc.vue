@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <section class="about">
     <h3 class="green-subtitle">{{ $t("about.results.subtitle") }}</h3>
 
     <h2 class="about__title title">{{ $t("about.results.title") }}</h2>
@@ -31,7 +31,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

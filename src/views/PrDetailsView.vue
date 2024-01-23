@@ -1,11 +1,11 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper">
     <Suspense>
       <template #default>
-        <div>
+        <section>
           <div class="project__title">
             <ButtonBack route="/projects" />
-            <h1>{{ dataItem.title }}</h1>
+            <h2>{{ dataItem.title }}</h2>
           </div>
 
           <p class="project__text">{{ dataItem.shortDesc }}</p>
@@ -23,14 +23,14 @@
               :url-link="item.url"
             />
           </div>
-        </div>
+        </section>
       </template>
 
       <template #fallback>
         <LoadSpinner />
       </template>
     </Suspense>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -97,6 +97,7 @@ onBeforeUnmount(() => store.commit("resetItem"));
   position: relative;
   min-height: 600px;
 }
+
 .project {
   &__title {
     display: flex;

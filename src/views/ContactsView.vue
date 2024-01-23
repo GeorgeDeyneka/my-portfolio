@@ -1,9 +1,11 @@
 <template>
-  <div class="wrapper">
-    <h1>{{ $t("contacts.title") }}</h1>
+  <main class="wrapper">
+    <section class="contacts">
+      <h2>{{ $t("contacts.title") }}</h2>
 
-    <ContactsList :arr-data="contacts" />
-  </div>
+      <ContactsList :arr-data="contacts" />
+    </section>
+  </main>
 </template>
 
 <script setup>

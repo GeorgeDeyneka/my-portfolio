@@ -1,9 +1,9 @@
 <template>
-  <div class="start">
+  <section class="start">
     <h1 class="start__title">{{ $t("about.start.title") }}</h1>
 
     <h4>{{ $t("about.start.desc") }}</h4>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

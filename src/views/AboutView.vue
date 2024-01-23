@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper">
     <AboutStart />
     <AboutDesc />
     <AboutSpec />
@@ -17,7 +17,7 @@
       <RouterLink class="about__link" to="/stack">Technologies</RouterLink>
       section.
     </p> -->
-  </div>
+  </main>
 </template>
 
 <script setup>
