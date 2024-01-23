@@ -21,7 +21,24 @@ const router = createRouter({
           component: () => import("@/views/ProjectsView.vue"),
         },
         {
-          path: "/projects/:id",
+          path: "/projects/pet",
+          name: "projects-pet",
+          component: () => import("@/views/ProjectsPetView.vue"),
+        },
+        {
+          path: "/projects/commercial",
+          name: "projects-commercial",
+          component: () => import("@/views/ProjectsCommView.vue"),
+        },
+        {
+          path: "/projects/pet/:id",
+          // rewrite
+          name: "project",
+          component: () => import("@/views/PrDetailsView.vue"),
+        },
+        {
+          path: "/projects/commercial/:id",
+          // rewrite
           name: "project",
           component: () => import("@/views/PrDetailsView.vue"),
         },

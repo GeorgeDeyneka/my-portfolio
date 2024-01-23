@@ -4,20 +4,24 @@
       v-for="item of arrProjects"
       :key="item"
       :project-item="item"
+      :current-route="currentName"
     />
   </ul>
 </template>
 
 <script setup>
 import ProjectsItem from "@/views/ProjectsItem.vue";
-import { computed, onMounted, watch } from "vue";
+import { computed, onMounted, watch, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "vuex";
+import { useRoute } from "vue-router";
 
 const { locale } = useI18n();
 const store = useStore();
+const route = useRoute();
 
 const arrProjects = computed(() => store.state.databaseModule.items);
+const currentName = ref("");
 
 const fetchDataOnLocaleChange = () => {
   store.dispatch("fetchItems", locale.value);
@@ -28,7 +32,10 @@ watch(
   () => fetchDataOnLocaleChange(),
 );
 
-onMounted(() => fetchDataOnLocaleChange());
+onMounted(() => {
+  currentName.value = route.path;
+  fetchDataOnLocaleChange();
+});
 </script>
 
 <style lang="scss" scoped>
