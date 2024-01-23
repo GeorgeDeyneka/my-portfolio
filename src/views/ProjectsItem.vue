@@ -1,6 +1,9 @@
 <template>
   <li class="project">
-    <RouterLink class="project__link" :to="currentRoute + '/' + projectItem.id">
+    <RouterLink
+      class="project__link"
+      :to="'/projects/' + currentRoute + '/' + projectItem.id"
+    >
       <img
         class="project__image"
         :src="projectItem.imgUrls[0].url"

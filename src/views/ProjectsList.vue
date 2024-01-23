@@ -4,7 +4,7 @@
       v-for="item of arrProjects"
       :key="item"
       :project-item="item"
-      :current-route="currentName"
+      :current-route="secondPartOfRoute"
     />
   </ul>
 </template>
@@ -21,7 +21,7 @@ const store = useStore();
 const route = useRoute();
 
 const arrProjects = computed(() => store.state.databaseModule.items);
-const currentName = ref("");
+const secondPartOfRoute = ref("");
 
 const fetchDataOnLocaleChange = () => {
   store.dispatch("fetchItems", locale.value);
@@ -33,8 +33,9 @@ watch(
 );
 
 onMounted(() => {
-  currentName.value = route.path;
+  secondPartOfRoute.value = route.path.split("/")[2];
   fetchDataOnLocaleChange();
+  console.log(secondPartOfRoute.value);
 });
 </script>
 

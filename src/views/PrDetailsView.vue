@@ -5,6 +5,8 @@
         <section>
           <div class="project__title">
             <ButtonBack route="/projects" />
+            <!-- <ButtonBack :route="router.go(-1)" /> -->
+            <!-- <ButtonBack :route="router.back()" /> -->
             <h2>{{ dataItem.title }}</h2>
           </div>
 
