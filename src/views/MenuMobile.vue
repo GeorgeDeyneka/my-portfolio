@@ -9,7 +9,7 @@
         v-for="route in $tm('nav')"
         :key="route"
         class="nav-link navbar__link"
-        exact-active-class="nav-link-active"
+        :class="{ 'nav-link-active': isExactRoute(route.path) }"
         :to="route.path"
         @click="toggleMenu"
         >{{ route.name }}</RouterLink
@@ -26,12 +26,18 @@
 import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
 import LangSwitcher from "@/components/LangSwitcher.vue";
+import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { computed, onBeforeUnmount, ref } from "vue";
 
+const router = useRouter();
 const isOpen = ref(false);
 const store = useStore();
 const screenWidth = computed(() => store.getters.screenWidth);
+
+const isExactRoute = (path) => {
+  return router.currentRoute.value.path.includes(path);
+};
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;

@@ -1,6 +1,9 @@
 <template>
   <li class="project">
-    <RouterLink class="project__link" :to="'/projects/' + projectItem.id">
+    <RouterLink
+      class="project__link"
+      :to="'/projects/' + currentRoute + '/' + projectItem.id"
+    >
       <img
         class="project__image"
         :src="projectItem.imgUrls[0].url"
@@ -27,6 +30,10 @@ defineProps({
   projectItem: {
     required: true,
     type: Object,
+  },
+  currentRoute: {
+    required: true,
+    type: String,
   },
 });
 

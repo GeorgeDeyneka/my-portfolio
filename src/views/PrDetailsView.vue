@@ -1,36 +1,37 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper">
     <Suspense>
       <template #default>
-        <div>
+        <section>
           <div class="project__title">
-            <ButtonBack route="/projects" />
-            <h1>{{ dataItem.title }}</h1>
+            <ButtonBack />
+            <h2>{{ dataItem.title }}</h2>
           </div>
 
           <p class="project__text">{{ dataItem.shortDesc }}</p>
 
           <PrDetailsSwiper :data-item="dataItem" />
 
-          <div
-            v-if="dataItem.liveUrl && dataItem.repoUrl"
-            class="project__links"
-          >
+          <div class="project__links">
             <PrDetailsReferences
-              v-for="item of referencesData"
-              :key="item"
-              :title="item.title"
-              :url-link="item.url"
+              v-if="dataItem.liveUrl"
+              :title="$t('details.linkLive')"
+              :url-link="dataItem.liveUrl"
+            />
+            <PrDetailsReferences
+              v-if="dataItem.repoUrl"
+              :title="$t('details.linkRepo')"
+              :url-link="dataItem.repoUrl"
             />
           </div>
-        </div>
+        </section>
       </template>
 
       <template #fallback>
         <LoadSpinner />
       </template>
     </Suspense>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -42,6 +43,7 @@ import {
   onMounted,
   watch,
   defineAsyncComponent,
+  ref,
 } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
@@ -58,18 +60,15 @@ const store = useStore();
 const route = useRoute();
 const router = useRouter();
 
-const dataItem = computed(() => store.state.item);
-
-const referencesData = computed(() => [
-  { title: t("details.linkLive"), url: dataItem.value.liveUrl },
-  { title: t("details.linkRepo"), url: dataItem.value.repoUrl },
-]);
+const category = ref("");
+const dataItem = computed(() => store.state.databaseModule.item);
 
 const fetchItemOnLocaleChange = () => {
   store
     .dispatch("fetchItem", {
       id: Number(route.params.id),
       locale: locale.value,
+      category: category.value,
     })
     .then((resp) => {
       checkItemAndRedirect(resp);
@@ -87,7 +86,10 @@ watch(
   () => fetchItemOnLocaleChange(),
 );
 
-onMounted(() => fetchItemOnLocaleChange());
+onMounted(() => {
+  category.value = route.path.split("/")[2];
+  fetchItemOnLocaleChange();
+});
 
 onBeforeUnmount(() => store.commit("resetItem"));
 </script>
@@ -97,6 +99,7 @@ onBeforeUnmount(() => store.commit("resetItem"));
   position: relative;
   min-height: 600px;
 }
+
 .project {
   &__title {
     display: flex;

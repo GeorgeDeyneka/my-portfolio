@@ -10,7 +10,11 @@ const router = createRouter({
       component: MainView,
       children: [
         {
-          path: "",
+          path: "/",
+          redirect: "/about",
+        },
+        {
+          path: "/about",
           name: "about",
           component: () => import("@/views/AboutView.vue"),
           exact: true,
@@ -21,7 +25,17 @@ const router = createRouter({
           component: () => import("@/views/ProjectsView.vue"),
         },
         {
-          path: "/projects/:id",
+          path: "/projects/pet",
+          name: "projects-pet",
+          component: () => import("@/views/ProjectsPetView.vue"),
+        },
+        {
+          path: "/projects/commercial",
+          name: "projects-commercial",
+          component: () => import("@/views/ProjectsCommView.vue"),
+        },
+        {
+          path: "/projects/:category/:id",
           name: "project",
           component: () => import("@/views/PrDetailsView.vue"),
         },

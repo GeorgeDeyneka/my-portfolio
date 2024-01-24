@@ -4,23 +4,30 @@
       v-for="item of arrProjects"
       :key="item"
       :project-item="item"
+      :current-route="secondPartOfRoute"
     />
   </ul>
 </template>
 
 <script setup>
 import ProjectsItem from "@/views/ProjectsItem.vue";
-import { computed, onMounted, watch } from "vue";
+import { computed, onMounted, watch, ref, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "vuex";
+import { useRoute } from "vue-router";
 
 const { locale } = useI18n();
 const store = useStore();
+const route = useRoute();
 
-const arrProjects = computed(() => store.state.items);
+const arrProjects = computed(() => store.state.databaseModule.items);
+const secondPartOfRoute = ref("");
 
 const fetchDataOnLocaleChange = () => {
-  store.dispatch("fetchItems", locale.value);
+  store.dispatch("fetchItems", {
+    locale: locale.value,
+    category: secondPartOfRoute.value,
+  });
 };
 
 watch(
@@ -28,7 +35,14 @@ watch(
   () => fetchDataOnLocaleChange(),
 );
 
-onMounted(() => fetchDataOnLocaleChange());
+onMounted(() => {
+  secondPartOfRoute.value = route.path.split("/")[2];
+  fetchDataOnLocaleChange();
+});
+
+onBeforeUnmount(() => {
+  store.commit("resetItems");
+});
 </script>
 
 <style lang="scss" scoped>

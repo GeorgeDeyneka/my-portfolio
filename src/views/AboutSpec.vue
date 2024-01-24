@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <section class="about">
     <h3 class="green-subtitle">{{ $t("about.spec.subtitle") }}</h3>
 
     <h2 class="about__title title">{{ $t("about.spec.title") }}</h2>
@@ -21,7 +21,7 @@
         <img src="@/assets/images/development.svg" alt="Development" />
       </figure>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

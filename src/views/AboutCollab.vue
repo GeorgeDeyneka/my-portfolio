@@ -1,5 +1,5 @@
 <template>
-  <div class="collab">
+  <section class="collab">
     <h3 class="green-subtitle">{{ $t("about.collab.subtitle") }}</h3>
     <h2 class="collab__title">{{ $t("about.collab.title") }}</h2>
 
@@ -13,7 +13,7 @@
         :link="$t('button.hire.link')"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

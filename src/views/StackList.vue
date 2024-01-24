@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ title }}:</h2>
+  <h3 class="tech__subtitle">{{ title }}:</h3>
 
   <ul class="tech__logos">
     <li v-for="item of arrData" :key="item" class="tech__item">
@@ -40,6 +40,10 @@ defineProps({
     align-items: center;
     list-style: none;
     max-width: min-content;
+  }
+
+  &__subtitle {
+    font-size: 20px;
   }
 
   &__name {

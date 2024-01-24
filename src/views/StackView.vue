@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper">
     <StackDesc :text-list="$tm('tech.stack.desc')" />
 
-    <div class="tech__experience experience">
+    <section class="tech__experience experience">
       <h3 class="experience__subtitle green-subtitle">
         {{ $t("tech.exp.subtitle") }}
       </h3>
@@ -16,8 +16,8 @@
         :title="item.title"
         :arr-data="item.data"
       />
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script setup>
