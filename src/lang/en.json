@@ -91,7 +91,23 @@
     }
   },
   "projects": {
-    "title": "Projects I have worked on:"
+    "title": "Projects I have worked on:",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Commercial",
+        "path": "commercial",
+        "desc": "What was developed by me at the company for commercial purposes.",
+        "iconPath": "#icon-git-link"
+      },
+      {
+        "id": 2,
+        "title": "Pet",
+        "path": "pet",
+        "desc": "Projects developed by me for portfolio or self-study purposes.",
+        "iconPath": "#icon-cubes"
+      }
+    ]
   },
   "details": {
     "linkLive": "Live Page",

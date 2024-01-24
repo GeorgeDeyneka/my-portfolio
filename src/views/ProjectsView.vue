@@ -5,48 +5,20 @@
 
       <ul class="projects__cards">
         <ProjectCategoryCard
-          v-for="item of categoryData"
+          v-for="item of $tm('projects.cards')"
           :key="item.id"
           :title="item.title"
           :desc="item.desc"
           :icon-path="item.iconPath"
-          :route="item.route"
+          :route="item.path"
         />
       </ul>
-      <!-- 
-      <Suspense>
-        <template #default>
-          <ProjectsList />
-        </template>
-        <template #fallback>
-          <LoadSpinner />
-        </template>
-      </Suspense> -->
     </section>
   </main>
 </template>
 
 <script setup>
 import ProjectCategoryCard from "@/views/ProjectCategoryCard.vue";
-
-const categoryData = [
-  {
-    id: 1,
-    title: "Commercial",
-    route: "commercial",
-    collection: "commercial",
-    desc: "What was developed by me at the company for commercial purposes.",
-    iconPath: "#icon-git-link",
-  },
-  {
-    id: 2,
-    title: "Pet",
-    route: "pet",
-    collection: "pet",
-    desc: "Projects developed by me for portfolio or self-study purposes.",
-    iconPath: "#icon-cubes",
-  },
-];
 </script>
 
 <style lang="scss" scoped>
