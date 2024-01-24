@@ -24,7 +24,10 @@ const arrProjects = computed(() => store.state.databaseModule.items);
 const secondPartOfRoute = ref("");
 
 const fetchDataOnLocaleChange = () => {
-  store.dispatch("fetchItems", locale.value);
+  store.dispatch("fetchItems", {
+    locale: locale.value,
+    category: secondPartOfRoute.value,
+  });
 };
 
 watch(

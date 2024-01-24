@@ -42,6 +42,7 @@ import {
   onMounted,
   watch,
   defineAsyncComponent,
+  ref,
 } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
@@ -58,6 +59,7 @@ const store = useStore();
 const route = useRoute();
 const router = useRouter();
 
+const category = ref("");
 const dataItem = computed(() => store.state.databaseModule.item);
 
 const referencesData = computed(() => [
@@ -70,6 +72,7 @@ const fetchItemOnLocaleChange = () => {
     .dispatch("fetchItem", {
       id: Number(route.params.id),
       locale: locale.value,
+      category: category.value,
     })
     .then((resp) => {
       checkItemAndRedirect(resp);
@@ -87,7 +90,10 @@ watch(
   () => fetchItemOnLocaleChange(),
 );
 
-onMounted(() => fetchItemOnLocaleChange());
+onMounted(() => {
+  category.value = route.path.split("/")[2];
+  fetchItemOnLocaleChange();
+});
 
 onBeforeUnmount(() => store.commit("resetItem"));
 </script>

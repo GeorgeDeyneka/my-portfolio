@@ -23,9 +23,12 @@ export default {
   getters: {},
 
   actions: {
-    async fetchItems({ commit }, locale) {
+    async fetchItems({ commit }, payload) {
+      const { category, locale } = payload;
       const items = [];
-      const snapshot = await db.ref(`projects/pet/${locale}`).once("value");
+      const snapshot = await db
+        .ref(`projects/${category}/${locale}`)
+        .once("value");
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
         items.push(childData);
@@ -34,9 +37,9 @@ export default {
     },
 
     async fetchItem({ commit }, payload) {
-      const { id, locale } = payload;
+      const { id, locale, category } = payload;
       const snapshot = await db
-        .ref(`projects/pet/${locale}`)
+        .ref(`projects/${category}/${locale}`)
         .orderByChild("id")
         .equalTo(id)
         .once("value");
