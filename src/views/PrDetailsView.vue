@@ -12,15 +12,16 @@
 
           <PrDetailsSwiper :data-item="dataItem" />
 
-          <div
-            v-if="dataItem.liveUrl && dataItem.repoUrl"
-            class="project__links"
-          >
+          <div class="project__links">
             <PrDetailsReferences
-              v-for="item of referencesData"
-              :key="item"
-              :title="item.title"
-              :url-link="item.url"
+              v-if="dataItem.liveUrl"
+              :title="$t('details.linkLive')"
+              :url-link="dataItem.liveUrl"
+            />
+            <PrDetailsReferences
+              v-if="dataItem.repoUrl"
+              :title="$t('details.linkRepo')"
+              :url-link="dataItem.repoUrl"
             />
           </div>
         </section>
@@ -61,11 +62,6 @@ const router = useRouter();
 
 const category = ref("");
 const dataItem = computed(() => store.state.databaseModule.item);
-
-const referencesData = computed(() => [
-  { title: t("details.linkLive"), url: dataItem.value.liveUrl },
-  { title: t("details.linkRepo"), url: dataItem.value.repoUrl },
-]);
 
 const fetchItemOnLocaleChange = () => {
   store

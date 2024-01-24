@@ -11,7 +11,7 @@
 
 <script setup>
 import ProjectsItem from "@/views/ProjectsItem.vue";
-import { computed, onMounted, watch, ref } from "vue";
+import { computed, onMounted, watch, ref, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
@@ -38,6 +38,10 @@ watch(
 onMounted(() => {
   secondPartOfRoute.value = route.path.split("/")[2];
   fetchDataOnLocaleChange();
+});
+
+onBeforeUnmount(() => {
+  store.commit("resetItems");
 });
 </script>
 

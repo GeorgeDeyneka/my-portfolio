@@ -18,6 +18,10 @@ export default {
     resetItem(state) {
       state.item = {};
     },
+
+    resetItems(state) {
+      state.items = [];
+    },
   },
 
   getters: {},
