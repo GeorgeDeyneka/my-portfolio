@@ -10,7 +10,11 @@ const router = createRouter({
       component: MainView,
       children: [
         {
-          path: "",
+          path: "/",
+          redirect: "/about",
+        },
+        {
+          path: "/about",
           name: "about",
           component: () => import("@/views/AboutView.vue"),
           exact: true,
