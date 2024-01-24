@@ -35,7 +35,6 @@ watch(
 onMounted(() => {
   secondPartOfRoute.value = route.path.split("/")[2];
   fetchDataOnLocaleChange();
-  console.log(secondPartOfRoute.value);
 });
 </script>
 
