@@ -92,6 +92,7 @@
   },
   "projects": {
     "title": "Projects I have worked on:",
+    "categoriesTitle": "Select the project category you want to view:",
     "cards": [
       {
         "id": 1,

@@ -1,7 +1,7 @@
 <template>
   <main class="wrapper">
     <section class="projects">
-      <!-- <h2>{{ $t("projects.title") }}</h2> -->
+      <h2>{{ $t("projects.title") }}</h2>
 
       <Suspense>
         <template #default>

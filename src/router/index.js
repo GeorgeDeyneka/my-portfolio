@@ -27,12 +27,12 @@ const router = createRouter({
         {
           path: "/projects/pet",
           name: "projects-pet",
-          component: () => import("@/views/ProjectsPetView.vue"),
+          component: () => import("@/views/ProjectsCatalogView.vue"),
         },
         {
           path: "/projects/commercial",
           name: "projects-commercial",
-          component: () => import("@/views/ProjectsCommView.vue"),
+          component: () => import("@/views/ProjectsCatalogView.vue"),
         },
         {
           path: "/projects/:category/:id",
