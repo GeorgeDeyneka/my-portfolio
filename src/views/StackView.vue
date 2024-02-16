@@ -7,7 +7,7 @@
         {{ $t("tech.exp.subtitle") }}
       </h3>
 
-      <h2 class="title">{{ $t("tech.exp.title") }}</h2>
+      <h2>{{ $t("tech.exp.title") }}</h2>
 
       <StackList
         v-for="item of stack"

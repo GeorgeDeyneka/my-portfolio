@@ -1,14 +1,17 @@
 <template>
   <section class="stack">
-    <h3 class="stack__subtitle green-subtitle">
-      {{ $t("tech.stack.subtitle") }}
-    </h3>
-    <h2 class="stack__title title">{{ $t("tech.stack.title") }}</h2>
+    <div class="stack__title">
+      <ButtonBack />
+
+      <h2>{{ $t("tech.stack.title") }}</h2>
+    </div>
     <p v-for="item of textList" :key="item">{{ item }}</p>
   </section>
 </template>
 
 <script setup>
+import ButtonBack from "@/components/ButtonBack.vue";
+
 defineProps({
   textList: {
     required: true,
@@ -19,7 +22,12 @@ defineProps({
 
 <style lang="scss" scoped>
 .stack {
-  padding: 60px 0;
   max-width: 650px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
 }
 </style>

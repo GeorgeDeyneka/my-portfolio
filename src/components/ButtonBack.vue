@@ -1,12 +1,11 @@
 <template>
-  <button class="btn" @click="router.back()">
+  <button class="btn" @click="goBack()">
     <SvgIcon
       class="icon"
       :size="30"
       string-path="#icon-arrow"
       fill-color="var(--white)"
     />
-    {{ text }}
   </button>
 </template>
 
@@ -14,14 +13,18 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 import { useRouter } from "vue-router";
 
-defineProps({
-  text: {
+const props = defineProps({
+  route: {
     type: String,
-    default: "",
+    default: null,
   },
 });
 
 const router = useRouter();
+
+const goBack = () => {
+  props.route ? router.push(props.route) : router.back();
+};
 </script>
 
 <style lang="scss" scoped>
