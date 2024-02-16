@@ -129,6 +129,10 @@
             "title": "Software",
             "data": [
                 {
+                    "name": "Jira",
+                    "path": "#icon-jira"
+                },
+                {
                     "name": "Chat GPT",
                     "path": "#icon-chat-gpt"
                 },
