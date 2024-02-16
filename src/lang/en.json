@@ -112,7 +112,8 @@
   },
   "details": {
     "linkLive": "Live Page",
-    "linkRepo": "Repository Page"
+    "linkRepo": "Repository Page",
+    "stack": "Technical stack"
   },
   "contacts": {
     "title": "My Contacts"

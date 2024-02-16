@@ -12,6 +12,13 @@
 
           <PrDetailsSwiper :data-item="dataItem" />
 
+          <div class="projects__stack stack">
+            <h2 class="stack__title">
+              {{ $t("details.stack") }}
+            </h2>
+            <p class="stack__desc">{{ dataItem.stack }}</p>
+          </div>
+
           <div class="project__links">
             <PrDetailsReferences
               v-if="dataItem.liveUrl"
@@ -110,6 +117,13 @@ onBeforeUnmount(() => store.commit("resetItem"));
   &__text {
     padding: 40px 0;
     max-width: 600px;
+  }
+}
+
+.stack {
+  padding: 20px 0;
+  &__desc {
+    padding: 0;
   }
 }
 </style>
