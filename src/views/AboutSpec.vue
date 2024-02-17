@@ -32,7 +32,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: -webkit-fill-available;
+    height: 100%;
     background-image: url("@/assets/images/rocket.svg");
     background-repeat: no-repeat;
     background-position: center;

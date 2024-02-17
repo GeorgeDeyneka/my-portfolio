@@ -54,7 +54,7 @@ import AboutCounter from "@/views/AboutCounter.vue";
     top: 0;
     left: 0;
     width: 100%;
-    height: -webkit-fill-available;
+    height: 100%;
     background-image: url("@/assets/images/chart.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -72,13 +72,14 @@ import AboutCounter from "@/views/AboutCounter.vue";
 
   &__counter {
     display: flex;
-    gap: 60px;
+    gap: 20px;
     padding: 20px 0;
     flex-wrap: wrap;
     justify-content: center;
 
     @media #{$tablet} {
       justify-content: flex-start;
+      gap: 60px;
     }
   }
 
