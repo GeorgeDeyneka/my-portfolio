@@ -30,7 +30,6 @@ import ButtonBack from "@/components/ButtonBack.vue";
 
 .wrapper {
   position: relative;
-  min-height: 600px;
 }
 
 .projects {

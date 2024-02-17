@@ -55,10 +55,9 @@ onBeforeUnmount(() =>
 }
 
 .main {
-  padding: 24px;
+  padding: 0 24px;
   flex: 1 1 auto;
   width: 100%;
-  padding-top: 0;
 
   @media #{$tablet} {
     max-width: 1100px;
