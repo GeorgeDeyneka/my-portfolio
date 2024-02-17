@@ -40,8 +40,12 @@ import AboutCounter from "@/views/AboutCounter.vue";
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 30px 0;
   background-color: var(--black-header-bg);
+
+  @media #{$tablet} {
+    padding: 50px 0;
+  }
 
   @media #{$desktop-sm} {
     background-color: inherit;
@@ -70,10 +74,13 @@ import AboutCounter from "@/views/AboutCounter.vue";
     }
   }
 
+  &__list {
+    padding: 40px 0 20px;
+  }
+
   &__counter {
     display: flex;
     gap: 20px;
-    padding: 20px 0;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -84,8 +91,6 @@ import AboutCounter from "@/views/AboutCounter.vue";
   }
 
   &__content {
-    padding: 45px 0;
-
     @media #{$tablet} {
       max-width: 550px;
       align-self: end;

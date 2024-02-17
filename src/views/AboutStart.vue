@@ -10,15 +10,18 @@
 @import "@/assets/styles/base/variables.scss";
 
 .start {
-  padding: 50px 0;
   max-width: 550px;
+  padding: 20px 0;
+
+  @media #{$tablet} {
+    padding: 50px 0;
+  }
 
   &__title {
-    padding: 60px 0;
+    padding: 40px 0;
     font-size: 65px;
 
     @media #{$tablet} {
-      padding: 70px 0 40px;
       font-size: 80px;
       line-height: 1.3;
     }

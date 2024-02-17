@@ -20,6 +20,11 @@
 .spec {
   position: relative;
   background-color: var(--black-header-bg);
+  padding: 30px 0;
+
+  @media #{$tablet} {
+    padding: 50px 0;
+  }
 
   @media #{$desktop-sm} {
     background-color: inherit;

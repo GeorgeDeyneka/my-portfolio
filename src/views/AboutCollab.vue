@@ -28,7 +28,11 @@ import ButtonNav from "@/components/ButtonNav.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0 150px;
+  padding: 30px 0 50px;
+
+  @media #{$tablet} {
+    padding: 50px 0;
+  }
 
   &__title {
     font-size: 45px;
