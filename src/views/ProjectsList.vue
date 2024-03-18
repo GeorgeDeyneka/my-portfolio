@@ -13,18 +13,18 @@
 import ProjectsItem from "@/views/ProjectsItem.vue";
 import { computed, onMounted, watch, ref, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
-import { useStore } from "vuex";
+import { useDatabaseStore } from "@/store/databaseStore";
 import { useRoute } from "vue-router";
 
 const { locale } = useI18n();
-const store = useStore();
+const store = useDatabaseStore();
 const route = useRoute();
 
-const arrProjects = computed(() => store.state.databaseModule.items);
+const arrProjects = computed(() => store.items);
 const secondPartOfRoute = ref("");
 
 const fetchDataOnLocaleChange = () => {
-  store.dispatch("fetchItems", {
+  store.fetchItems({
     locale: locale.value,
     category: secondPartOfRoute.value,
   });
@@ -40,9 +40,7 @@ onMounted(() => {
   fetchDataOnLocaleChange();
 });
 
-onBeforeUnmount(() => {
-  store.commit("resetItems");
-});
+onBeforeUnmount(() => store.resetItems());
 </script>
 
 <style lang="scss" scoped>

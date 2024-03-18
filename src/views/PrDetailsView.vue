@@ -12,6 +12,13 @@
 
           <PrDetailsSwiper :data-item="dataItem" />
 
+          <div class="projects__stack stack">
+            <h2 class="stack__title">
+              {{ $t("details.stack") }}
+            </h2>
+            <p class="stack__desc">{{ dataItem.stack }}</p>
+          </div>
+
           <div class="project__links">
             <PrDetailsReferences
               v-if="dataItem.liveUrl"
@@ -47,7 +54,7 @@ import {
 } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { useStore } from "vuex";
+import { useDatabaseStore } from "@/store/databaseStore";
 
 const PrDetailsSwiper = defineAsyncComponent(() =>
   import("@/views/PrDetailsSwiper.vue"),
@@ -56,16 +63,16 @@ const PrDetailsReferences = defineAsyncComponent(() =>
   import("@/views/PrDetailsReferences.vue"),
 );
 const { locale, t } = useI18n();
-const store = useStore();
+const store = useDatabaseStore();
 const route = useRoute();
 const router = useRouter();
 
 const category = ref("");
-const dataItem = computed(() => store.state.databaseModule.item);
+const dataItem = computed(() => store.item);
 
 const fetchItemOnLocaleChange = () => {
   store
-    .dispatch("fetchItem", {
+    .fetchItem({
       id: Number(route.params.id),
       locale: locale.value,
       category: category.value,
@@ -91,7 +98,7 @@ onMounted(() => {
   fetchItemOnLocaleChange();
 });
 
-onBeforeUnmount(() => store.commit("resetItem"));
+onBeforeUnmount(() => store.resetItem());
 </script>
 
 <style lang="scss" scoped>
@@ -110,6 +117,13 @@ onBeforeUnmount(() => store.commit("resetItem"));
   &__text {
     padding: 40px 0;
     max-width: 600px;
+  }
+}
+
+.stack {
+  padding: 20px 0;
+  &__desc {
+    padding: 0;
   }
 }
 </style>

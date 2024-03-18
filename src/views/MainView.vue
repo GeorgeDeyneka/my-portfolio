@@ -1,27 +1,31 @@
 <template>
-  <TheHeader />
+  <div class="app">
+    <TheHeader />
 
-  <router-view v-slot="{ Component }" class="main">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+    <router-view v-slot="{ Component }" class="main">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
 
-  <TheFooter />
+    <TheFooter />
+    <SvgSprite />
+  </div>
 </template>
 
 <script setup>
 import TheHeader from "@/views/TheHeader.vue";
 import TheFooter from "@/views/TheFooter.vue";
+import SvgSprite from "@/views/SvgSprite.vue";
 import { debounce } from "lodash";
 import { nextTick, onBeforeUnmount, onMounted, onUpdated } from "vue";
-import { useStore } from "vuex";
+import { useScreenWidthStore } from "@/store/screenWidth";
 
-const store = useStore();
+const store = useScreenWidthStore();
 
 const updateScreenWidth = () =>
   debounce(function () {
-    store.commit("setScreenWidth", window.innerWidth);
+    store.setScreenWidth(window.innerWidth);
   }, 200);
 
 onMounted(() => window.addEventListener("resize", updateScreenWidth()));
@@ -51,10 +55,9 @@ onBeforeUnmount(() =>
 }
 
 .main {
-  padding: 24px;
+  padding: 0 24px;
   flex: 1 1 auto;
   width: 100%;
-  padding-top: 0;
 
   @media #{$tablet} {
     max-width: 1100px;

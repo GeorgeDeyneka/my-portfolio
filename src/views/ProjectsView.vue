@@ -1,7 +1,10 @@
 <template>
   <main class="wrapper">
     <section class="projects">
-      <h2>{{ $t("projects.categoriesTitle") }}</h2>
+      <div class="projects__title">
+        <ButtonBack />
+        <h2>{{ $t("projects.categoriesTitle") }}</h2>
+      </div>
 
       <ul class="projects__cards">
         <ProjectCategoryCard
@@ -19,6 +22,7 @@
 
 <script setup>
 import ProjectCategoryCard from "@/views/ProjectCategoryCard.vue";
+import ButtonBack from "@/components/ButtonBack.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -26,10 +30,15 @@ import ProjectCategoryCard from "@/views/ProjectCategoryCard.vue";
 
 .wrapper {
   position: relative;
-  min-height: 600px;
 }
 
 .projects {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
   &__cards {
     display: flex;
     gap: 30px;

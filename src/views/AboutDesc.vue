@@ -7,29 +7,23 @@
     <ButtonLink :text="$t('button.hire.text')" :link="$t('button.hire.link')" />
 
     <div class="about__content">
-      <figure class="about__img">
-        <img src="@/assets/images/modules.svg" alt="Modules" />
-      </figure>
+      <ul class="about__list list">
+        <li
+          v-for="text of $tm('about.results.desc')"
+          :key="text"
+          class="list__item li-text"
+        >
+          {{ text }}
+        </li>
+      </ul>
 
-      <div class="about__info">
-        <ul class="about__list list">
-          <li
-            v-for="text of $tm('about.results.desc')"
-            :key="text"
-            class="list__item li-text"
-          >
-            {{ text }}
-          </li>
-        </ul>
-
-        <ul class="about__counter">
-          <AboutCounter
-            v-for="item of $tm('about.results.counter')"
-            :key="item"
-            :item="item"
-          />
-        </ul>
-      </div>
+      <ul class="about__counter">
+        <AboutCounter
+          v-for="item of $tm('about.results.counter')"
+          :key="item"
+          :item="item"
+        />
+      </ul>
     </div>
   </section>
 </template>
@@ -43,49 +37,64 @@ import AboutCounter from "@/views/AboutCounter.vue";
 @import "@/assets/styles/base/variables.scss";
 
 .about {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 30px 0;
+  background-color: var(--black-header-bg);
+
+  @media #{$tablet} {
+    padding: 50px 0;
+  }
+
+  @media #{$desktop-sm} {
+    background-color: inherit;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("@/assets/images/chart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: cover;
+
+    @media (min-width: 400px) {
+      background-size: 380px;
+    }
+
+    @media #{$tablet} {
+      background-position: left center;
+      background-size: 350px;
+    }
+  }
+
+  &__list {
+    padding: 40px 0 20px;
+  }
 
   &__counter {
     display: flex;
-    gap: 60px;
-    padding: 20px 0;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 
     @media #{$tablet} {
       justify-content: flex-start;
+      gap: 60px;
     }
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @media #{$desktop-sm} {
-      flex-direction: row;
+    @media #{$tablet} {
+      max-width: 550px;
+      align-self: end;
     }
-  }
-
-  &__img {
-    padding-top: 20px;
-
-    @media #{$desktop-sm} {
-      padding-top: 20px;
-    }
-
-    img {
-      width: 400px;
-      height: auto;
-    }
-  }
-
-  &__info {
-    max-width: 550px;
-    padding: 45px 0;
-    align-self: end;
   }
 
   &__link {

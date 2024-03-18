@@ -19,7 +19,7 @@
 
 <script setup>
 import SvgIcon from "@/components/SvgIcon.vue";
-import { useStore } from "vuex";
+import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed } from "vue";
 
 defineProps({
@@ -41,8 +41,8 @@ defineProps({
   },
 });
 
-const store = useStore();
-const screenWidth = computed(() => store.getters.screenWidth);
+const store = useScreenWidthStore();
+const screenWidth = computed(() => store.screenWidth);
 </script>
 
 <style lang="scss" scoped>

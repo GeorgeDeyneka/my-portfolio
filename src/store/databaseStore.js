@@ -1,47 +1,48 @@
 import { db } from "/firebaseConfig";
+import { defineStore } from "pinia";
 
-export default {
+export const useDatabaseStore = defineStore("database", {
   state: () => ({
     items: [],
     item: {},
   }),
 
-  mutations: {
-    setItems(state, items) {
-      state.items = items;
-    },
-
-    setItem(state, item) {
-      state.item = item;
-    },
-
-    resetItem(state) {
-      state.item = {};
-    },
-
-    resetItems(state) {
-      state.items = [];
-    },
-  },
-
-  getters: {},
-
   actions: {
-    async fetchItems({ commit }, payload) {
+    setItems(items) {
+      this.items = items;
+    },
+
+    setItem(item) {
+      this.item = item;
+    },
+
+    resetItem() {
+      this.item = {};
+    },
+
+    resetItems() {
+      this.items = [];
+    },
+
+    async fetchItems(payload) {
       const { category, locale } = payload;
       const items = [];
+
       const snapshot = await db
         .ref(`projects/${category}/${locale}`)
         .once("value");
+
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
         items.push(childData);
       });
-      commit("setItems", items);
+
+      this.setItems(items);
     },
 
-    async fetchItem({ commit }, payload) {
+    async fetchItem(payload) {
       const { id, locale, category } = payload;
+
       const snapshot = await db
         .ref(`projects/${category}/${locale}`)
         .orderByChild("id")
@@ -53,7 +54,7 @@ export default {
       }
 
       const item = Object.values(snapshot.val())[0];
-      return commit("setItem", item);
+      return this.setItem(item);
     },
   },
-};
+});

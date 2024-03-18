@@ -18,15 +18,15 @@
 </template>
 
 <script setup>
-import { useStore } from "vuex";
 import { register } from "swiper/element/bundle";
+import { computed, ref } from "vue";
+import { useScreenWidthStore } from "@/store/screenWidth";
 import PrDetailsSlide from "@/views/PrDetailsSlide.vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import { computed, ref } from "vue";
 
 register();
 
@@ -45,8 +45,8 @@ const swiperStyles = ref({
   overflowY: "visible",
 });
 
-const store = useStore();
-const screenWidth = store.getters.screenWidth;
+const store = useScreenWidthStore();
+const screenWidth = store.screenWidth;
 
 const minSlideHeight = computed(() => {
   if (screenWidth >= 1200) {
