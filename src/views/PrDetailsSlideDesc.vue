@@ -2,12 +2,12 @@
   <div class="description">
     <div
       class="description__wrapper"
-      :class="showTextFlag ? 'full-list' : 'short-list'"
-      @click="showFullDescription"
+      :class="isShowText ? 'full-list' : 'short-list'"
+      @click="expandDescription"
     >
-      <ul class="list">
+      <ul ref="description" class="list">
         <li v-for="(text, index) of textData" :key="index" class="list__item">
-          <span v-if="!showTextFlag && index === 0" class="list__hint"
+          <span v-if="!isShowText && index === 0" class="list__hint"
             >(Click and scroll)</span
           >
           {{ text }}
@@ -17,7 +17,7 @@
       <ButtonShowText
         ref="btn-show"
         class="list__btn-show"
-        @click.stop="showFullDescription"
+        :class="{ active: isShowText }"
       />
     </div>
   </div>
@@ -34,14 +34,10 @@ defineProps({
   },
 });
 
-// function handleClick() {
-//   this.$refs["btn-show"].$el.click();
-// }
+const isShowText = ref(false);
 
-const showTextFlag = ref(false);
-
-const showFullDescription = () => {
-  showTextFlag.value = !showTextFlag.value;
+const expandDescription = () => {
+  isShowText.value = !isShowText.value;
 };
 </script>
 
@@ -77,6 +73,29 @@ const showFullDescription = () => {
       padding: 2px 55px 10px 30px;
       min-height: 68px;
     }
+
+    &.full-list {
+      display: block;
+      max-height: 200px;
+      overflow: auto;
+    }
+
+    &.short-list {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        pointer-events: none;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      }
+    }
   }
 }
 
@@ -99,29 +118,12 @@ const showFullDescription = () => {
     z-index: 12;
     right: 10px;
     top: 2px;
-  }
-}
+    transition: transform 100ms linear;
+    transform: rotate(0deg);
 
-.full-list {
-  display: block;
-  max-height: 200px;
-  overflow: auto;
-}
-
-.short-list {
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    pointer-events: none;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.9) 100%
-    );
+    &.active {
+      transform: rotate(180deg);
+    }
   }
 }
 </style>
