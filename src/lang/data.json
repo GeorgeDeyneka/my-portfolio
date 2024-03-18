@@ -108,6 +108,10 @@
                     "path": "#icon-vuex"
                 },
                 {
+                    "name": "Pinia",
+                    "path": "#icon-pinia"
+                },
+                {
                     "name": "i18n",
                     "path": "#icon-i18n"
                 },

@@ -1,17 +1,13 @@
-export default {
+import { defineStore } from "pinia";
+
+export const useScreenWidthStore = defineStore("screen-width", {
   state: () => ({
     screenWidth: window.innerWidth,
   }),
 
-  mutations: {
-    setScreenWidth(state, width) {
-      state.screenWidth = width;
+  actions: {
+    setScreenWidth(width) {
+      this.screenWidth = width;
     },
   },
-
-  getters: {
-    screenWidth: (state) => state.screenWidth,
-  },
-
-  actions: {},
-};
+});

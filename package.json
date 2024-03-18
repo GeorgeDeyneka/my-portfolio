@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "pinia": "^2.1.7",
     "swiper": "^9.3.0",
     "vue": "^3.2.47",
     "vue-i18n": "^9.5.0",
     "vue-lazyload": "^3.0.0-rc.2",
-    "vue-router": "^4.1.6",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.1",

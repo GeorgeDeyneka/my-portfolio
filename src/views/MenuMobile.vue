@@ -27,13 +27,14 @@ import MenuBtnClose from "@/views/MenuBtnClose.vue";
 import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
 import LangSwitcher from "@/components/LangSwitcher.vue";
 import { useRouter } from "vue-router";
-import { useStore } from "vuex";
+import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed, onBeforeUnmount, ref } from "vue";
 
 const router = useRouter();
 const isOpen = ref(false);
-const store = useStore();
-const screenWidth = computed(() => store.getters.screenWidth);
+const store = useScreenWidthStore();
+
+const screenWidth = computed(() => store.screenWidth);
 
 const isExactRoute = (path) => {
   return router.currentRoute.value.path.includes(path);

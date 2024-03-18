@@ -1,11 +1,13 @@
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 import VueLazyload from "vue-lazyload";
 import router from "./router";
-import store from "./store";
 import "@/assets/styles/global.scss";
 import { createI18n, useI18n } from "vue-i18n";
 import { langs, defaultLocale } from "@/lang/i18n";
+
+const pinia = createPinia();
 
 const messages = Object.assign(langs);
 
@@ -31,7 +33,7 @@ app.use(VueLazyload, {
   preLoad: 1.3,
 });
 
-app.use(store);
+app.use(pinia);
 
 app.use(router);
 

@@ -54,7 +54,7 @@ import {
 } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { useStore } from "vuex";
+import { useDatabaseStore } from "@/store/databaseStore";
 
 const PrDetailsSwiper = defineAsyncComponent(() =>
   import("@/views/PrDetailsSwiper.vue"),
@@ -63,16 +63,16 @@ const PrDetailsReferences = defineAsyncComponent(() =>
   import("@/views/PrDetailsReferences.vue"),
 );
 const { locale, t } = useI18n();
-const store = useStore();
+const store = useDatabaseStore();
 const route = useRoute();
 const router = useRouter();
 
 const category = ref("");
-const dataItem = computed(() => store.state.databaseModule.item);
+const dataItem = computed(() => store.item);
 
 const fetchItemOnLocaleChange = () => {
   store
-    .dispatch("fetchItem", {
+    .fetchItem({
       id: Number(route.params.id),
       locale: locale.value,
       category: category.value,
@@ -98,7 +98,7 @@ onMounted(() => {
   fetchItemOnLocaleChange();
 });
 
-onBeforeUnmount(() => store.commit("resetItem"));
+onBeforeUnmount(() => store.resetItem());
 </script>
 
 <style lang="scss" scoped>

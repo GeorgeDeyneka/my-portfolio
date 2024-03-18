@@ -22,11 +22,11 @@ import ButtonLink from "@/components/ButtonLink.vue";
 import MenuMobile from "@/views/MenuMobile.vue";
 import MenuDesktop from "@/views/MenuDesktop.vue";
 import LangSwitcher from "@/components/LangSwitcher.vue";
-import { useStore } from "vuex";
+import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed } from "vue";
 
-const store = useStore();
-const screenWidth = computed(() => store.getters.screenWidth);
+const store = useScreenWidthStore();
+const screenWidth = computed(() => store.screenWidth);
 </script>
 
 <style lang="scss" scoped>
@@ -55,7 +55,6 @@ const screenWidth = computed(() => store.getters.screenWidth);
   position: sticky;
   z-index: 900;
   font-family: Mulish;
-  // font-family: Poppins;
 
   &__actions {
     display: flex;

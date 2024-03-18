@@ -19,13 +19,13 @@ import TheFooter from "@/views/TheFooter.vue";
 import SvgSprite from "@/views/SvgSprite.vue";
 import { debounce } from "lodash";
 import { nextTick, onBeforeUnmount, onMounted, onUpdated } from "vue";
-import { useStore } from "vuex";
+import { useScreenWidthStore } from "@/store/screenWidth";
 
-const store = useStore();
+const store = useScreenWidthStore();
 
 const updateScreenWidth = () =>
   debounce(function () {
-    store.commit("setScreenWidth", window.innerWidth);
+    store.setScreenWidth(window.innerWidth);
   }, 200);
 
 onMounted(() => window.addEventListener("resize", updateScreenWidth()));
