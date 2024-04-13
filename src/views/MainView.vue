@@ -17,7 +17,7 @@
 import TheHeader from "@/components/header/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheSvgSprite from "@/components/TheSvgSprite.vue";
-import { debounce } from "lodash";
+import debounce from "lodash.debounce";
 import { nextTick, onBeforeUnmount, onMounted, onUpdated } from "vue";
 import { useScreenWidthStore } from "@/store/screenWidth";
 
