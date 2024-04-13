@@ -2,7 +2,7 @@
   <main class="wrapper">
     <section class="projects">
       <div class="projects__title">
-        <ButtonBack />
+        <AppButtonBack />
         <h2>{{ $t("projects.title") }}</h2>
       </div>
 
@@ -11,7 +11,7 @@
           <ProjectsList />
         </template>
         <template #fallback>
-          <LoadSpinner />
+          <AppLoadSpinner />
         </template>
       </Suspense>
     </section>
@@ -20,8 +20,8 @@
 
 <script setup>
 import { defineAsyncComponent } from "vue";
-import LoadSpinner from "@/components/LoadSpinner.vue";
-import ButtonBack from "@/components/ButtonBack.vue";
+import AppLoadSpinner from "@/components/AppLoadSpinner.vue";
+import AppButtonBack from "@/components/AppButtonBack.vue";
 
 const ProjectsList = defineAsyncComponent(() =>
   import("@/views/ProjectsList.vue"),

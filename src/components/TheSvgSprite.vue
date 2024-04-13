@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "SvgSprite",
+  name: "TheSvgSprite",
 };
 </script>
 

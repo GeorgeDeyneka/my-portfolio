@@ -1,8 +1,8 @@
 <template>
-  <MenuBtnOpen @click="toggleMenu" />
+  <HeaderButtonOpen @click="toggleMenu" />
 
   <div :class="{ opened: isOpen }" class="navbar">
-    <MenuBtnClose @click="toggleMenu" />
+    <HeaderButtonClose @click="toggleMenu" />
 
     <nav class="navbar__list">
       <RouterLink
@@ -16,16 +16,16 @@
       >
     </nav>
 
-    <LangSwitcher v-if="screenWidth < 768" />
+    <HeaderLangSwitcher v-if="screenWidth < 768" />
   </div>
 
   <div v-if="isOpen" class="navbar__overlay" @click="toggleMenu"></div>
 </template>
 
 <script setup>
-import MenuBtnClose from "@/views/MenuBtnClose.vue";
-import MenuBtnOpen from "@/views/MenuBtnOpen.vue";
-import LangSwitcher from "@/components/LangSwitcher.vue";
+import HeaderLangSwitcher from "@/components/header/HeaderLangSwitcher.vue";
+import HeaderButtonClose from "@/components/header/HeaderButtonClose.vue";
+import HeaderButtonOpen from "@/components/header/HeaderButtonOpen.vue";
 import { useRouter } from "vue-router";
 import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed, onBeforeUnmount, ref } from "vue";

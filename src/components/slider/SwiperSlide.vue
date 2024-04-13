@@ -8,13 +8,13 @@
         alt="project-demo"
         loading="lazy"
       />
-      <PrDetailsSlideDesc :text-data="infoItem.description" />
+      <SwiperSlideDescription :text-data="infoItem.description" />
     </div>
   </swiper-slide>
 </template>
 
 <script setup>
-import PrDetailsSlideDesc from "@/views/PrDetailsSlideDesc.vue";
+import SwiperSlideDescription from "@/components/slider/SwiperSlideDescription.vue";
 
 defineProps({
   infoItem: {

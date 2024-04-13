@@ -9,14 +9,14 @@
     </router-view>
 
     <TheFooter />
-    <SvgSprite />
+    <TheSvgSprite />
   </div>
 </template>
 
 <script setup>
-import TheHeader from "@/views/TheHeader.vue";
-import TheFooter from "@/views/TheFooter.vue";
-import SvgSprite from "@/views/SvgSprite.vue";
+import TheHeader from "@/components/header/TheHeader.vue";
+import TheFooter from "@/components/TheFooter.vue";
+import TheSvgSprite from "@/components/TheSvgSprite.vue";
 import { debounce } from "lodash";
 import { nextTick, onBeforeUnmount, onMounted, onUpdated } from "vue";
 import { useScreenWidthStore } from "@/store/screenWidth";

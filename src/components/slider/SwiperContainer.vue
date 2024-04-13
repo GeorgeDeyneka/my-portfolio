@@ -8,7 +8,7 @@
     lazy="true"
     :navigation="true"
   >
-    <PrDetailsSlide
+    <SwiperSlide
       v-for="item of dataItem.imgUrls"
       :key="item"
       :image-height="minSlideHeight"
@@ -21,12 +21,7 @@
 import { register } from "swiper/element/bundle";
 import { computed, ref } from "vue";
 import { useScreenWidthStore } from "@/store/screenWidth";
-import PrDetailsSlide from "@/views/PrDetailsSlide.vue";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
+import SwiperSlide from "@/components/slider/SwiperSlide.vue";
 
 register();
 

@@ -14,7 +14,7 @@
         </li>
       </ul>
 
-      <ButtonShowText
+      <SwiperShowText
         ref="btn-show"
         class="list__btn-show"
         :class="{ active: isShowText }"
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import ButtonShowText from "@/components/ButtonShowText.vue";
+import SwiperShowText from "@/components/slider/SwiperShowText.vue";
 import { ref } from "vue";
 
 defineProps({

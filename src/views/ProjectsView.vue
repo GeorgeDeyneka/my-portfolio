@@ -2,7 +2,7 @@
   <main class="wrapper">
     <section class="projects">
       <div class="projects__title">
-        <ButtonBack />
+        <AppButtonBack />
         <h2>{{ $t("projects.categoriesTitle") }}</h2>
       </div>
 
@@ -22,7 +22,7 @@
 
 <script setup>
 import ProjectCategoryCard from "@/views/ProjectCategoryCard.vue";
-import ButtonBack from "@/components/ButtonBack.vue";
+import AppButtonBack from "@/components/AppButtonBack.vue";
 </script>
 
 <style lang="scss" scoped>

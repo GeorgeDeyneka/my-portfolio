@@ -4,11 +4,11 @@
     <h2 class="collab__title">{{ $t("about.collab.title") }}</h2>
 
     <div class="collab__buttons">
-      <ButtonNav
+      <AppButtonNav
         :text="$t('button.contacts.text')"
         :route="$t('button.contacts.link')"
       />
-      <ButtonLink
+      <AppButtonLink
         :text="$t('button.hire.text')"
         :link="$t('button.hire.link')"
       />
@@ -17,8 +17,8 @@
 </template>
 
 <script setup>
-import ButtonLink from "@/components/ButtonLink.vue";
-import ButtonNav from "@/components/ButtonNav.vue";
+import AppButtonLink from "@/components/AppButtonLink.vue";
+import AppButtonNav from "@/components/AppButtonNav.vue";
 </script>
 
 <style lang="scss" scoped>

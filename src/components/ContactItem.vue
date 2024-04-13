@@ -1,26 +1,26 @@
 <template>
-  <li class="cont__item" :class="{ 'item-padding': showTitle }">
+  <li class="contact__item" :class="{ padding: isShowTitle }">
     <a
-      class="cont__link"
-      :class="[showTitle ? 'item-column' : 'item-row']"
+      class="contact__link"
+      :class="[isShowTitle ? 'column' : 'row']"
       :href="linkItem.link"
       target="_blank"
       @mouseenter="onHoverChild"
       @mouseleave="onHoverChild"
     >
-      <SvgIcon
+      <AppSvgIcon
         :fill-color="fillColor"
         :class="{ hovered: isChildHover }"
         :hover-color="hoverColor"
         :string-path="linkItem.path"
       />
-      <h2 v-if="showTitle" class="cont__subtitle">{{ linkItem.title }}</h2>
+      <h2 v-if="isShowTitle" class="contact__subtitle">{{ linkItem.title }}</h2>
     </a>
   </li>
 </template>
 
 <script setup>
-import SvgIcon from "@/components/SvgIcon.vue";
+import AppSvgIcon from "@/components/AppSvgIcon.vue";
 import { ref } from "vue";
 
 defineProps({
@@ -29,7 +29,7 @@ defineProps({
     type: Object,
   },
 
-  showTitle: {
+  isShowTitle: {
     type: Boolean,
     default: true,
   },
@@ -53,29 +53,7 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 <style lang="scss" scoped>
 @import "@/assets/styles/base/variables.scss";
 
-.item-padding {
-  padding: 6px 0;
-}
-
-.item-column {
-  @media (hover: hover) {
-    &:hover {
-      transition: background-color 300ms ease-out;
-      background-color: var(--dark-gray-hover);
-      border-radius: 4px;
-    }
-  }
-
-  @media (hover: none) {
-    &:active {
-      transition: background-color 300ms ease-out;
-      background-color: var(--dark-gray-hover);
-      border-radius: 4px;
-    }
-  }
-}
-
-.cont {
+.contact {
   &__link {
     display: flex;
     align-items: center;
@@ -86,6 +64,24 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
     @media #{$tablet} {
       gap: 20px;
+    }
+
+    &.column {
+      @media (hover: hover) {
+        &:hover {
+          transition: background-color 300ms ease-out;
+          background-color: var(--dark-gray-hover);
+          border-radius: 4px;
+        }
+      }
+
+      @media (hover: none) {
+        &:active {
+          transition: background-color 300ms ease-out;
+          background-color: var(--dark-gray-hover);
+          border-radius: 4px;
+        }
+      }
     }
   }
 
@@ -101,6 +97,10 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
   &__item {
     list-style: none;
+
+    &.padding {
+      padding: 6px 0;
+    }
   }
 }
 </style>

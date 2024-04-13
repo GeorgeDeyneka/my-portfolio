@@ -2,7 +2,7 @@
   <main class="wrapper">
     <section class="contacts">
       <div class="contacts__title">
-        <ButtonBack />
+        <AppButtonBack />
         <h2>{{ $t("contacts.title") }}</h2>
       </div>
 
@@ -13,7 +13,7 @@
 
 <script setup>
 import ContactsList from "@/views/ContactsList.vue";
-import ButtonBack from "@/components/ButtonBack.vue";
+import AppButtonBack from "@/components/AppButtonBack.vue";
 import { contacts } from "@/lang/data";
 </script>
 

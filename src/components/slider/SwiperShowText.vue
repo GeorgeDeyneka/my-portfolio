@@ -1,6 +1,6 @@
 <template>
   <button class="btn" @click="rotateIcon">
-    <SvgIcon
+    <AppSvgIcon
       string-path="#icon-arrow"
       class="icon"
       :size="24"
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import SvgIcon from "@/components/SvgIcon.vue";
+import AppSvgIcon from "@/components/AppSvgIcon.vue";
 </script>
 
 <style lang="scss" scoped>

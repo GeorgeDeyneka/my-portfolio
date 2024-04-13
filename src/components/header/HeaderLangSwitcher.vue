@@ -10,7 +10,7 @@
         {{ currentLocale }}
       </a>
 
-      <svg-icon
+      <AppSvgIcon
         string-path="#icon-arrow"
         :size="20"
         :class="{ hovered: isChildHover || isOpen }"
@@ -40,7 +40,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import SvgIcon from "./SvgIcon.vue";
+import AppSvgIcon from "@/components/AppSvgIcon.vue";
 
 const isOpen = ref(false);
 const langs = ref(["en", "ua"]);
@@ -87,12 +87,12 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
       transition: all 300ms ease-out;
       color: var(--light-green-accent);
 
-      .switcher__list {
-        display: flex;
-      }
+      .switcher {
+        &__list {
+          display: flex;
+        }
 
-      .switcher__btn {
-        &::before {
+        &__btn:before {
           display: block;
         }
       }
@@ -105,12 +105,12 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
       transition: all 300ms ease-out;
       color: var(--light-green-accent);
 
-      .switcher__list {
-        display: flex;
-      }
+      .switcher {
+        &__list {
+          display: flex;
+        }
 
-      .switcher__btn {
-        &::before {
+        &__btn:before {
           display: block;
         }
       }
