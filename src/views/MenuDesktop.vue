@@ -2,7 +2,7 @@
   <nav class="menu__nav">
     <RouterLink
       v-for="route in $tm('nav')"
-      :key="route"
+      :key="route.name"
       :class="{ 'nav-link-active': isExactRoute(route.path), 'nav-link': true }"
       :to="route.path"
       >{{ route.name }}</RouterLink

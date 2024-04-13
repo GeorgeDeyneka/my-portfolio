@@ -6,7 +6,7 @@
       @click="expandDescription"
     >
       <ul ref="description" class="list">
-        <li v-for="(text, index) of textData" :key="index" class="list__item">
+        <li v-for="(text, index) of textData" :key="text" class="list__item">
           <span v-if="!isShowText && index === 0" class="list__hint"
             >(Click and scroll)</span
           >

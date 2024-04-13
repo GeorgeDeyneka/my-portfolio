@@ -7,7 +7,7 @@
     <nav class="navbar__list">
       <RouterLink
         v-for="route in $tm('nav')"
-        :key="route"
+        :key="route.name"
         class="nav-link navbar__link"
         :class="{ 'nav-link-active': isExactRoute(route.path) }"
         :to="route.path"

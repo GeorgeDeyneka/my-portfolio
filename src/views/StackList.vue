@@ -2,7 +2,7 @@
   <h3 class="tech__subtitle">{{ title }}:</h3>
 
   <ul class="tech__logos">
-    <li v-for="item of arrData" :key="item" class="tech__item">
+    <li v-for="item of arrData" :key="item.name" class="tech__item">
       <SvgIcon :size="iconSize" :string-path="item.path" />
       <p class="tech__name">{{ item.name }}</p>
     </li>

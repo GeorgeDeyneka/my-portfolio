@@ -2,7 +2,7 @@
   <ul class="contacts__list">
     <ContactItem
       v-for="item of arrData"
-      :key="item"
+      :key="item.link"
       :hover-color="item.hoverColor"
       :link-item="item"
     />

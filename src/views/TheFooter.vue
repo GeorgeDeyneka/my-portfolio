@@ -6,7 +6,7 @@
       <ul class="footer__item network">
         <ContactItem
           v-for="item of contacts"
-          :key="item"
+          :key="item.link"
           fill-color="#c3c3c3"
           hover-color="#75fa7f"
           :show-title="false"

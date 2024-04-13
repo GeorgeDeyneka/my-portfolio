@@ -19,9 +19,9 @@
 
       <ul class="about__counter">
         <AboutCounter
-          v-for="item of $tm('about.results.counter')"
-          :key="item"
-          :item="item"
+          v-for="count of $tm('about.results.counter')"
+          :key="count"
+          :item="count"
         />
       </ul>
     </div>
