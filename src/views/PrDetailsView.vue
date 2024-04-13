@@ -88,10 +88,10 @@ const checkItemAndRedirect = (resp) => {
   }
 };
 
-// watch(
-//   () => locale.value,
-//   () => fetchItemOnLocaleChange(),
-// );
+watch(
+  () => locale.value,
+  () => fetchItemOnLocaleChange(),
+);
 
 onMounted(() => {
   category.value = route.path.split("/")[2];
