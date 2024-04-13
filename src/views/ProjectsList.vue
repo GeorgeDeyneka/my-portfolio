@@ -2,7 +2,7 @@
   <ul class="list-wrapper">
     <ProjectsItem
       v-for="item of arrProjects"
-      :key="item"
+      :key="item.title"
       :project-item="item"
       :current-route="secondPartOfRoute"
     />

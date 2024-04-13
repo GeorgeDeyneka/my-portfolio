@@ -4,7 +4,10 @@
 
     <h2 class="about__title title">{{ $t("about.results.title") }}</h2>
 
-    <ButtonLink :text="$t('button.hire.text')" :link="$t('button.hire.link')" />
+    <AppButtonLink
+      :text="$t('button.hire.text')"
+      :link="$t('button.hire.link')"
+    />
 
     <div class="about__content">
       <ul class="about__list list">
@@ -19,9 +22,9 @@
 
       <ul class="about__counter">
         <AboutCounter
-          v-for="item of $tm('about.results.counter')"
-          :key="item"
-          :item="item"
+          v-for="count of $tm('about.results.counter')"
+          :key="count"
+          :item="count"
         />
       </ul>
     </div>
@@ -29,7 +32,7 @@
 </template>
 
 <script setup>
-import ButtonLink from "@/components/ButtonLink.vue";
+import AppButtonLink from "@/components/AppButtonLink.vue";
 import AboutCounter from "@/views/AboutCounter.vue";
 </script>
 

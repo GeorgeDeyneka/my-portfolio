@@ -1,7 +1,7 @@
 <template>
   <section class="stack">
     <div class="stack__title">
-      <ButtonBack />
+      <AppButtonBack />
 
       <h2>{{ $t("tech.stack.title") }}</h2>
     </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import ButtonBack from "@/components/ButtonBack.vue";
+import AppButtonBack from "@/components/AppButtonBack.vue";
 
 defineProps({
   textList: {

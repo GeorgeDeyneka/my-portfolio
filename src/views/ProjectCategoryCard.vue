@@ -1,7 +1,7 @@
 <template>
   <li class="projects__card card">
     <RouterLink :to="`/projects/${route}`">
-      <SvgIcon
+      <AppSvgIcon
         :string-path="iconPath"
         class="card__icon"
         :size="screenWidth < 768 ? 100 : 150"
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import SvgIcon from "@/components/SvgIcon.vue";
+import AppSvgIcon from "@/components/AppSvgIcon.vue";
 import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed } from "vue";
 

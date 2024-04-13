@@ -6,16 +6,16 @@
       <ul class="footer__item network">
         <ContactItem
           v-for="item of contacts"
-          :key="item"
+          :key="item.link"
           fill-color="#c3c3c3"
           hover-color="#75fa7f"
-          :show-title="false"
+          :is-show-title="false"
           :link-item="item"
         />
       </ul>
 
       <div class="footer__item hire-btn">
-        <ButtonLink
+        <AppButtonLink
           :text="$t('button.hire.text')"
           :link="$t('button.hire.link')"
         />
@@ -26,7 +26,7 @@
 
 <script setup>
 import { contacts } from "@/lang/data";
-import ButtonLink from "@/components/ButtonLink.vue";
+import AppButtonLink from "@/components/AppButtonLink.vue";
 import ContactItem from "@/components/ContactItem.vue";
 </script>
 

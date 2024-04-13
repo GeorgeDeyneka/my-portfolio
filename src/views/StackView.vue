@@ -11,7 +11,7 @@
 
       <StackList
         v-for="item of stack"
-        :key="item"
+        :key="item.title"
         :icon-size="iconSize"
         :title="item.title"
         :arr-data="item.data"

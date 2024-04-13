@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <div class="container">
-      <MenuMobile v-if="screenWidth < 1024" />
-      <MenuDesktop v-else />
+      <TheMenuMobile v-if="screenWidth < 1024" />
+      <TheMenuDesktop v-else />
 
       <div class="header__actions">
-        <LangSwitcher v-if="screenWidth >= 768" />
-        <ButtonLink
+        <HeaderLangSwitcher v-if="screenWidth >= 768" />
+        <AppButtonLink
           :link="$t('button.resume.link')"
           :text="$t('button.resume.text')"
           download="George_Deyneka_(Frontend)_EN.pdf"
@@ -18,10 +18,10 @@
 </template>
 
 <script setup>
-import ButtonLink from "@/components/ButtonLink.vue";
-import MenuMobile from "@/views/MenuMobile.vue";
-import MenuDesktop from "@/views/MenuDesktop.vue";
-import LangSwitcher from "@/components/LangSwitcher.vue";
+import AppButtonLink from "@/components/AppButtonLink.vue";
+import TheMenuMobile from "@/components/header/TheMenuMobile.vue";
+import TheMenuDesktop from "@/components/header/TheMenuDesktop.vue";
+import HeaderLangSwitcher from "@/components/header/HeaderLangSwitcher.vue";
 import { useScreenWidthStore } from "@/store/screenWidth";
 import { computed } from "vue";
 

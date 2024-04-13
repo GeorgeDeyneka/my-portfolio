@@ -1,6 +1,6 @@
 <template>
   <button class="btn" @click="goBack()">
-    <SvgIcon
+    <AppSvgIcon
       class="icon"
       :size="30"
       string-path="#icon-arrow"
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import SvgIcon from "@/components/SvgIcon.vue";
+import AppSvgIcon from "@/components/AppSvgIcon.vue";
 import { useRouter } from "vue-router";
 
 const props = defineProps({

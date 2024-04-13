@@ -11,9 +11,9 @@
     "deploy": "vite build && firebase deploy"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
     "pinia": "^2.1.7",
-    "swiper": "^9.3.0",
+    "swiper": "^9.4.1",
     "vue": "^3.2.47",
     "vue-i18n": "^9.5.0",
     "vue-lazyload": "^3.0.0-rc.2",

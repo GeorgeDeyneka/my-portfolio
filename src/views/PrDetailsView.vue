@@ -4,13 +4,13 @@
       <template #default>
         <section>
           <div class="project__title">
-            <ButtonBack />
+            <AppButtonBack />
             <h2>{{ dataItem.title }}</h2>
           </div>
 
           <p class="project__text">{{ dataItem.shortDesc }}</p>
 
-          <PrDetailsSwiper :data-item="dataItem" />
+          <SwiperContainer :data-item="dataItem" />
 
           <div class="projects__stack stack">
             <h2 class="stack__title">
@@ -35,15 +35,15 @@
       </template>
 
       <template #fallback>
-        <LoadSpinner />
+        <AppLoadSpinner />
       </template>
     </Suspense>
   </main>
 </template>
 
 <script setup>
-import LoadSpinner from "@/components/LoadSpinner.vue";
-import ButtonBack from "@/components/ButtonBack.vue";
+import AppLoadSpinner from "@/components/AppLoadSpinner.vue";
+import AppButtonBack from "@/components/AppButtonBack.vue";
 import {
   computed,
   onBeforeUnmount,
@@ -56,8 +56,8 @@ import { useRouter, useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { useDatabaseStore } from "@/store/databaseStore";
 
-const PrDetailsSwiper = defineAsyncComponent(() =>
-  import("@/views/PrDetailsSwiper.vue"),
+const SwiperContainer = defineAsyncComponent(() =>
+  import("@/components/slider/SwiperContainer.vue"),
 );
 const PrDetailsReferences = defineAsyncComponent(() =>
   import("@/views/PrDetailsReferences.vue"),
