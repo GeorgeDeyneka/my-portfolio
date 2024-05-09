@@ -11,6 +11,18 @@
     "hire": {
       "text": "Hire Me Now!",
       "link": "mailto:zhoradeynecka{'@'}gmail.com"
+    },
+    "back": {
+      "text": "Go Back"
+    },
+    "closeMenu": {
+      "text": "Close menu"
+    },
+    "openMenu": {
+      "text": "Open menu"
+    },
+    "showDescription": {
+      "text": "Show project information"
     }
   },
   "nav": [

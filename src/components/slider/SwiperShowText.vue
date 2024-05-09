@@ -1,5 +1,9 @@
 <template>
-  <button class="btn" @click="rotateIcon">
+  <button
+    class="btn"
+    :aria-label="$t('button.openMenu.text')"
+    @click="rotateIcon"
+  >
     <AppSvgIcon
       string-path="#icon-arrow"
       class="icon"

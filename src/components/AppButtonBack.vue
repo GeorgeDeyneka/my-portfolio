@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" @click="goBack()">
+  <button class="btn" :aria-label="$t('button.back.text')" @click="goBack()">
     <AppSvgIcon
       class="icon"
       :size="30"

@@ -11,6 +11,18 @@
     "hire": {
       "text": "Найняти Мене!",
       "link": "mailto:zhoradeynecka{'@'}gmail.com"
+    },
+    "back": {
+      "text": "Попередня сторінка"
+    },
+    "closeMenu": {
+      "text": "Закрити меню"
+    },
+    "openMenu": {
+      "text": "Відкрити меню"
+    },
+    "showDescription": {
+      "text": "Показати інформацію про проект"
     }
   },
   "nav": [
