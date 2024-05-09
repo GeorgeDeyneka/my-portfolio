@@ -5,6 +5,7 @@
       :class="[isShowTitle ? 'column' : 'row']"
       :href="linkItem.link"
       target="_blank"
+      :aria-label="linkItem.name"
       @mouseenter="onHoverChild"
       @mouseleave="onHoverChild"
     >

@@ -1,14 +1,14 @@
 <template>
   <div class="switcher" :class="{ active: isOpen }">
-    <div
+    <button
       class="switcher__btn"
       @mouseenter="onHoverChild"
       @mouseleave="onHoverChild"
       @click="toggleSwitcher"
     >
-      <a class="switcher__link">
+      <p class="switcher__option">
         {{ currentLocale }}
-      </a>
+      </p>
 
       <AppSvgIcon
         string-path="#icon-arrow"
@@ -17,7 +17,7 @@
         fill-color="var(--white)"
         hover-color="var(--light-green-accent)"
       />
-    </div>
+    </button>
 
     <ul
       class="switcher__list"
@@ -31,7 +31,7 @@
         class="switcher__item"
         @click="changeLocale(lang)"
       >
-        <a class="switcher__link" target="_blank"> {{ lang }} </a>
+        <p class="switcher__option">{{ lang }}</p>
       </li>
     </ul>
   </div>
@@ -66,7 +66,6 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 @import "@/assets/styles/base/variables.scss";
 
 .switcher {
-  border-radius: 4px;
   font-family: inherit;
   font-weight: 500;
   font-size: 18px;
@@ -75,6 +74,7 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
   margin-bottom: 40px;
   max-width: fit-content;
   margin-left: -10px;
+  border-radius: 4px 4px 0 0;
 
   @media #{$tablet} {
     margin-bottom: 0;
@@ -83,10 +83,6 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
   @media (hover: hover) {
     &:hover {
-      border-radius: 4px 4px 0 0;
-      transition: all 300ms ease-out;
-      color: var(--light-green-accent);
-
       .switcher {
         &__list {
           display: flex;
@@ -94,6 +90,11 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
         &__btn:before {
           display: block;
+        }
+
+        &__option {
+          transition: all 300ms ease-out;
+          color: var(--light-green-accent);
         }
       }
     }
@@ -101,10 +102,6 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
   @media (hover: none) {
     &.active {
-      border-radius: 4px 4px 0 0;
-      transition: all 300ms ease-out;
-      color: var(--light-green-accent);
-
       .switcher {
         &__list {
           display: flex;
@@ -112,6 +109,11 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
 
         &__btn:before {
           display: block;
+        }
+
+        &__option {
+          transition: all 300ms ease-out;
+          color: var(--light-green-accent);
         }
       }
     }
@@ -123,6 +125,8 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
     cursor: pointer;
     position: relative;
     gap: 10px;
+    background-color: transparent;
+    border: none;
 
     @media #{$tablet} {
       gap: 0;
@@ -160,7 +164,7 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
     width: 100%;
   }
 
-  &__link {
+  &__option {
     display: flex;
     text-transform: uppercase;
     align-items: center;
@@ -170,6 +174,8 @@ const onHoverChild = () => (isChildHover.value = !isChildHover.value);
     cursor: pointer;
     user-select: none;
     font-size: 20px;
+    color: var(--white);
+    line-height: 175%;
 
     @media #{$tablet} {
       padding: 4px 12px;

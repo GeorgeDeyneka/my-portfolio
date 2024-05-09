@@ -1,5 +1,5 @@
 <template>
-  <button class="open-btn">
+  <button :aria-label="$t('button.showDescription.text')" class="open-btn">
     <div class="open-btn__line"></div>
   </button>
 </template>
@@ -9,7 +9,7 @@
 
 .open-btn {
   @include burger-button;
-  
+
   &__line {
     position: relative;
     @include burger-line;

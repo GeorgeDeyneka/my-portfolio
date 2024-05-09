@@ -1,222 +1,228 @@
 {
-    "contacts": [
+  "contacts": [
+    {
+      "name": "Telegram",
+      "link": "https://t.me/Deyneka_George",
+      "path": "#icon-telegram",
+      "title": "@Deyneka_George",
+      "hoverColor": "#42abff"
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/george-deyneka/",
+      "path": "#icon-linked-in",
+      "title": "George Deyneka",
+      "hoverColor": "#0B66C2"
+    },
+    {
+      "name": "GitHub",
+      "link": "https://github.com/GeorgeDeyneka",
+      "path": "#icon-github",
+      "title": "GeorgeDeyneka",
+      "hoverColor": "#3E75C3"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/_veeermilliooon_/",
+      "path": "#icon-instagram",
+      "title": "@_veeermilliooon_",
+      "hoverColor": "#f66969"
+    },
+    {
+      "name": "Gmail",
+      "link": "mailto:zhoradeynecka@gmail.com",
+      "path": "#icon-gmail",
+      "title": "zhoradeynecka@gmail.com",
+      "hoverColor": "#E04C40"
+    },
+    {
+      "name": "Codewars",
+      "link": "https://www.codewars.com/users/GeorgeDeyneka",
+      "path": "#icon-codewars",
+      "title": "GeorgeDeyneka",
+      "hoverColor": "#B13621"
+    }
+  ],
+  "stack": [
+    {
+      "title": "Frameworks",
+      "data": [
         {
-            "link": "https://t.me/Deyneka_George",
-            "path": "#icon-telegram",
-            "title": "@Deyneka_George",
-            "hoverColor": "#42abff"
+          "name": "Angular",
+          "path": "#icon-ang"
         },
         {
-            "link": "https://www.linkedin.com/in/george-deyneka/",
-            "path": "#icon-linked-in",
-            "title": "George Deyneka",
-            "hoverColor": "#0B66C2"
+          "name": "Vue.js",
+          "path": "#icon-vue"
         },
         {
-            "link": "https://github.com/GeorgeDeyneka",
-            "path": "#icon-github",
-            "title": "GeorgeDeyneka",
-            "hoverColor": "#3E75C3"
+          "name": "Nuxt.js",
+          "path": "#icon-nuxt"
         },
         {
-            "link": "https://www.instagram.com/_veeermilliooon_/",
-            "path": "#icon-instagram",
-            "title": "@_veeermilliooon_",
-            "hoverColor": "#f66969"
-        },
-        {
-            "link": "mailto:zhoradeynecka@gmail.com",
-            "path": "#icon-gmail",
-            "title": "zhoradeynecka@gmail.com",
-            "hoverColor": "#E04C40"
-        },
-        {
-            "link": "https://www.codewars.com/users/GeorgeDeyneka",
-            "path": "#icon-codewars",
-            "title": "GeorgeDeyneka",
-            "hoverColor": "#B13621"
+          "name": "Node.js",
+          "path": "#icon-node-js"
         }
-    ],
-    "stack": [
+      ]
+    },
+    {
+      "title": "Main stack",
+      "data": [
         {
-            "title": "Frameworks",
-            "data": [
-                {
-                    "name": "Angular",
-                    "path": "#icon-ang"
-                },
-                {
-                    "name": "Vue.js",
-                    "path": "#icon-vue"
-                },
-                {
-                    "name": "Nuxt.js",
-                    "path": "#icon-nuxt"
-                },
-                {
-                    "name": "Node.js",
-                    "path": "#icon-node-js"
-                }
-            ]
+          "name": "JavaScript",
+          "path": "#icon-js"
         },
         {
-            "title": "Main stack",
-            "data": [
-                {
-                    "name": "JavaScript",
-                    "path": "#icon-js"
-                },
-                {
-                    "name": "TypeScript",
-                    "path": "#icon-ts"
-                },
-                {
-                    "name": "HTML",
-                    "path": "#icon-html"
-                },
-                {
-                    "name": "CSS",
-                    "path": "#icon-css"
-                },
-                {
-                    "name": "SCSS",
-                    "path": "#icon-sass"
-                },
-                {
-                    "name": "REST API",
-                    "path": "#icon-rest"
-                },
-                {
-                    "name": "HTTP/HTTPS (+CORS)",
-                    "path": "#icon-http"
-                }
-            ]
+          "name": "TypeScript",
+          "path": "#icon-ts"
         },
         {
-            "title": "Libraries",
-            "data": [
-                {
-                    "name": "RxJS",
-                    "path": "#icon-rxjs"
-                },
-                {
-                    "name": "Angular Material",
-                    "path": "#icon-ang-mat"
-                },
-                {
-                    "name": "Vuex",
-                    "path": "#icon-vuex"
-                },
-                {
-                    "name": "Pinia",
-                    "path": "#icon-pinia"
-                },
-                {
-                    "name": "i18n",
-                    "path": "#icon-i18n"
-                },
-                {
-                    "name": "jQuery",
-                    "path": "#icon-jquery"
-                },
-                {
-                    "name": "Babel",
-                    "path": "#icon-babel"
-                },
-                {
-                    "name": "Date-fns",
-                    "path": "#icon-date-fns"
-                }
-            ]
+          "name": "HTML",
+          "path": "#icon-html"
         },
         {
-            "title": "Software",
-            "data": [
-                {
-                    "name": "Jira",
-                    "path": "#icon-jira"
-                },
-                {
-                    "name": "Chat GPT",
-                    "path": "#icon-chat-gpt"
-                },
-                {
-                    "name": "Adobe Photoshop",
-                    "path": "#icon-ps"
-                },
-                {
-                    "name": "Postman",
-                    "path": "#icon-postman"
-                },
-                {
-                    "name": "Canva",
-                    "path": "#icon-canva"
-                },
-                {
-                    "name": "Figma",
-                    "path": "#icon-figma"
-                },
-                {
-                    "name": "VS Code",
-                    "path": "#icon-vs-code"
-                }
-            ]
+          "name": "CSS",
+          "path": "#icon-css"
         },
         {
-            "title": "Data bases",
-            "data": [
-                {
-                    "name": "MongoDB",
-                    "path": "#icon-mongodb"
-                },
-                {
-                    "name": "Firebase",
-                    "path": "#icon-firebase"
-                }
-            ]
+          "name": "SCSS",
+          "path": "#icon-sass"
         },
         {
-            "title": "Version control system",
-            "data": [
-                {
-                    "name": "GIT",
-                    "path": "#icon-git"
-                },
-                {
-                    "name": "GitHub",
-                    "path": "#icon-github-bw"
-                }
-            ]
+          "name": "REST API",
+          "path": "#icon-rest"
         },
         {
-            "title": "Builders",
-            "data": [
-                {
-                    "name": "Gulp",
-                    "path": "#icon-gulp"
-                },
-                {
-                    "name": "Webpack",
-                    "path": "#icon-webpack"
-                },
-                {
-                    "name": "Vite",
-                    "path": "#icon-vite"
-                }
-            ]
-        },
-        {
-            "title": "Package Managers",
-            "data": [
-                {
-                    "name": "Yarn",
-                    "path": "#icon-yarn"
-                },
-                {
-                    "name": "NPM",
-                    "path": "#icon-npm"
-                }
-            ]
+          "name": "HTTP/HTTPS (+CORS)",
+          "path": "#icon-http"
         }
-    ]
+      ]
+    },
+    {
+      "title": "Libraries",
+      "data": [
+        {
+          "name": "RxJS",
+          "path": "#icon-rxjs"
+        },
+        {
+          "name": "Angular Material",
+          "path": "#icon-ang-mat"
+        },
+        {
+          "name": "Vuex",
+          "path": "#icon-vuex"
+        },
+        {
+          "name": "Pinia",
+          "path": "#icon-pinia"
+        },
+        {
+          "name": "i18n",
+          "path": "#icon-i18n"
+        },
+        {
+          "name": "jQuery",
+          "path": "#icon-jquery"
+        },
+        {
+          "name": "Babel",
+          "path": "#icon-babel"
+        },
+        {
+          "name": "Date-fns",
+          "path": "#icon-date-fns"
+        }
+      ]
+    },
+    {
+      "title": "Software",
+      "data": [
+        {
+          "name": "Jira",
+          "path": "#icon-jira"
+        },
+        {
+          "name": "Chat GPT",
+          "path": "#icon-chat-gpt"
+        },
+        {
+          "name": "Adobe Photoshop",
+          "path": "#icon-ps"
+        },
+        {
+          "name": "Postman",
+          "path": "#icon-postman"
+        },
+        {
+          "name": "Canva",
+          "path": "#icon-canva"
+        },
+        {
+          "name": "Figma",
+          "path": "#icon-figma"
+        },
+        {
+          "name": "VS Code",
+          "path": "#icon-vs-code"
+        }
+      ]
+    },
+    {
+      "title": "Data bases",
+      "data": [
+        {
+          "name": "MongoDB",
+          "path": "#icon-mongodb"
+        },
+        {
+          "name": "Firebase",
+          "path": "#icon-firebase"
+        }
+      ]
+    },
+    {
+      "title": "Version control system",
+      "data": [
+        {
+          "name": "GIT",
+          "path": "#icon-git"
+        },
+        {
+          "name": "GitHub",
+          "path": "#icon-github-bw"
+        }
+      ]
+    },
+    {
+      "title": "Builders",
+      "data": [
+        {
+          "name": "Gulp",
+          "path": "#icon-gulp"
+        },
+        {
+          "name": "Webpack",
+          "path": "#icon-webpack"
+        },
+        {
+          "name": "Vite",
+          "path": "#icon-vite"
+        }
+      ]
+    },
+    {
+      "title": "Package Managers",
+      "data": [
+        {
+          "name": "Yarn",
+          "path": "#icon-yarn"
+        },
+        {
+          "name": "NPM",
+          "path": "#icon-npm"
+        }
+      ]
+    }
+  ]
 }

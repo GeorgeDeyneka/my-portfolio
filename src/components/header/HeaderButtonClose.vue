@@ -1,5 +1,5 @@
 <template>
-  <button class="close-btn"></button>
+  <button :aria-label="$t('button.closeMenu.text')" class="close-btn"></button>
 </template>
 
 <style lang="scss" scoped>
