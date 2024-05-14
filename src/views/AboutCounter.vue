@@ -1,6 +1,6 @@
 <template>
   <li ref="counter" class="count">
-    <h2 class="count__number" v-html="count"></h2>
+    <h2 class="count__number">{{ count }}</h2>
     <span class="count__plus">+</span>
     <p class="count__text">{{ item.text }}</p>
   </li>

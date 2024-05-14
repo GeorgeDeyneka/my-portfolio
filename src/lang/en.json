@@ -131,6 +131,8 @@
     "title": "My Contacts"
   },
   "footer": {
-    "desc": "Developed by <strong>George Deyneka</strong> with <strong>Vue 3</strong>"
+    "desc": "Developed by {0} with {1}",
+    "name": "George Deyneka",
+    "framework": "Vue 3"
   }
 }

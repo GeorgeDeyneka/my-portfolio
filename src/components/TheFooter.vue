@@ -1,7 +1,15 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="footer__item text" v-html="$t('footer.desc')" />
+      <i18n-t
+        keypath="footer.desc"
+        tag="p"
+        class="footer__item text"
+        scope="global"
+      >
+        <strong>{{ $t("footer.name") }}</strong>
+        <strong>{{ $t("footer.framework") }}</strong>
+      </i18n-t>
 
       <ul class="footer__item network">
         <ContactItem
