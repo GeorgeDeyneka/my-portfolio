@@ -2,7 +2,7 @@
   "button": {
     "resume": {
       "text": "Download CV",
-      "link": "public/resume.pdf"
+      "link": "/resume.pdf"
     },
     "contacts": {
       "text": "Get In Touch",
@@ -58,7 +58,7 @@
         },
         {
           "text": "Years experience",
-          "endNum": 1
+          "endNum": 3
         },
         {
           "text": "Certificates",

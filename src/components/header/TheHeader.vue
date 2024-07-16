@@ -9,7 +9,7 @@
         <AppButtonLink
           :link="$t('button.resume.link')"
           :text="$t('button.resume.text')"
-          download="George_Deyneka_(Frontend)_EN.pdf"
+          download="Middle Frontend - George Deyneka.pdf"
           size="small"
         />
       </div>

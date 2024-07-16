@@ -2,7 +2,7 @@
   "button": {
     "resume": {
       "text": "Завантажити CV",
-      "link": "public/resume.pdf"
+      "link": "/resume.pdf"
     },
     "contacts": {
       "text": "Зв'язатись",
@@ -58,7 +58,7 @@
         },
         {
           "text": "Років досвіду",
-          "endNum": 1
+          "endNum": 3
         },
         {
           "text": "Сертифікати",
