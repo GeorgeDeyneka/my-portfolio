@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "name": "Telegram",
-      "link": "https://t.me/Deyneka_George",
-      "path": "#icon-telegram",
-      "title": "@Deyneka_George",
-      "hoverColor": "#42abff"
-    },
-    {
       "name": "LinkedIn",
       "link": "https://www.linkedin.com/in/george-deyneka/",
       "path": "#icon-linked-in",
@@ -18,15 +11,15 @@
       "name": "GitHub",
       "link": "https://github.com/GeorgeDeyneka",
       "path": "#icon-github",
-      "title": "GeorgeDeyneka",
+      "title": "George Deyneka",
       "hoverColor": "#3E75C3"
     },
     {
-      "name": "Instagram",
-      "link": "https://www.instagram.com/_veeermilliooon_/",
-      "path": "#icon-instagram",
-      "title": "@_veeermilliooon_",
-      "hoverColor": "#f66969"
+      "name": "Telegram",
+      "link": "https://t.me/meowstormcat",
+      "path": "#icon-telegram",
+      "title": "@meowstormcat",
+      "hoverColor": "#42abff"
     },
     {
       "name": "Gmail",
@@ -34,13 +27,6 @@
       "path": "#icon-gmail",
       "title": "zhoradeynecka@gmail.com",
       "hoverColor": "#E04C40"
-    },
-    {
-      "name": "Codewars",
-      "link": "https://www.codewars.com/users/GeorgeDeyneka",
-      "path": "#icon-codewars",
-      "title": "GeorgeDeyneka",
-      "hoverColor": "#B13621"
     }
   ],
   "stack": [
